@@ -2,10 +2,9 @@
   <%= f.error_messages %>
   <div class="columns">
     <div class="column left">
-      <div class="group">
-        <%= f.label :nome %><br />
-        <%= f.text_field :name %>
-      </div>
+
+      <%= form_input(:name, :label => "Nome") %>
+
       <div class="group">
         <%= f.radio_button :sex, true %> Masculino
         <%= f.radio_button :sex, false  %> Feminino
@@ -14,45 +13,27 @@
         <%= f.label :estado_civil %>
         <%= f.select :marital, Person.get_marital_values %>
       </div>
-      <div class="group">
-        <%= f.label :birth %><br />
-        <%= f.text_field :born_at %>
-      </div>
+
+      <%= form_input(:born_at, :label => "Nascimento") %>
+
       <div class="group">
         <%= f.label :birthplace %><br />
         <%# f.text_field :birthplace %>
       </div>
-      <div class="group">
-        <%= f.label :time_residence %><br />
-        <%= f.text_field :arrival_at %>
-      </div>
-      <div class="group">
-        <%= f.label :profession %><br />
-        <%= f.text_field :profession %>
-      </div>
+
+      <%= form_input(:arrival_at, :label => "Tempo Residencia") %>
+      <%= form_input(:profession, :label => "Profissao") %>
+
       <div class="group">
         <%= f.label :Tipo_Sanguíneo %>
         <%= f.select :name, Person.get_blood_values, :prompt => "Selecione" %>
       </div>
     </div>
-
     <div class="column right">
-      <div class="group">
-        <%= f.label :income %><br />
-        <%= f.text_field :income %>
-      </div>
-      <div class="group">
-        <%= f.label :housing %><br />
-        <%= f.text_field :house_type %>
-      </div>
-      <div class="group">
-        <%= f.label :room %><br />
-        <%= f.text_field :rooms %>
-      </div>
-      <div class="group">
-        <%= f.label :revenue %><br />
-        <%= f.text_field :revenue %>
-      </div>
+      <%= form_input(:income) %>
+      <%= form_input(:revenue) %>
+      <%= form_input(:house_type) %>
+      <%= form_input(:rooms) %>
     </div>
     <div class="clear"></div>
     <div class="group navform">

@@ -45,6 +45,14 @@ module ApplicationHelper
     flashes
   end
 
+  def form_input(field, *opts)
+    lbl = opts.first.delete(:label) unless opts.empty?
+    lbl ||= field.to_s.capitalize
+    out = "<div class='group'>"
+    out += "<label class='label'>#{lbl}</label>"
+    out += text_field_tag field, {} , opts.first || {}
+    out += "</div>"
+  end
 
 
 

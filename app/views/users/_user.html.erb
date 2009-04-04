@@ -1,35 +1,22 @@
-<div class="block">
-  <div class="content">
-    <div class="inner">
+<% form_for(@user, :html => { :class => "form" }) do |f| %>
+  <%= f.error_messages %>
+  <%= hidden_field "user",  "tipo_formulario", :value => "novo_usuario" %>
 
-      <% form_for(@user, :html => { :class => "form" }) do |f| %>
-        <%= f.error_messages %>
-        <%= hidden_field "user",  "tipo_formulario", :value => "novo_usuario" %>
+  <%= form_input(:login, :size => 40, :maxlength => 5, :class => 'campos') %>
+  <%= form_input(:login, :label => "CPF") %>
+  <%= form_input(:login, :password => true) %>
 
-        <div class="group">
-          <%= f.label :login %>
-          <%= f.text_field :login, :size => 40, :maxlength => 5, :class => 'campos'  %>
-        </div>
-
-        <div class="group">
-          <%= f.label "CPF" %>
-          <%= f.text_field :name, :size => 40, :maxlength => 100  %>
-        </div>
-
-        <div class="group">
-          <%= f.label "Senha" %>
-          <%= f.password_field :password, :size => 40, :maxlength => 40  %>
-        </div>
-
-        <div class="group">
-          <%= f.label " Confirma Senha:" %>
-          <%= f.password_field :password_confirmation, :size => 40, :maxlength => 40  %>
-        </div>
-
-        <div class="group navform">
-        <%= f.submit "Enviar", :class => 'button' %>
-</div>
-      <% end %>
-    </div>
+  <div class="group">
+    <%= f.label "Senha", :html => { :class => :label} %>
+    <%= f.password_field :password, :size => 40, :maxlength => 40  %>
   </div>
-</div>
+
+  <div class="group">
+    <%= f.label "Confirma" %>
+    <%= f.password_field :password_confirmation, :size => 40, :maxlength => 40  %>
+  </div>
+
+  <div class="group navform">
+    <%= f.submit "Enviar", :class => 'button' %> ou <a href="/"> Cancelar </a>
+  </div>
+<% end %>
