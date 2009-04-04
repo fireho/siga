@@ -1,0 +1,47 @@
+= SIG@
+
+Info p/ desenvolvedores.
+
+
+= Models
+
+
+* Person       =>   Cadastro Municipe
+  * Relatives  =>   Familia
+  * Document   =>   Cad. Documentos (CPF, RG..)
+  * Contact
+  * Address
+
+* Group        =>   Pessoa Juridica
+  * Document   =>   Cad. Documentos (CNPJ, Inscricoes, etc)
+  * Contact
+  * Address
+
+* Storage      =>   Almoxarifado
+* Heritage     =>   Patrimonio
+* Procurement  =>   Licitacao
+* Publication  =>   Editais
+* Charter      =>   Alvara/Permissoes
+* Calendar     =>   Calendario Oficial da Cidade
+* Law          =>   Leis
+* User         =>   Usuario com acesso sistema (Deve ser person tb)
+* Sector       =>   Setor do usuario do sistema
+* Opt          =>   Opcoes do sistema
+
+
+== GIS
+
+* Country
+  * Province
+     * City    =>   Pais/Estado/Cidade
+
+* Area         =>   Representa Terreno
+  * Property
+* Zone         =>   Bairros
+
+
+== Defaults
+
+
+= SPEC
+

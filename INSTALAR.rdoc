@@ -1,3 +1,44 @@
+= SIG@
+
+Manual instalacao do sistema.
+
+== Software
+
+* Ruby        >=   1.8.7/1.9.x
+* PostgreSQL  >=   8.3.x
+* PostGIS     >=   1.3.x
+
+Extra:
+
+* Thin/Ngnix or Passenger
+* ImageMagick
+* GIT
+
+
+== Gems
+
+* rails       >=   2.3.x
+* postgres
+* postgis_adapter
+* haml
+* authlogic
+* bcrypt-ruby
+* paperclip
+* GeoRuby
+* rghost
+* will_paginate
+* nofxx-money
+
+= Desenvolvedores
+
+== Test
+
+* RSpec
+* RSpec-Rails
+* Object Daddy
+* Faker
+
+
 == PostgreSQL
 
 UTF Database:
@@ -18,7 +59,8 @@ Instalando PostGIS no PostgreSQL:
   \c template_postgis
   CREATE LANGUAGE plpgsql;
 
-Algumas distros:
+Importando as funcoes, agora os comandos divergem entre SOs.
+Alguns exemplos:
 
   # archlinux
   \i /usr/share/lwpostgis.sql;
@@ -36,7 +78,7 @@ Algumas distros:
   \i /opt/local/postgis/lwpostgis.sql;
   \i /opt/local/postgis/spatial_ref_sys.sql;
 
-Finalize:
+Finalizando:
 
   GRANT ALL ON geometry_columns TO PUBLIC;
   GRANT ALL ON spatial_ref_sys TO PUBLIC;
@@ -44,8 +86,18 @@ Finalize:
   VACUUM FREEZE;
 
 
-== DATABASE
+== Criando o Banco
 
   $ createdb -O <owner> -T template_postgis siga_development
 
 Repetir para test e production.
+
+== Rails
+
+Copie o database.yml.sample:
+
+  cp config/database.yml.sample config/database.yml
+
+Migre:
+
+  rake db:migrate
