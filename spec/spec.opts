@@ -1,0 +1,4 @@
+--colour
+--format RspecSpinner::Spinner
+--loadby mtime
+--reverse

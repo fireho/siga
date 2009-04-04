@@ -1,0 +1,23 @@
+<p>
+  <b>Kind:</b>
+  <%=h @document.kind %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%=h @document.value %>
+</p>
+
+<p>
+  <b>Note:</b>
+  <%=h @document.note %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%=h @document.state %>
+</p>
+
+
+<%= link_to 'Edit', edit_document_path(@document) %> |
+<%= link_to 'Back', documents_path %>

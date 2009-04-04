@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+    <title>SIG@ { <%= controller.controller_name %> }</title>
+    <% bundle :name => :base do %>
+      <%= stylesheet_link_tag 'base', 'style' %>
+      <%= javascript_include_tag 'jquery', 'application' %>
+    <% end %>
+    <%= yield :head %>
+  </head>
+  <body>
+    <div id='container'>
+      <div id='header'>
+        <h1><%= image_tag "layout/logo.png" %> </h1>
+        <div id='user-navigation'>
+          <ul>
+            <li><%= link_to "Notícias", "/articles"%> </li>
+            <li><%= link_to "Editais", "/articles"%> </li>
+            <% if current_user %>
+              <li><%= link_to "Mensagens", "/inbox"%> </li>
+              <li><%= link_to "Opções", "/"%> </li>
+              <li><a href="/admin">Admin</a></li>
+              <li><%= link_to "Sair", '/logout'%> </li>
+            <% else %>
+              <li><%= link_to "Signup", "/signup"%> </li>
+              <li><%= link_to "Login", "/login"%> </li>
+            <% end %>
+          </ul>
+          <div class='clear'></div>
+        </div>
+
+        <div id="main-navigation">
+          <ul>
+            <li class="first"><a href="/">Home</a></li>
+            <li><a href="/news">Mural</a></li>
+            <li><a href="/publications">Editais</a></li>
+            <li><a href="/laws">Leis</a></li>
+            <% if current_user %>
+              <li class="active"><a href="/people">Municipes</a></li>
+              <li><a href="/areas">Areas</a></li>
+              <li><a href="/properties">Propriedades</a></li>
+              <li><a href="/procurements">Licitacoes</a></li>
+              <li><a href="/storages">Almoxarifado</a></li>
+            <% end %>
+          </ul>
+          <div class="clear"></div>
+        </div>
+      </div>
+      <div id='wrapper'>
+        <%= flash_message %>
+        <div id='main'>
+          <%= yield %>
+        </div>
+        <div id="sidebar">
+          <%= yield :sidebar %>
+          <% if current_user %>
+            <div class="block">
+              <h3>Menu Principal</h3>
+              <ul class="navigation">
+                <li><a href="#"> Editais </a></li>
+                <li><a href="#"> Cadastro Unico </a></li>
+                <li><a href="#"> Relatorio </a></li>
+                <li><a href="#"> Documentos </a></li>
+                <li><a href="#"> Contas </a></li>
+                <li><a href="#"> Saude </a></li>
+              </ul>
+            </div>
+          <% end %>
+          <div class="block">
+            <% if current_user %>
+              <h3> <%= current_user.name %></h3>
+              <div class="content">
+                Oi!
+              </div>
+
+            <% else %>
+
+              <h3>Login</h3>
+              <div class="content">
+                <%= render :partial => "user_sessions/new" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class='clear'></div>
+      </div>
+      <div id='footer'>
+        <div class='block'>
+          <div class="links">
+            <a href="#"> Mapa </a> |
+            <a href="#"> O que e? </a> |
+            <a href="#"> Como usar? </a> |
+            <a href="#"> Sugestoes </a> |
+            <a href="#"> Projeto </a>
+          </div>
+          <p>
+            <div class="left"> Sistema Gestao Integrada </div>
+            <div class="right"> Sig@ Alpha / 2009 - Powered by Ruby, Rails & PostgreSQL  <img src="images/icons/ruby.png"></img></div>
+
+          </p> <p>  - Prefeitura Municial de Xlandia </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

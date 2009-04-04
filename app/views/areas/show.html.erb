@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%=h @area.name %>
+</p>
+
+<p>
+  <b>Kind:</b>
+  <%=h @area.kind %>
+</p>
+
+<p>
+  <b>Geom:</b>
+  <%=h @area.geom %>
+</p>
+
+
+<%= link_to 'Edit', edit_area_path(@area) %> |
+<%= link_to 'Back', areas_path %>

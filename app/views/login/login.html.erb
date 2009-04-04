@@ -1,0 +1,48 @@
+<div id="conteudo">
+<fieldset>
+<legend><img src="/images/Key1.gif" width="50" height="50"></legend>
+<br>
+<h2>SIG@ - SISTEMA DE GESTÃO @ADMINISTRATIVA</h2>
+<br>
+
+<table align = 'center'>
+<tr>
+<% if flash_message %>
+<th><%= flash_message %></th>
+<% end %>
+</tr>
+</table>
+
+<% form_tag ({:action => 'login'}) do %>
+<p>Por favor, informe seu login e senha para acessar o sistema:</p>
+<table class="bordasimples" cellspacing="5" cellpadding="5" width="40%" >
+<tr>
+    <td>&nbsp</td>
+    <td>&nbsp</td>
+</tr>
+
+<tr>
+    <td align="right"><label for = "login">Login:</label></td>
+    <td align="left"><%= text_field_tag "login", params[:login], :maxlenght => 5, :size => 20, :class => 'campos' %></td>
+</tr>
+
+<tr>
+    <td align="right"><label for = "password">Senha:</label></td>
+    <td align="left"><%= password_field_tag "password", "", :maxlenght => 40, :size => 20 %></td>
+</tr>
+<tr align="center">
+    <td colspan= 2>
+    <%= submit_tag "Acessar", :class => "botao" %><br><br>
+    </td>
+</tr>
+</table>
+<br><br><br>
+<p>
+    <h2>"O conhecimento é um bem de todos, e não apenas privilégio de alguns!"</h2>
+</p>
+
+
+<% end %>
+
+</fieldset>
+</div>

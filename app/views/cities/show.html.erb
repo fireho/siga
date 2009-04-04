@@ -1,0 +1,13 @@
+<p>
+  <b>Name:</b>
+  <%=h @city.name %>
+</p>
+
+<p>
+  <b>Pop:</b>
+  <%=h @city.pop %>
+</p>
+
+
+<%= link_to 'Edit', edit_city_path(@city) %> |
+<%= link_to 'Back', cities_path %>

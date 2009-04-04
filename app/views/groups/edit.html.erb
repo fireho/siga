@@ -1,0 +1,28 @@
+<h1>Editing group</h1>
+
+<% form_for(@group) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :official_name %><br />
+    <%= f.text_field :official_name %>
+  </p>
+  <p>
+    <%= f.label :kind %><br />
+    <%= f.text_field :kind %>
+  </p>
+  <p>
+    <%= f.label :creation %><br />
+    <%= f.date_select :creation %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @group %> |
+<%= link_to 'Back', groups_path %>

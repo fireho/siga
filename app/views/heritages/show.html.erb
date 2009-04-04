@@ -1,0 +1,23 @@
+<p>
+  <b>Name:</b>
+  <%=h @heritage.name %>
+</p>
+
+<p>
+  <b>Code:</b>
+  <%=h @heritage.code %>
+</p>
+
+<p>
+  <b>Bought at:</b>
+  <%=h @heritage.bought_at %>
+</p>
+
+<p>
+  <b>Value cents:</b>
+  <%=h @heritage.value_cents %>
+</p>
+
+
+<%= link_to 'Edit', edit_heritage_path(@heritage) %> |
+<%= link_to 'Back', heritages_path %>

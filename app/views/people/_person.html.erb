@@ -1,0 +1,63 @@
+
+<% form_for(@person, :html => { :class => "form" }) do |f| %>
+  <%= f.error_messages %>
+  <div class="columns">
+
+    <div class="column left">
+
+      <div class="group">
+        <%= f.label :name %><br />
+        <%= f.text_field :name %>
+      </div>
+      <div class="group">
+        <%= f.label :sex %><br />
+        <%= f.text_field :sex %>
+      </div>
+      <div class="group">
+        <%= f.label :marital_status %><br />
+        <%= f.text_field :marital %>
+      </div>
+      <div class="group">
+        <%= f.label :birth %><br />
+        <%= f.text_field :born_at %>
+      </div>
+      <div class="group">
+        <%= f.label :birthplace %><br />
+        <%# f.text_field :birthplace %>
+      </div>
+      <div class="group">
+        <%= f.label :time_residence %><br />
+        <%= f.text_field :arrival_at %>
+      </div>
+      <div class="group">
+        <%= f.label :profession %><br />
+        <%= f.text_field :profession %>
+      </div>
+
+    </div>
+    <div class="column right">
+      <div class="group">
+        <%= f.label :income %><br />
+        <%= f.text_field :income %>
+      </div>
+      <div class="group">
+        <%= f.label :housing %><br />
+        <%= f.text_field :house_type %>
+      </div>
+
+      <div class="group">
+        <%= f.label :room %><br />
+        <%= f.text_field :rooms %>
+      </div>
+      <div class="group">
+        <%= f.label :revenue %><br />
+        <%= f.text_field :revenue %>
+      </div>
+
+    </div>
+    <div class="clear"></div>
+    <div class="group navform">
+      <%= f.submit "Salvar" %> ou <%= link_to 'Cancelar', people_path %>
+    </div>
+  </div>
+<% end %>

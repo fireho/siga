@@ -1,0 +1,18 @@
+<p>
+  <b>Content:</b>
+  <%=h @law.content %>
+</p>
+
+<p>
+  <b>Wrote at:</b>
+  <%=h @law.wrote_at %>
+</p>
+
+<p>
+  <b>Valid at:</b>
+  <%=h @law.valid_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_law_path(@law) %> |
+<%= link_to 'Back', laws_path %>

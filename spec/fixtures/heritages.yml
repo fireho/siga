@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  code: MyString
+  bought_at: 2009-03-29
+  value_cents: 1
+
+two:
+  name: MyString
+  code: MyString
+  bought_at: 2009-03-29
+  value_cents: 1

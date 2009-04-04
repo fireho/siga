@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  day: 2009-03-29
+  business: false
+  yearly: false
+  note: MyText
+
+two:
+  day: 2009-03-29
+  business: false
+  yearly: false
+  note: MyText

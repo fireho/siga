@@ -1,0 +1,54 @@
+<% form_for([@user]) do |f| %>
+<%= hidden_field "user",  "tipo_formulario", :value => "edita_usuario" %>
+<table cellspacing="5" align='center'>
+<tr align="left">
+<td>Login:<br/>
+<%= f.text_field :login, :size => 40, :maxlength => 5, :class => 'campos'  %></td>
+<td>Nome:<br/>
+<%= f.text_field :nome, :size => 40, :maxlength => 100  %></td>
+</tr>
+
+<tr align="left">
+<td>Nascimento:<br/>
+<%= f.date_select :nascimento, :order => [:day, :month, :year], :start_year => 1900  %></td>
+<td>Setor:<br/>
+<%= f.select(:sector_id, Sector.find(:all).collect{ |s| [s.setor, s.id]},
+:prompt => "==== Selecione o setor do usuário ====") %></td>
+</tr>
+</table><br><br>
+
+<p>ACESSO AOS MÓDULOS DO SISTEMA:</p></br>
+
+<table border="1" cellspacing="5" align='center'>
+<tr align="center">
+<th>ADM:</th>
+<th>OPR:</th>
+<th>GER:</th>
+<tr>
+
+<tr align="center">
+<td class="td1">
+<%= f.radio_button(:adm, 'SIM') %>SIM<br>
+<%= f.radio_button(:adm, "NÃO")%>NÃO
+</td>
+
+<td class="td1">
+<%= f.radio_button(:opr, 'SIM') %>SIM<br>
+<%= f.radio_button(:opr, "NÃO")%>NÃO
+</td>
+
+<td class="td1">
+<%= f.radio_button(:ger, 'SIM') %>SIM<br>
+<%= f.radio_button(:ger, "NÃO")%>NÃO
+</td>
+
+</tr>
+</table>
+
+<br>
+<table cellspacing="5" align='center'>
+  <tr align="center">
+  <td><%= f.submit button_name, :class => 'botao' %></td>
+</table>
+
+<% end %>

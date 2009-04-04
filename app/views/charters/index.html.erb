@@ -1,0 +1,22 @@
+<h1>Listing charters</h1>
+
+<table>
+  <tr>
+    <th>Code</th>
+    <th>Restrictions</th>
+  </tr>
+
+<% @charters.each do |charter| %>
+  <tr>
+    <td><%=h charter.code %></td>
+    <td><%=h charter.restrictions %></td>
+    <td><%= link_to 'Show', charter %></td>
+    <td><%= link_to 'Edit', edit_charter_path(charter) %></td>
+    <td><%= link_to 'Destroy', charter, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New charter', new_charter_path %>

@@ -1,0 +1,15 @@
+<fieldset>
+<legend>Alteração de Usuários</legend>
+
+<% if session_user.adm == "SIM" %>
+  <% @menu = 'home/menuAdm' %>
+<% end %>
+
+<%= error_messages_for :user %>
+
+<%= render :partial => 'user_edit', :locals => {:button_name => "Alterar"} %>
+<br>
+<p align='right'>
+  <%= tooltip link_to(image_tag('voltar.png', :border => 0), :action => 'index'), { :tooltip => 'Retornar.' } %>
+</p>
+</fieldset>

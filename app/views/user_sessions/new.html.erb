@@ -1,0 +1,37 @@
+<div id="box">
+  <div class="block">
+    <h2> Login </h2>
+    <div class="content">
+      <div class="clear"></div>
+
+      <% form_for @user_session, :url => user_session_path, :html => { :class => "form login" } do |f| %>
+
+      <div class="group">
+        <div class="left"><%= f.label :user %></div>
+        <div class="right"> <%= f.text_field :login %> </div>
+        <div class="clear"></div>
+      </div>
+
+      <div class="group">
+        <div class="left"> <%= f.label :pass %></div>
+        <div class="right"> <%= f.password_field :password %></div>
+        <div class="clear"></div>
+      </div>
+
+      <div class="group">
+        <div class="right">
+          <%= f.check_box 'remember_me' %>
+          <%= f.label "Lembrar?" %>
+        </div>
+        <div class="clear"></div>
+      </div>
+
+      <div class="group navform">
+        <%= f.submit 'Entrar', :class => :button %>
+      </div>
+
+<% end %>
+
+</div>
+</div>
+</div>

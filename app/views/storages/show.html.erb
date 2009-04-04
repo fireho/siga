@@ -1,0 +1,18 @@
+<p>
+  <b>Amount:</b>
+  <%=h @storage.amount %>
+</p>
+
+<p>
+  <b>Unit:</b>
+  <%=h @storage.unit %>
+</p>
+
+<p>
+  <b>Value cents:</b>
+  <%=h @storage.value_cents %>
+</p>
+
+
+<%= link_to 'Edit', edit_storage_path(@storage) %> |
+<%= link_to 'Back', storages_path %>

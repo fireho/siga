@@ -1,0 +1,95 @@
+fieldset { display: block; } /* In-line para o internet explorer */
+
+body {
+   margin: 0;
+   padding: 0;
+   background-color: #FFFFFF;
+   text-align: center; /* hack para o IE */
+   font: 10px Arial, Helvetica, sans-serif;
+   color: #0000FF;
+}
+
+#tudo {
+   width: 860px;
+   margin: 0 auto;
+   padding:10px; /* Distancia do topo do browser */
+   text-align:left;
+}
+
+
+#conteudo {
+   padding: 20px;
+   background-image: url("../images/siga.png");
+   background-repeat: no-repeat;
+   background-position: center center;
+}
+
+fieldset{
+   width: 90%; /* troca o tamanho pra 20% ai quebra a linha */
+   padding:10px;
+   padding-top:20px;
+   border: 2px solid #990000;
+   background: #EBC79E;
+   font-size: 12px;
+   filter:alpha(opacity=85);
+   -moz-opacity:.85;
+   opacity:.85;
+   
+   -moz-border-radius-topleft: 1.0em;
+   -moz-border-radius-topright: 1.0em; 
+   -moz-border-radius-bottomleft: 1.0em;
+   -moz-border-radius-bottomright: 1.0em;
+}
+
+.bordasimples {
+   border-collapse: collapse;
+   border:1px solid #FF0000;
+   font: 8pt Verdana, Geneva, Arial, Helvetica, sans-serif;
+   color:#0000FF;
+   padding:3px 0px 5px 5px;
+}
+
+.campos {
+   text-transform: uppercase;
+}
+
+.botao {
+   width: 80px;
+   height:25px;
+   padding:1px;
+   border:2px solid #990000;
+   font: 8pt Verdana, Geneva, Arial, Helvetica, sans-serif;
+   color:#0000FF;
+   font-weight:bold;
+   background:#FFE4C4;
+}
+
+.notice, .error, .warning, .info { 
+font-weight: bold;
+margin: -10px 0 15px 0;
+padding: 5px 5px 5px 27px;
+}
+
+.notice {
+border: 1px solid #9c9;
+background: #e2f9e3 url(../images/tick.png) no-repeat 5px center;
+color: #060;
+}
+
+.error {
+border: 1px solid #c68484;
+background: #fcc url(../images/cross.png) no-repeat 5px center;
+color: #c00;
+}
+
+.warning {
+border: 1px solid #dd0;
+background: #ffc url(../images/error.png) no-repeat 5px center;
+color: #000;
+}
+
+.info {
+border: 1px solid #82c2d4;
+background: #ebf5f8 url(../images/information.png) no-repeat 5px center;
+color: #000;
+}

@@ -1,0 +1,33 @@
+<fieldset>
+<legend>Setores</legend>
+
+<% if session_user.adm == "SIM" %>
+  <% @menu = 'home/menuAdm' %>
+<% end %>
+
+<table align="center" cellspacing="10">
+<tr align="left">
+<td><% form_tag :action => "show" do %>
+<label for="find_str">Chave para pesquisa:</label>
+<%= text_field_tag :pesquisar, params[:pesquisar], "size" => 50, "maxlenght" => 60 %>
+<input type='submit' value=' Consultar ' class= 'botao' />
+<br><br></td>
+<% end %>
+
+</tr>
+<tr align="left">
+<td>
+<p>
+<li>Para filtrar a pesquisa, digite o Setor a buscar no campo "Chave para pesquisa".</li><br>
+<li>Para pesquisar todos os Setores, deixe o campo "Chave para pesquisa" em branco.</li>
+</p>
+</td>
+</tr>
+</table>
+
+<p align='right'>
+  <%= tooltip link_to(image_tag('novo.png', :border => 0), :action => "new" ), { :tooltip => 'Adicionar novo registro.' } %>
+  <%= tooltip link_to(image_tag('voltar.png', :border => 0), :controller => "home", :action => "menuAdm" ), { :tooltip => 'Retornar.' } %>
+  </p>
+
+</fieldset>

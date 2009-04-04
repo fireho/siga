@@ -1,0 +1,17 @@
+<fieldset>
+<legend>Novo Usuário</legend>
+
+<% if session_user.adm == "SIM" %>
+  <% @menu = 'home/menuAdm' %>
+<% end %>
+<br>
+
+<%= error_messages_for :user %>
+
+<%= render :partial => @user, :locals => {:button_name => "Gravar"} %>
+<br>
+<p align='right'>
+  <br><%= tooltip link_to(image_tag('voltar.png', :border => 0), :action => 'index'), {:tooltip => 'Retornar.'} %>
+  </p>
+
+</fieldset>

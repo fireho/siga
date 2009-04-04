@@ -1,0 +1,22 @@
+<h1>Listing attachments</h1>
+
+<table>
+  <tr>
+    <th>Attachable</th>
+    <th>Info</th>
+  </tr>
+
+<% @attachments.each do |attachment| %>
+  <tr>
+    <td><%=h attachment.attachable %></td>
+    <td><%=h attachment.info %></td>
+    <td><%= link_to 'Show', attachment %></td>
+    <td><%= link_to 'Edit', edit_attachment_path(attachment) %></td>
+    <td><%= link_to 'Destroy', attachment, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New attachment', new_attachment_path %>

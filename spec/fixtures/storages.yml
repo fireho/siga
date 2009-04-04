@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  amount: MyString
+  unit: MyString
+  value_cents: 1
+
+two:
+  amount: MyString
+  unit: MyString
+  value_cents: 1

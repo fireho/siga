@@ -1,0 +1,24 @@
+<h1>Listing procurements</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Body</th>
+    <th>Due at</th>
+  </tr>
+
+<% @procurements.each do |procurement| %>
+  <tr>
+    <td><%=h procurement.name %></td>
+    <td><%=h procurement.body %></td>
+    <td><%=h procurement.due_at %></td>
+    <td><%= link_to 'Show', procurement %></td>
+    <td><%= link_to 'Edit', edit_procurement_path(procurement) %></td>
+    <td><%= link_to 'Destroy', procurement, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New procurement', new_procurement_path %>

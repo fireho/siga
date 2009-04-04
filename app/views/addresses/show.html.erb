@@ -1,0 +1,28 @@
+<p>
+  <b>Addressable:</b>
+  <%=h @address.addressable %>
+</p>
+
+<p>
+  <b>Street:</b>
+  <%=h @address.street %>
+</p>
+
+<p>
+  <b>Complement:</b>
+  <%=h @address.complement %>
+</p>
+
+<p>
+  <b>Number:</b>
+  <%=h @address.number %>
+</p>
+
+<p>
+  <b>Zip code:</b>
+  <%=h @address.zip_code %>
+</p>
+
+
+<%= link_to 'Edit', edit_address_path(@address) %> |
+<%= link_to 'Back', addresses_path %>

@@ -1,0 +1,29 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  kind: MyString
+  value: MyString
+  note: MyString
+  state: MyString
+
+two:
+  kind: MyString
+  value: MyString
+  note: MyString
+  state: MyString
+
+# == Schema Information
+# Schema version: 99999999999999
+#
+# Table name: documents
+#
+#  id         :integer         not null, primary key
+#  person_id   :integer         not null
+#  kind       :string(10)      not null
+#  value      :string(255)     not null
+#  note       :string(255)
+#  state      :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+

@@ -1,0 +1,32 @@
+<h1>Editing address</h1>
+
+<% form_for(@address) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :addressable %><br />
+    <%= f.text_field :addressable %>
+  </p>
+  <p>
+    <%= f.label :street %><br />
+    <%= f.text_field :street %>
+  </p>
+  <p>
+    <%= f.label :complement %><br />
+    <%= f.text_field :complement %>
+  </p>
+  <p>
+    <%= f.label :number %><br />
+    <%= f.text_field :number %>
+  </p>
+  <p>
+    <%= f.label :zip_code %><br />
+    <%= f.text_field :zip_code %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @address %> |
+<%= link_to 'Back', addresses_path %>

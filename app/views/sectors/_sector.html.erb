@@ -1,0 +1,44 @@
+<% form_for([@sector]) do |f| %>
+  <table cellspacing="5" align='center'>
+  <tr align="left">
+    <td>Setor:<br/>
+    <%= f.text_field :setor, :size => 40, :maxlength => 100  %></td>
+    <td>Endereço:<br/>
+    <%= f.text_field :endereco, :size => 40, :maxlength => 100  %></td>
+  </tr>
+
+  <tr align="left">
+    <td>Número:<br/>
+    <%= f.text_field :numero, :size => 40, :maxlength => 40  %></td>
+    <td>Bairro:<br/>
+    <%= f.text_field :bairro, :size => 40, :maxlength => 40  %></td>
+  </tr>
+
+  <tr align="left">
+    <td>Cidade:<br/>
+    <%= f.text_field :cidade, :size => 40, :maxlength => 40  %></td>
+    <td>UF:<br/>
+    <%= f.text_field :uf, :size => 40, :maxlength => 2  %></td>
+  </tr>
+
+  <tr align="left">
+    <td>CEP:<br/>
+    <%= f.text_field :cep, :size => 40, :maxlength => 10, :onKeyPress => "Cep(this)"  %></td>
+    <td>Fone1:<br/>
+    <%= f.text_field :fone1, :size => 40, :maxlength => 13, :onKeyPress => "Telefone(this)"  %></td>
+  </tr>
+
+  <tr align="left">
+    <td>Fone2:<br/>
+    <%= f.text_field :fone2, :size => 40, :maxlength => 13, :onKeyPress => "Telefone(this)"  %></td>
+    <td>Responsavel:<br/>
+    <%= f.text_field :responsavel, :size => 40, :maxlength => 100  %></td>
+  </tr>
+</table>
+<br>
+<table cellspacing="5" align='center'>
+  <tr align="center">
+  <td><%= f.submit button_name, :class => 'botao' %></td>
+</table>
+
+<% end %>

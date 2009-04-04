@@ -1,0 +1,28 @@
+<h1>Listing registers</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Value cents</th>
+    <th>Sign</th>
+    <th>Due at</th>
+    <th>Cleared at</th>
+  </tr>
+
+<% @registers.each do |register| %>
+  <tr>
+    <td><%=h register.name %></td>
+    <td><%=h register.value_cents %></td>
+    <td><%=h register.sign %></td>
+    <td><%=h register.due_at %></td>
+    <td><%=h register.cleared_at %></td>
+    <td><%= link_to 'Show', register %></td>
+    <td><%= link_to 'Edit', edit_register_path(register) %></td>
+    <td><%= link_to 'Destroy', register, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New register', new_register_path %>

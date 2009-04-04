@@ -1,0 +1,22 @@
+<fieldset>
+<legend>Gerenciador de Relatórios</legend>
+
+<% form_tag :action => 'list' do %>
+  <table align ="center" border='1' width="80%">
+    <tr>
+      <th>RELATÓRIO</th>
+	  <th>DATA / HORA</th>
+    </tr>
+<% for report in @reports %>
+  <tr>
+  	<td width="60%" align='center'class="td"><%= link_to (report.relatorio, :action => 'show', :id => report) %></td>
+	<td width="40%" align='center'class="td"><%=h (report.created_at.strftime("%d/%m/%Y - %H:%M:%S")) %></td>
+	<tr>
+<% end %>
+</table>
+<br><br>
+<% end %>
+<p align='right'>
+  <%= tooltip link_to(image_tag('voltar.png', :border => 0), :controller => :home, :action => 'index'), { :tooltip => 'Retornar.' } %>
+  </p>
+</fieldset>

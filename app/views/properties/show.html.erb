@@ -1,0 +1,13 @@
+<p>
+  <b>Name:</b>
+  <%=h @property.name %>
+</p>
+
+<p>
+  <b>Built at:</b>
+  <%=h @property.built_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_property_path(@property) %> |
+<%= link_to 'Back', properties_path %>

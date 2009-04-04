@@ -1,0 +1,24 @@
+<div id="menuh">
+<ul>
+  <li><h2>Cadastros</h2>
+    <ul>
+      <li><%= link_to 'Setores', :controller => :sectors, :action => 'index' %></li>
+      <li><%= link_to 'Usuários', :controller => :users, :action => 'index' %></li>
+    </ul>
+  </li>
+</ul>
+
+<ul>
+  <li><h2>Relatórios</h2>
+    <ul>
+      <li><%= link_to 'Setores', :controller => :rel_adm, :action => 'rel_sectors' %></li>
+      <li><%= link_to 'Usuários', :controller => :rel_adm, :action => 'rel_users' %></li>
+    </ul>
+  </li>
+</ul>
+
+<ul>
+  <li><h2>Módulo ADM</h2>
+</ul>
+
+</div>

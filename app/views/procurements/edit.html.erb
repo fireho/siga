@@ -1,0 +1,24 @@
+<h1>Editing procurement</h1>
+
+<% form_for(@procurement) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.label :due_at %><br />
+    <%= f.datetime_select :due_at %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @procurement %> |
+<%= link_to 'Back', procurements_path %>

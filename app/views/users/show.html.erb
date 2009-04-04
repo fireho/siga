@@ -1,0 +1,32 @@
+<fieldset>
+<legend>Usuários Cadastrados</legend>
+
+<% if session_user.adm == "SIM" %>
+  <% @menu = 'home/menuAdm' %>
+<% end %>
+
+<table align="center" border='1' width="80%">
+<tr>
+<th>CÓDIGO</th>
+<th>LOGIN</th>
+<th>NOME</th>
+<th>AÇÃO</th>
+</tr>
+
+<% for user in @users %>
+  <tr>
+    <td width="10%" align='center'class="td"><%=h (user.id) %></td>
+    <td width="20%" align='center'class="td"><%=h (user.login) %></td>
+	<td width="60%" align='left'class="td"><%=h (user.nome) %></td>
+    <td width="10%" align='center' class="td">
+    <%= tooltip link_to(image_tag("edit.png", {:border => 0}), :action => 'edit', :id => user), { :tooltip => 'Editar Registro.' } %>&nbsp
+    <%= tooltip link_to(image_tag("delete.png", {:border => 0}), {:action => 'destroy', :id => user}, :method => :delete , :confirm => 'Confirma exclusão?'), { :tooltip => 'Deletar Registro.' }  %></td>
+  <tr>
+<% end %>
+</table>
+<br>
+<p><%= will_paginate @users, :params => {:pesquisar => params[:pesquisar]} %></p>
+<p align='right'>
+  <%= link_to(image_tag('voltar.png', :border => 0), :action => 'index') %>
+  </p>
+</fieldset>

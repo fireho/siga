@@ -1,0 +1,39 @@
+<div class="block">
+  <div class="content">
+    <h2 class="title">Editais</h2>
+    <div class="inner">
+      <table class="table">
+
+        <tr>
+          <th>Titulo</th>
+          <th>Texto</th>
+        </tr>
+
+        <% @publications.each do |publication| %>
+          <tr>
+            <td><%= link_to publication.title, publication %></td>
+            <td><%=h publication.body %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
+
+<% content_for :sidebar do %>
+  <div class="block">
+    <h3>Procura</h3>
+    <div class="content">
+      <p>
+        <% form_tag request.path, :method => 'get' do %>
+        <%= link_to image_tag('../images/icons/lupa.png', :class=>'img') %>
+        <%= text_field_tag :search, params[:search], :title=>'Procura PERSON' %>
+        <% end %></p></div></div>
+
+<div class="block">
+  <h3>Menu</h3>
+  <ul class="navigation">
+    <li><%= link_to image_tag('../images/icons/add.png', :class=>'img')+' Novo Registro', new_publication_path %></li>
+  </ul>
+</div>
+<% end %>

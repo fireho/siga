@@ -1,0 +1,22 @@
+<h1>Listing provinces</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Pop</th>
+  </tr>
+
+<% @provinces.each do |province| %>
+  <tr>
+    <td><%=h province.name %></td>
+    <td><%=h province.pop %></td>
+    <td><%= link_to 'Show', province %></td>
+    <td><%= link_to 'Edit', edit_province_path(province) %></td>
+    <td><%= link_to 'Destroy', province, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New province', new_province_path %>
