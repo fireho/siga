@@ -1,7 +1,15 @@
 # -*- coding: utf-8 -*-
 class User < ActiveRecord::Base
+
+  belongs_to :person
   belongs_to :sector
+
+  has_many :articles
   has_many :publications
+  has_many :contacts, :through => :person
+  has_many :messages, :foreign_key => :to_id
+  has_many :messages_sent, :foreign_key => :from_id, :class_name => "Message"
+
 
   acts_as_authentic do |c|
     c.crypto_provider = Authlogic::CryptoProviders::BCrypt
@@ -27,6 +35,11 @@ class User < ActiveRecord::Base
     self.time_zone ||= "Brasilia"
     self.locale ||= "br"
   end
+
+  def activate!
+    self.update_attribute(:state, :active)
+  end
+
 
   def self.search(pesquisar, page)
     paginate :per_page => 10, :page => page,

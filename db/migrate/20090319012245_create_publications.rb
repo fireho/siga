@@ -2,8 +2,8 @@ class CreatePublications < ActiveRecord::Migration
   def self.up
     create_table :publications do |t|
       t.references :user
-      t.string :title
-      t.string :permalink
+      t.string :title, :permalink, :null => false
+      t.boolean :published, :null => false, :default => false
       t.text :body
 
       t.timestamps
@@ -11,6 +11,7 @@ class CreatePublications < ActiveRecord::Migration
 
     add_index :publications, :permalink
     add_index :publications, :created_at
+    add_index :publications, :published
     add_index :publications, :user_id
   end
 

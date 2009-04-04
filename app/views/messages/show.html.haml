@@ -1,0 +1,18 @@
+- content_for :content_header do
+  #content_header
+    %h1= @message.subject
+.messages
+  =h @message.body
+
+.forms
+  %h2 Responder
+  - form_for(@reply) do |f|
+    = f.error_messages
+    = f.hidden_field :to_login, { :value => @message.sender.login }
+    = f.hidden_field :subject,  { :value => @message.subject }
+    %p
+      = f.text_area :body, :size=>"30x5"
+    %p
+      = f.submit "Enviar"
+%p
+  = link_to 'Voltar', messages_path, :class=>'icon back'

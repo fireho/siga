@@ -1,5 +1,7 @@
 class Document < ActiveRecord::Base
   belongs_to :person
+  # :cpf, :cnh, :rg, cert_nasc, tipo sanguineo
+
 end
 
 # == Schema Information

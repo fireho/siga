@@ -1,0 +1,27 @@
+- content_for :sidebar do
+  .block
+    %h3 Menu
+    %ul{:class => :navigation}
+      %li= link_to "Enviar Mensagem", "/inbox/new", :class=>"icon mail"
+
+
+.block{:id => "block-lists"}
+  #top
+    %h2 Inbox
+  .content
+    - for message in @messages
+      %ul{:class => "list"}
+        %li
+          %div{:class => message.read ? :messages : :messages_new}
+          .left
+            %b De:
+            = message.sender.login
+            %b= message.subject
+          .item
+            .message_icons
+              = link_to '', message, :class =>message.read ? :"icon mail_read" : :"icon mail"
+              = link_to '', message, :confirm => 'Apagar mensagem?', :method => :delete, :class=>"icon delete"
+            %p
+              = link_to truncate(message.body), message
+            %br
+            .gray= hour_format(message.created_at)

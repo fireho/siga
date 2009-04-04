@@ -15,17 +15,34 @@ Info p/ desenvolvedores.
   * Contact
   * Address
 
+* User         =>   Usuario com acesso sistema (Deve ser person tb)
+* Message      =>   Mensagens entre usuarios.
+* Publication  =>   Editais
+* Article      =>   Noticias/Informativos
+
 * Storage      =>   Almoxarifado
 * Heritage     =>   Patrimonio
+
 * Procurement  =>   Licitacao
-* Publication  =>   Editais
-* Charter      =>   Alvara/Permissoes
 * Calendar     =>   Calendario Oficial da Cidade
 * Law          =>   Leis
-* User         =>   Usuario com acesso sistema (Deve ser person tb)
+* Charter      =>   Alvara/Permissoes
+
+* Employee     =>   Funcionario
 * Sector       =>   Setor do usuario do sistema
 * Opt          =>   Opcoes do sistema
 
+== Financeiro
+
+* Tax
+* Register
+* Account
+
+== Saude
+
+== Educacao
+
+== Social
 
 == GIS
 

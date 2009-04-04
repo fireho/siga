@@ -5,6 +5,15 @@ ActionController::Routing::Routes.draw do |map|
 
   map.root :controller => 'home', :action => 'index'
 
+  map.resources :people,      :collection => { :report => :get  }
+  map.resources :properties,  :collection => { :report => :get  }
+  map.resources :groups,      :collection => { :report => :get  }
+  map.resources :areas,       :collection => { :report => :get  }
+
+  map.resources :messages
+  map.inbox '/inbox', :controller => 'messages', :action => 'index'
+  map.inbox_new '/inbox/new/:id', :controller => 'messages', :action => 'new'
+
   map.resources :laws
   map.resources :articles
   map.resources :heritages
@@ -12,10 +21,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :calendars
   map.resources :procurements
   map.resources :registers
-  map.resources :properties
-  map.resources :areas
   map.resources :charters
-  map.resources :groups
   map.resources :documents
   map.resources :publications
   map.resources :attachments
@@ -27,9 +33,11 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :contacts
   map.resources :sectors
   map.resources :reports
-  map.resources :people
   map.resources :admin
+  map.resource  :config, :controller => "config"
   map.resource  :about, :controller => "about"
+  map.resource  :help, :controller => "help"
+  map.resource  :opt, :controller => "opt"
 
   map.resource :user_session
   map.logout   '/logout',   :controller => 'user_sessions', :action => 'destroy'
