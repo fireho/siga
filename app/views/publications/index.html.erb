@@ -2,9 +2,10 @@
   <div class="content">
     <h2 class="title">Editais</h2>
     <div class="inner">
-      <% @publications.each do |publication| %>
+      <% for publication in @publications %>
         <div class="block">
           <h3> <%= link_to publication.title, publication %></h3>
+          <div class="gray"> <%= publication.created_at %> </div>
           <div class="content">
             <%=h publication.body %>
           </div>
@@ -19,7 +20,7 @@
     <div class="block">
       <h3>Menu</h3>
       <ul class="navigation">
-        <li><%= link_to image_tag('../images/icons/add.png', :class=>'img')+' Novo Registro', new_publication_path %></li>
+        <li><%= link_to image_tag('../images/icons/add.png', :class=>'img')+' Criar Edital', new_publication_path %></li>
       </ul>
     </div>
   <% end %>

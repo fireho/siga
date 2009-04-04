@@ -16,8 +16,6 @@
         <h1><%= image_tag "layout/logo.png" %> </h1>
         <div id='user-navigation'>
           <ul>
-            <li><%= link_to "Notícias", "/articles"%> </li>
-            <li><%= link_to "Editais", "/articles"%> </li>
             <% if current_user %>
               <li><%= link_to "Mensagens", "/inbox"%> </li>
               <li><%= link_to "Opções", "/"%> </li>
@@ -36,12 +34,12 @@
         </div>
         <div id="main-navigation">
           <ul>
-            <li class="first"><a href="/">Home</a></li>
-            <li><a href="/news">Mural</a></li>
+            <li class="first active"><a href="/">Home</a></li>
+            <li><a href="/articles">Notícias</a></li>
             <li><a href="/publications">Editais</a></li>
             <li><a href="/laws">Leis</a></li>
             <% if current_user %>
-              <li class="active"><a href="/people">Municipes</a></li>
+              <li><a href="/people">Municipes</a></li>
               <li><a href="/areas">Areas</a></li>
               <li><a href="/properties">Propriedades</a></li>
               <li><a href="/procurements">Licitacoes</a></li>

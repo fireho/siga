@@ -18,6 +18,7 @@ Rails::Initializer.run do |config|
   config.gem "haml"
   config.gem "bcrypt-ruby", :lib => "bcrypt"
   config.gem "thoughtbot-paperclip" , :lib => "paperclip"
+  config.gem "giraffesoft-is_taggable", :lib => "is_taggable"
   config.gem "rghost"
   config.gem "nofxx-money", :lib => "money"
 
