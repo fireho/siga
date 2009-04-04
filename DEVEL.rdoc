@@ -2,9 +2,7 @@
 
 Info p/ desenvolvedores.
 
-
 = Models
-
 
 * Person       =>   Cadastro Municipe
   * Relatives  =>   Familia
@@ -33,14 +31,15 @@ Info p/ desenvolvedores.
 
 * Country
   * Province
-     * City    =>   Pais/Estado/Cidade
+     * City      =>   Pais/Estado/Cidade   |  POLYGON
 
-* Area         =>   Representa Terreno
-  * Property
-* Zone         =>   Bairros
-
+* Zone           =>   Bairros, Zonas (Industrial, Comercial...) | POLYGON
+  * Area         =>   Representa Lotes/Terreno | POLYGON
+    * Property   =>   Representa Imovel Construido | MULTIPOLYGON
+    * Address    =>   Geolocatable
 
 == Defaults
+
 
 
 = SPEC
