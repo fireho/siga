@@ -20,10 +20,6 @@ hr {
   background: #7A1818;
 }
 
-#header h1 {
-  padding: 20px 0;
-}
-
 #header h1 a:link, #header h1 a:active, #header h1 a:hover, #header h1 a:visited {
   color: #FFF;
 }
@@ -36,6 +32,15 @@ hr {
 
 #user-navigation ul li a:hover { color: #fff; text-decoration: underline; }
 
+#user-drop-navigation {
+    font-weight: bold;
+  color:#fff;
+  bottom:4px;
+  right:25px;
+  top:auto;
+  position:absolute;
+
+}
 
 #main .block .content {
   background: #FFF;
@@ -296,8 +301,7 @@ ul.list li .item .avatar {
   -webkit-border-bottom-right-radius: 4px;
 }
 
-
-
+/* Terminal like */
 div.code {
   font-size: 14px;
   font-family: monospace;

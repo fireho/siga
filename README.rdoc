@@ -34,3 +34,6 @@ http://groups.google.com.br/group/siga-brasil
 TODO/BUG Tracker:
 http://www.pivotaltracker.com/projects/10997
 
+
+Copyright © 2009 Fireho
+Released Under GNU General Public License version 3
