@@ -28,6 +28,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :reports
   map.resources :people
   map.resources :admin
+  map.resource  :about, :controller => "about"
 
   map.resource :user_session
   map.logout   '/logout',   :controller => 'user_sessions', :action => 'destroy'

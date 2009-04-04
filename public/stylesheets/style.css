@@ -33,13 +33,12 @@ hr {
 #user-navigation ul li a:hover { color: #fff; text-decoration: underline; }
 
 #user-drop-navigation {
-    font-weight: bold;
+  font-weight: bold;
   color:#fff;
-  bottom:4px;
+  bottom:5px;
   right:25px;
   top:auto;
   position:absolute;
-
 }
 
 #main .block .content {
