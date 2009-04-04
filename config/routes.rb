@@ -6,6 +6,7 @@ ActionController::Routing::Routes.draw do |map|
   map.root :controller => 'home', :action => 'index'
 
   map.resources :laws
+  map.resources :articles
   map.resources :heritages
   map.resources :storages
   map.resources :calendars

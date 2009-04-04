@@ -1,0 +1,19 @@
+- form_for(@article) do |f|
+  = f.error_messages
+  .forms.tabular
+
+    %p
+      = f.label :titu
+      = f.text_field :title
+    %p
+      = f.label :corpo
+      = f.text_area :body
+    %p
+      = f.label :publica?
+      = f.check_box :public
+    .clear
+    %p
+      = f.label :exibir?
+      = f.check_box :published
+    .forms_buttons
+      = f.submit "Salvar"

@@ -1,0 +1,18 @@
+.block{:id => "block-lists"}
+  #top
+    %h2 Noticias
+    .content      
+      - for article in @articles
+        %ul{:class => "list"}
+          %li
+            .left
+              %h3=h article.title
+              Por:
+              =h article.user.name
+            .item
+              .message_icons
+                = link_to '', edit_article_path(article), :class => "icon edit"
+                = link_to '', article, :confirm => 'Apagar artigo?', :method => :delete, :class=>"icon delete"
+              %p
+                = link_to article.body, article
+

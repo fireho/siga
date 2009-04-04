@@ -1,0 +1,9 @@
+- content_for :content_header do
+  #content_header
+    %h1 Editando Artigo
+
+= render :partial => "article"
+
+= link_to 'Voltar', articles_path, :class => "icon back"
+|
+= link_to 'Ver', @article
