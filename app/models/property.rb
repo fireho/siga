@@ -1,4 +1,5 @@
 class Property < ActiveRecord::Base
+  belongs_to :area
   acts_as_geom :geom
 
   has_many :addresses, :as => :addressable

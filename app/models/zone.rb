@@ -1,4 +1,8 @@
 class Zone < ActiveRecord::Base
+  belongs_to :city
+  has_many :areas, :dependent => :nullify
+  has_many :properties, :through => :areas
+
   acts_as_geom :geom
 
   has_many :properties, :dependent => :nullify
