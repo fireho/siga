@@ -1,9 +1,10 @@
+# -*- coding: utf-8 -*-
 class UsersController < ApplicationController
 
-  layout 'siga'
-
-  before_filter :access_adm, :except => [:show_password, :update_password]
-
+  before_filter :require_no_user, :only => [:new, :create]
+  before_filter :require_user, :only => :destroy
+  before_filter :load_relatives ,:only => [:new, :update, :create, :edit
+                                          ]
   # GET /users
   # GET /users.xml
   def index
@@ -95,4 +96,21 @@ class UsersController < ApplicationController
       end
     end
   end
+
+  private
+
+  def load_relatives
+    @sectors =  Sector.all.map{ |s| [s.name, s.id] }
+  end
+
+  def require_no_user
+    if current_user
+      store_location
+      flash[:notice] = "You must be logged out to access this page"
+      redirect_to account_url
+      return false
+    end
+  end
+
+
 end

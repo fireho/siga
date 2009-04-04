@@ -2,7 +2,8 @@
 class User < ActiveRecord::Base
 
   belongs_to :person
-  belongs_to :sector
+
+  #belongs_to :sector funcionarios...
 
   has_many :articles
   has_many :publications

@@ -1,21 +1,18 @@
-
 <% form_for(@person, :html => { :class => "form" }) do |f| %>
   <%= f.error_messages %>
   <div class="columns">
-
     <div class="column left">
-
       <div class="group">
-        <%= f.label :name %><br />
+        <%= f.label :nome %><br />
         <%= f.text_field :name %>
       </div>
       <div class="group">
-        <%= f.label :sex %><br />
-        <%= f.text_field :sex %>
+        <%= f.radio_button :sex, true %> Masculino
+        <%= f.radio_button :sex, false  %> Feminino
       </div>
       <div class="group">
-        <%= f.label :marital_status %><br />
-        <%= f.text_field :marital %>
+        <%= f.label :estado_civil %>
+        <%= f.select :marital, Person.get_marital_values %>
       </div>
       <div class="group">
         <%= f.label :birth %><br />
@@ -33,8 +30,12 @@
         <%= f.label :profession %><br />
         <%= f.text_field :profession %>
       </div>
-
+      <div class="group">
+        <%= f.label :Tipo_Sanguíneo %>
+        <%= f.select :name, Person.get_blood_values, :prompt => "Selecione" %>
+      </div>
     </div>
+
     <div class="column right">
       <div class="group">
         <%= f.label :income %><br />
@@ -44,7 +45,6 @@
         <%= f.label :housing %><br />
         <%= f.text_field :house_type %>
       </div>
-
       <div class="group">
         <%= f.label :room %><br />
         <%= f.text_field :rooms %>
@@ -53,7 +53,6 @@
         <%= f.label :revenue %><br />
         <%= f.text_field :revenue %>
       </div>
-
     </div>
     <div class="clear"></div>
     <div class="group navform">

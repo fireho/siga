@@ -5,6 +5,10 @@ class Person < ActiveRecord::Base
 
   has_money :income, :revenue
 
+  symbolize :blood, :in => %w{A+ A- O+ O- B+ B- AB+ AB-}
+  symbolize :marital, :in => %w{single married viuvo separado}
+
+
   validates_presence_of :name
   validates_inclusion_of :sex, :in => [true, false]
 

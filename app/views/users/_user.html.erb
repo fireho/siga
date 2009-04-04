@@ -1,61 +1,35 @@
-<% form_for([@user]) do |f| %>
-<%= hidden_field "user",  "tipo_formulario", :value => "novo_usuario" %>
-<table cellspacing="5" align='center'>
-<tr align="left">
-<td>Login:<br/>
-<%= f.text_field :login, :size => 40, :maxlength => 5, :class => 'campos'  %></td>
-<td>Nome:<br/>
-<%= f.text_field :nome, :size => 40, :maxlength => 100  %></td>
-</tr>
+<div class="block">
+  <div class="content">
+    <div class="inner">
 
-<tr align="left">
-<td>Senha:<br/>
-<%= f.password_field :password, :size => 40, :maxlength => 40  %></td>
-<td>Confirma Senha:<br/>
-<%= f.password_field :password_confirmation, :size => 40, :maxlength => 40  %></td>
-</tr>
+      <% form_for(@user, :html => { :class => "form" }) do |f| %>
+        <%= f.error_messages %>
+        <%= hidden_field "user",  "tipo_formulario", :value => "novo_usuario" %>
 
-<tr align="left">
-<td>Nascimento:<br/>
-<%= f.date_select :nascimento, :order => [:day, :month, :year], :start_year => 1900  %></td>
-<td>Setor:<br/>
-<%= f.select(:sector_id, Sector.find(:all).collect{ |s| [s.setor, s.id]},
-:prompt => "==== Selecione o setor do usuário ====") %></td>
-</tr>
-</table><br><br>
+        <div class="group">
+          <%= f.label :login %>
+          <%= f.text_field :login, :size => 40, :maxlength => 5, :class => 'campos'  %>
+        </div>
 
-<p>ACESSO AOS MÓDULOS DO SISTEMA:</p></br>
+        <div class="group">
+          <%= f.label "CPF" %>
+          <%= f.text_field :name, :size => 40, :maxlength => 100  %>
+        </div>
 
-<table border="1" cellspacing="5" align='center'>
-<tr align="center">
-<th>ADM:</th>
-<th>OPR:</th>
-<th>GER:</th>
-<tr>
+        <div class="group">
+          <%= f.label "Senha" %>
+          <%= f.password_field :password, :size => 40, :maxlength => 40  %>
+        </div>
 
-<tr align="center">
-<td class="td1">
-<%= f.radio_button(:adm, 'SIM') %>SIM<br>
-<%= f.radio_button(:adm, "NÃO", :checked => true)%>NÃO
-</td>
+        <div class="group">
+          <%= f.label " Confirma Senha:" %>
+          <%= f.password_field :password_confirmation, :size => 40, :maxlength => 40  %>
+        </div>
 
-<td class="td1">
-<%= f.radio_button(:opr, 'SIM',:checked => true) %>SIM<br>
-<%= f.radio_button(:opr, "NÃO")%>NÃO
-</td>
-
-<td class="td1">
-<%= f.radio_button(:ger, 'SIM') %>SIM<br>
-<%= f.radio_button(:ger, "NÃO", :checked => true)%>NÃO
-</td>
-
-</tr>
-</table>
-
-<br>
-<table cellspacing="5" align='center'>
-  <tr align="center">
-  <td><%= f.submit button_name, :class => 'botao' %></td>
-</table>
-
-<% end %>
+        <div class="group navform">
+        <%= f.submit "Enviar", :class => 'button' %>
+</div>
+      <% end %>
+    </div>
+  </div>
+</div>
