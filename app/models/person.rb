@@ -6,7 +6,7 @@ class Person < ActiveRecord::Base
   has_money :income, :revenue
 
   symbolize :blood, :in => %w{A+ A- O+ O- B+ B- AB+ AB-}
-  symbolize :marital, :in => %w{single married viuvo separado}
+  symbolize :marital, :in => [:single, :married]
 
 
   validates_presence_of :name

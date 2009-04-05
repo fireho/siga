@@ -4,7 +4,7 @@ class CreatePeople < ActiveRecord::Migration
       t.string :name, :null => false
       t.string :state, :null => false
       t.boolean :sex, :null => false, :default => false
-      t.string :marital, :education, :profession, :house_type
+      t.string :marital, :education, :profession, :house_type, :blood
 
       t.integer :revenue_cents, :income_cents, :rooms
 

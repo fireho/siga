@@ -16,10 +16,11 @@ Rails::Initializer.run do |config|
   config.gem "postgis_adapter"
   config.gem "authlogic"
   config.gem "haml"
+  config.gem "rghost"
   config.gem "bcrypt-ruby", :lib => "bcrypt"
   config.gem "thoughtbot-paperclip" , :lib => "paperclip"
   config.gem "giraffesoft-is_taggable", :lib => "is_taggable"
-  config.gem "rghost"
+  config.gem "justinfrench-formtastic", :lib => "formtastic"
   config.gem "nofxx-money", :lib => "money"
 
   # config.plugins = [ :exception_notification, :ssl_requirement, :all ]

@@ -1,9 +1,8 @@
 class CreateGroups < ActiveRecord::Migration
   def self.up
     create_table :groups do |t|
-      t.string :name
-      t.string :official_name
-      t.string :kind
+      t.string :name, :official_name, :null => false
+      t.string :kind, :state
       t.date :creation
 
       t.timestamps
