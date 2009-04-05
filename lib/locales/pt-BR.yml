@@ -1,0 +1,49 @@
+# Portuguese Brasil (default)
+pt-BR:
+  # Menu
+  person: Pessoa
+  map: Mapa
+  alerts: Alertas
+  users: Usuários
+  points: Pontos
+  login: Entrar
+  logout: Sair
+  user: usuário
+
+  # UI
+  next: próximo
+  last: último
+  select_trac: Ver Trac
+  all: Todos
+  new: Novo
+  date: Data
+  save: Salvar
+  back: Voltar
+  really_delete: Deseja apagar?
+
+  nick: Nome
+  state: Estado
+
+  show: Mostrar
+  selects: Selecione
+  available: Disponíveis
+  in_use: Em Uso
+  avlss: Módulo
+  server: Servidor
+  cod: Código
+  gps: GPS
+  gprs: GPRS
+  temp: Temperatura
+
+  #Geral
+  record: Gravar
+  update: Atualizar
+  erase: Apagar
+  edit: Editar
+  activate: Ativar
+  deactivate: Desativar
+
+  # TEXT
+  report: Relatório
+  group: Grupo
+  hello: Olá

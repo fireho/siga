@@ -280,6 +280,20 @@ input.checkbox {
   border-style: solid;
 }
 
+.form .navform {
+  padding:10px;
+  background-color: #eee;
+  font-size:14px;
+  border-bottom:1px solid #ddd;
+  border-right:1px solid #ddd;
+  border-top:1px solid #eee;
+  border-left:1px solid #eee;
+}
+.form .navform input {
+  font-size:14px;
+}
+
+
 /* lists */
 
 ul.list {

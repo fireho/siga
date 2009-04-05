@@ -4,6 +4,7 @@ class CreatePublications < ActiveRecord::Migration
       t.references :user
       t.string :title, :permalink, :null => false
       t.boolean :published, :null => false, :default => false
+      t.timestamp :published_at
       t.text :body
 
       t.timestamps

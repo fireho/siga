@@ -27,6 +27,9 @@ class Person < ActiveRecord::Base
     end
   end
 
+  def sex_text
+    { true => "Masculino", false => "Feminino"}[sex]
+  end
 end
 
 # == Schema Information

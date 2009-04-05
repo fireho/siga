@@ -1,0 +1,13 @@
+- content_for :header do
+  = stylesheet_link_tag "jquery/ui.theme"
+  = javascript_include_tag "jquery/ui.datepicker"
+
+- semantic_form_for(@publication, :html => { :class => "form" }) do |f|
+  = f.input :published_at, :as => :string, :label => "Tempo Residencia", :input_html => { :id => "calendar" }
+  = f.input :title, :label => "Titulo"
+  = f.input :body, :label => "Conteudo"
+  .group.navform
+    = f.submit 'Salvar', :class => :button
+    ou
+    = link_to 'Cancelar', publications_path
+

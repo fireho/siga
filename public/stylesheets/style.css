@@ -320,7 +320,7 @@ div.code h1,div.code h3 {
 /*-------- FORMTASTIC ----------------------- */
 
 /* obviously inspired by Yahoo's reset.css, but scoped to just form.formtastic elements that we care about */
-form.formtastic, form.formtastic ul, form.formtastic ol, form.formtastic li, form.formtastic fieldset, form.formtastic legend, form.formtastic input, form.formtastic textarea, form.formtastic p { margin:0; padding:0; }
+form.formtastic, form.formtastic ul, form.formtastic ol, form.formtastic li, form.formtastic fieldset, form.formtastic legend, form.formtastic input, form.formtastic textarea, form.formtastic p { margin:0; padding:3px; margin-bottom:3px; }
 form.formtastic fieldset { border:0; }
 form.formtastic em, form.formtastic strong { font-style:normal; font-weight:normal; }
 form.formtastic ol, form.formtastic ul { list-style:none; }
@@ -351,7 +351,7 @@ html[xmlns] form.formtastic fieldset { display: block; }
 /* INPUT LIs
 --------------------------------------------------------------------------------------------------*/
 
-form.formtastic fieldset ol li { border-bottom:1px solid #eee; padding:5px; }
+form.formtastic fieldset ol li { border-bottom:1px solid #eee; padding:10px; }
 
 form.formtastic li { list-style-type: none }
 /* clearfixing the li's */
@@ -368,7 +368,7 @@ form.formtastic fieldset ol li.error { background:#FFCCCC; }
 /* LABELS
 --------------------------------------------------------------------------------------------------*/
 
-form.formtastic fieldset ol li label {  display:block; width:25%; float:left; }
+form.formtastic fieldset ol li label {  display:block; width:75%; float:left; }
 
 
 /* INLINE HINTS

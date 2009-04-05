@@ -1,9 +1,13 @@
+- content_for :header do
+  = stylesheet_link_tag "jquery/ui.theme"
+  = javascript_include_tag "jquery/ui.datepicker"
+
 - semantic_form_for(@person, :html => { :class => "form" }) do |f|
   .columns
     .column.left
       = f.input(:name, :label => "Nome")
       = f.input :sex, :label => "Sexo", :as => :radio, :collection => %w{Masculino Feminino}
-      = f.input :marital, :as => :select, :collection => Person.get_marital_values
+      = f.input :marital, :as => :radio, :collection => Person.get_marital_values
       = f.input :born_at, :as => :string
       = f.input :birthplace_id, :as => :string
       = f.input :blood, :as => :select, :collection => Person.get_blood_values
@@ -13,11 +17,11 @@
         = f.input :income
         = f.input :revenue
       - f.inputs :name => "Residencia", :id => "basic" do
-        = f.input :arrival_at, :as => :string, :label => "Tempo Residencia"
+        = f.input :arrival_at, :as => :string, :label => "Tempo Residencia", :input_html => { :id => "calendar" }
         = f.input :house_type, :label => "Tipo residencia"
         = f.input :rooms
     .clear
     .group.navform
-      = f.submit "Salvar"
+      = f.submit "Salvar &rarr;", :class => "button"
       ou
       = link_to 'Cancelar', people_path
