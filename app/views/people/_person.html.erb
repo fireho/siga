@@ -1,39 +1,23 @@
-<% form_for(@person, :html => { :class => "form" }) do |f| %>
+<% semantic_form_for(@person, :html => { :class => "form" }) do |f| %>
   <%= f.error_messages %>
   <div class="columns">
     <div class="column left">
-
-      <%= form_input(:name, :label => "Nome") %>
-
-      <div class="group">
-        <%= f.radio_button :sex, true %> Masculino
-        <%= f.radio_button :sex, false  %> Feminino
-      </div>
-      <div class="group">
-        <%= f.label :estado_civil %>
-        <%= f.select :marital, Person.get_marital_values %>
-      </div>
-
-      <%= form_input(:born_at, :label => "Nascimento") %>
-
-      <div class="group">
-        <%= f.label :birthplace %><br />
-        <%# f.text_field :birthplace %>
-      </div>
-
-      <%= form_input(:arrival_at, :label => "Tempo Residencia") %>
-      <%= form_input(:profession, :label => "Profissao") %>
-
-      <div class="group">
-        <%= f.label :Tipo_Sanguíneo %>
-        <%= f.select :name, Person.get_blood_values, :prompt => "Selecione" %>
-      </div>
+      <%= f.input(:name, :label => "Nome") %>
+      <%= f.input :sex, :as => :radio, :collection => %w{Masculino Feminino} %>
+      <%= f.input :marital, :as => :select, :collection => Person.get_marital_values %>
+      <%= f.input :born_at, :as => :string %>
+      <%= f.input :birthplace_id, :as => :string %>
+      <%= f.input :blood, :as => :select, :collection => Person.get_blood_values %>
     </div>
     <div class="column right">
-      <%= form_input(:income) %>
-      <%= form_input(:revenue) %>
-      <%= form_input(:house_type) %>
-      <%= form_input(:rooms) %>
+      <%= f.input :arrival_at, :as => :string, :label => "Tempo Residencia" %>
+        <% f.inputs :name => "Basic", :id => "basic" do %>
+        <%= f.input :profession, :label => "Profissao" %>
+        <%= f.input(:income) %>
+        <%= f.input(:revenue) %>
+      <% end %>
+      <%= f.input(:house_type) %>
+      <%= f.input(:rooms) %>
     </div>
     <div class="clear"></div>
     <div class="group navform">

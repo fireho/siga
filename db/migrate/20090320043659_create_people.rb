@@ -6,10 +6,11 @@ class CreatePeople < ActiveRecord::Migration
       t.boolean :sex, :null => false, :default => false
       t.string :marital, :education, :profession, :house_type, :blood
 
-      t.integer :revenue_cents, :income_cents, :rooms
+      t.integer :revenue_cents, :income_cents, :rooms, :age
 
       t.references :birthplace, :mom, :dad, :spouse
-      t.date :born_at, :arrival_at
+      t.timestamp :born_at
+      t.date :arrival_at, :leave_at
 
       t.timestamps
     end

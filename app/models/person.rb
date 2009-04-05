@@ -5,7 +5,7 @@ class Person < ActiveRecord::Base
 
   has_money :income, :revenue
 
-  symbolize :blood, :in => %w{A+ A- O+ O- B+ B- AB+ AB-}
+  symbolize :blood, :in => [:"A+", :"A-", :"O+", :"O-", :"B+", :"B-", :"AB+", :"AB-"]
   symbolize :marital, :in => [:single, :married]
 
 
