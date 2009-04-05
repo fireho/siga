@@ -1,10 +1,12 @@
 class CreateProperties < ActiveRecord::Migration
   def self.up
     create_table :properties do |t|
-      t.references :area
+      t.references :area, :person
       t.string :name
-      t.date :built_at
+      t.string :condition, :kind, :limit => 20
       t.multi_polygon :geom, :srid => 4236
+      t.integer :rooms
+      t.date :built_at
 
       t.timestamps
     end

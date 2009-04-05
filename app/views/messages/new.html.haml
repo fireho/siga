@@ -1,20 +1,12 @@
 .block
-  #top
-    %h2 Enviar Mensagem
-  .clear
   .content
+    %h2 Enviar Mensagem
     .inner
-      - form_for(@message, :html => {:class => :form}) do |f|
+      - semantic_form_for(@message, :html => {:class => "form" }) do |f|
         = f.error_messages
-        .group
-          %label.label Para
-          = f.select :to_id, @users
-        .group
-          %label.label Assunto
-          = f.text_field :subject
-        .group
-          %label.label Mensagem
-          = f.text_area :body, :size=>"48x14"
+        = f.input :to_id, :as => :string
+        = f.input :subject
+        = f.input :body
         .navform
           = f.submit "Enviar", :class => :button
           ou

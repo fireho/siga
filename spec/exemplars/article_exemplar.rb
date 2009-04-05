@@ -1,6 +1,6 @@
 class Article < ActiveRecord::Base
-  generator_for :title, "Mega Massa"
-  generator_for :body, "value for body"
+  generator_for :title, Faker::Lorem.sentence
+  generator_for :body, Faker::Lorem.paragraph
   generator_for :public, true
   generator_for :published, true
 

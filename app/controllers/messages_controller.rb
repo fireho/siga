@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_filter :load_users, :only => [:new, :create]
+  #before_filter :load_users, :only => [:new, :create]
 
   # GET /messages
   # GET /messages.xml

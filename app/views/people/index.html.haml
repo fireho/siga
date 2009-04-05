@@ -2,19 +2,12 @@
   .content
     %h2.title Municipes
     .inner
-      %table.table
-        %tr
-          %th Nome
-          %th Sexo
-          %th Civil
-        - for person in @people
-          %tr
-            %td= link_to person.name, person
-            %td=h person.sex_text
-            %td=h person.marital
+      = simple_table_for @people, :name, :sex_text, :marital_text
+      = will_paginate @people
+
 
 - content_for :sidebar do
   .block
-  %h3 Menu
-  %ul.navigation
-    %li= link_to image_tag('../images/icons/add.png', :class=>'img')+' Novo Registro', new_person_path
+    %h3 Menu
+    %ul.navigation
+      %li= link_to image_tag('../images/icons/add.png', :class=>'img')+' Novo Registro', new_person_path

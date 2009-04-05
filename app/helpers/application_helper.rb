@@ -25,16 +25,6 @@ module ApplicationHelper
     content_tag("span", content, html_options)
   end
 
-  # def flash_message
-  #   messages = ""
-  #   [:notice, :info, :warning, :error].each {|type|
-  #     if flash[type]
-  #       messages += "<p class=\"#{type}\">#{flash[type]}</p>"
-  #     end
-  #   }
-  #   messages
-  # end
-
   def flash_message
     flashes = ''
     unless flash.size == 0
@@ -45,15 +35,50 @@ module ApplicationHelper
     flashes
   end
 
-  def form_input(field, *opts)
-    lbl = opts.first.delete(:label) unless opts.empty?
-    lbl ||= field.to_s.capitalize
-    out = "<div class='group'>"
-    out += "<label class='label'>#{lbl}</label>"
-    out += text_field_tag field, {} , opts.first || {}
-    out += "</div>"
+  def filter_enum obj, attr
+    attr.map!(&:to_s)
+    attr.map do |a|
+      if a =~ /text/
+        val = obj.send(a)
+        obj[a.gsub!(/_text/, "")] = val
+      end
+    end
+    attr
   end
 
+  def show(obj, *attr) #, &proc)
+    options = attr.extract_options!
+    out = filter_enum(obj, attr)
+    out.map do |a|
+      value = obj[a]
+      case value
+      when Date then value = I18n.l value
+      when DateTime, Time then  value = I18n.l value
+      when Numeric then value = number_with_delimiter value
+      end
+      "<p><b>#{obj.class.human_attribute_name(a)}: </b>#{value}</p>"
+    end
+  end
 
+  def simple_table_for(obj, *attr)
+   # attr = filter_enum obj, attr
+    attr.map!(&:to_s)
+    attr.map do |a|
+      if a =~ /text/
+        obj.map do |o|
+          val = o.send(a)
+          o[a.gsub!(/_text/, "")] = val
+        end
+      end
+    end
+    out = "<table class='table'><tr>"
+    out += attr.map { |a| "<th>#{obj[0].class.human_attribute_name(a)}</th>" }.to_s + "</tr>"
+    obj.map do |o|
+      o[attr[0]] = link_to o[attr[0]], o
+    end
 
+    ss = obj.map { |o| attr.map { |a| "<td>#{o[a]}</td>" }}
+    out += ss.map { |s| "<tr>#{s}</tr>" }.to_s
+    out += "</table>"
+  end
 end

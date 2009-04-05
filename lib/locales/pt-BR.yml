@@ -1,7 +1,37 @@
 # Portuguese Brasil (default)
 pt-BR:
-  # Menu
-  person: Pessoa
+  activerecord:
+    attributes:
+      person:
+        name: Nome
+        sex: Sexo
+        income: Salario
+        marital: Estado Civil
+        born_at: Nascido em
+        profession: Profissao
+        profession_state: Atualmente
+        birthplace: Cidade natal
+        arrival_at: Tempo Residencia
+        blood: Sangue
+        rooms: Quartos
+        enums:
+          marital:
+            single: Solteiro(a)
+            married: Casado(a)
+          profession_state:
+            working: Trabalhando
+            retired: Aposentado(a)
+          sex:
+            true: Masculino
+            false: Feminino
+      publication:
+        title: Titulo
+        body: Corpo
+        published_at: Publicada em
+      message:
+        to_id: Para
+        subject: Assunto
+        body: Corpo
   map: Mapa
   alerts: Alertas
   users: Usuários
@@ -16,7 +46,6 @@ pt-BR:
   select_trac: Ver Trac
   all: Todos
   new: Novo
-  date: Data
   save: Salvar
   back: Voltar
   really_delete: Deseja apagar?

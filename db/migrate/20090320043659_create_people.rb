@@ -1,12 +1,14 @@
 class CreatePeople < ActiveRecord::Migration
   def self.up
     create_table :people do |t|
-      t.string :name, :null => false
+      t.string :name, :permalink, :null => false
       t.string :state, :null => false
       t.boolean :sex, :null => false, :default => false
-      t.string :marital, :education, :profession, :house_type, :blood
+      t.string :marital, :education
+      t.string :profession, :profession_state
+      t.string :prefix, :blood, :limit => 5
 
-      t.integer :revenue_cents, :income_cents, :rooms, :age
+      t.integer :revenue_cents, :income_cents, :age
 
       t.references :birthplace, :mom, :dad, :spouse
       t.timestamp :born_at

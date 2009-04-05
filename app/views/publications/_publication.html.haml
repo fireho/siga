@@ -3,9 +3,9 @@
   = javascript_include_tag "jquery/ui.datepicker"
 
 - semantic_form_for(@publication, :html => { :class => "form" }) do |f|
-  = f.input :published_at, :as => :string, :label => "Tempo Residencia", :input_html => { :id => "calendar" }
-  = f.input :title, :label => "Titulo"
-  = f.input :body, :label => "Conteudo"
+  = f.input :title
+  = f.input :body
+  = f.input :published_at, :as => :string, :input_html => { :id => "calendar" }
   .group.navform
     = f.submit 'Salvar', :class => :button
     ou

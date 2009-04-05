@@ -81,7 +81,10 @@ pt-BR:
       format:
         delimiter: '.'
     human:
-      format:
+      storage_units:
+        units:
+          byte: b
+        format: "%u"
         precision: 1
         delimiter: '.'
   support:
@@ -115,19 +118,26 @@ pt-BR:
         less_than_or_equal_to: "precisa ser menor ou igual a {{count}}"
         odd: "precisa ser ímpar"
         even: "precisa ser par"
+  formtastic:
+    yes: 'Sim'
+    no: 'Nao'
+    create: 'Criar'
+    save: 'Salvar'
+    submit: 'Enviar'
+    required: 'Requerido'
   authlogic:
     error_messages:
       login_blank: can not be blank
       login_not_found: does not exist
       login_invalid: should use only letters, numbers, spaces, and .-_@ please.
       consecutive_failed_logins_limit_exceeded: Consecutive failed logins limit exceeded, account is disabled.
-      email_invalid: should look like an email address.
+      email_invalid: nao parece um email
       password_blank: can not be blank
       password_invalid: is not valid
-      not_active: Your account is not active
-      not_confirmed: Your account is not confirmed
-      not_approved: Your account is not approved
-      no_authentication_details: You did not provide any details for authentication.
+      not_active: Sua conta nao esta ativa
+      not_confirmed: Sua conta nao foi confirmada
+      not_approved: Sua conta nao foi aprovada
+      no_authentication_details: Sem detalhes de autenticao.
     models:
       user_session: UserSession
     attributes:
@@ -135,4 +145,4 @@ pt-BR:
         login: login
         email: email
         passwword: password
-        remember_me: remember menu-bar
+        remember_me: lembrar

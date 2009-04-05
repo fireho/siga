@@ -7,7 +7,7 @@ class AddData < ActiveRecord::Migration
 
     # Load bunch of dumb data in devel mode....
     if RAILS_ENV =~ /development/
-      [Publication, Person, Group, Law].each do |k|
+      [Publication, Article, Person, Group, Law].each do |k|
         80.times {  k.generate! }
       end
       # 80.times { Publication.generate! }

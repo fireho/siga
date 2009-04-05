@@ -2,7 +2,7 @@ class PublicationsController < ApplicationController
   # GET /publications
   # GET /publications.xml
   def index
-    @publications = Publication.all
+    @publications = Publication.search(params[:filter], params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

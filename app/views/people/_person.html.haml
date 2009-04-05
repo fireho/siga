@@ -5,8 +5,8 @@
 - semantic_form_for(@person, :html => { :class => "form" }) do |f|
   .columns
     .column.left
-      = f.input(:name, :label => "Nome")
-      = f.input :sex, :label => "Sexo", :as => :radio, :collection => %w{Masculino Feminino}
+      = f.input :name
+      = f.input :sex, :as => :radio, :collection => %w{Masculino Feminino}
       = f.input :marital, :as => :radio, :collection => Person.get_marital_values
       = f.input :born_at, :as => :string
       = f.input :birthplace_id, :as => :string
@@ -18,8 +18,6 @@
         = f.input :revenue
       - f.inputs :name => "Residencia", :id => "basic" do
         = f.input :arrival_at, :as => :string, :label => "Tempo Residencia", :input_html => { :id => "calendar" }
-        = f.input :house_type, :label => "Tipo residencia"
-        = f.input :rooms
     .clear
     .group.navform
       = f.submit "Salvar &rarr;", :class => "button"

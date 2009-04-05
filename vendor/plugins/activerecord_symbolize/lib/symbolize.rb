@@ -3,6 +3,11 @@ module Symbolize
     base.extend(ClassMethods)
   end
 
+   # Return an attribute's i18n
+  def read_i18nte attr_name
+    I18n.translate("activerecord.attributes.#{self.class.to_s.downcase}.enums.#{attr_name}.#{read_attribute(attr_name)}") #.to_sym rescue nil
+  end
+
   # Symbolize ActiveRecord attributes. Add
   #   symbolize :attr_name
   # to your model class, to make an attribute return symbols instead of
@@ -14,48 +19,50 @@ module Symbolize
   #   class User < ActiveRecord::Base
   #     symbolize :gender, :in => [:female, :male]
   #   end
+
   module ClassMethods
     # Specifies that values of the given attributes should be returned
     # as symbols. The table column should be created of type string.
     def symbolize (*attr_names)
       configuration = {}
       configuration.update(attr_names.extract_options!)
-      
-      enum = configuration[:in] || configuration[:within]
-      
-      unless enum.nil?
-        if enum.class == Hash
-          values = enum
-          enum   = enum.map { |key,value| key } 
-        else
-          values = Hash[*enum.collect { |v| [v, v.to_s.capitalize] }.flatten]
-        end
 
+      enum = configuration[:in] || configuration[:within]
+
+      unless enum.nil?
         attr_names.each do |attr_name|
           attr_name = attr_name.to_s
+          values = Hash[*enum.map { |v| [v, I18n.translate("activerecord.attributes.#{self.to_s.downcase}.enums.#{attr_name}.#{v}")] }.flatten]
           class_eval("#{attr_name.upcase}_VALUES = values")
-          class_eval("def self.get_#{attr_name}_values; #{attr_name.upcase}_VALUES; end")
+          class_eval("def self.get_#{attr_name}_values; #{attr_name.upcase}_VALUES.map(&:reverse); end")
         end
-        
+
         class_eval("validates_inclusion_of :#{attr_names.join(', :')}, configuration")
       end
 
       attr_names.each do |attr_name|
         attr_name = attr_name.to_s
         class_eval("def #{attr_name}; read_and_symbolize_attribute('#{attr_name}'); end")
+        class_eval("def #{attr_name}_text; read_i18n_attribute('#{attr_name}'); end")
         class_eval("def #{attr_name}= (value); write_symbolized_attribute('#{attr_name}', value); end")
       end
     end
   end
 
   # Return an attribute's value as a symbol or nil
-  def read_and_symbolize_attribute (attr_name)
-    read_attribute(attr_name).to_sym rescue nil
+  def read_and_symbolize_attribute attr_name
+    attr = read_attribute(attr_name)
+    attr.respond_to?(:to_sym) ? attr.to_sym : attr
+  end
+
+  # Return an attribute's i18n
+  def read_i18n_attribute attr_name
+    I18n.translate("activerecord.attributes.#{self.class.to_s.downcase}.enums.#{attr_name}.#{read_attribute(attr_name)}") #.to_sym rescue nil
   end
 
   # Write a symbolized value
-  def write_symbolized_attribute (attr_name, value)
-    write_attribute(attr_name, (value.to_sym && value.to_sym.to_s rescue nil))
+  def write_symbolized_attribute attr_name, value
+    write_attribute(attr_name,  value.respond_to?(:to_sym)? value.to_sym : value) #(value.to_sym && value.to_sym.to_s rescue nil))
   end
 end
 
