@@ -444,3 +444,4 @@ form.formtastic fieldset ol li.date fieldset ol li label input,
 form.formtastic fieldset ol li.time fieldset ol li label input,
 form.formtastic fieldset ol li.datetime fieldset ol li label input { display:inline; margin:0; padding:0; }
 form.formtastic fieldset legend span.label { font-weight:bold;color:#222222; }
+div.pagination { padding-top: 20px; }
