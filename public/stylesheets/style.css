@@ -18,7 +18,7 @@ hr {
 
 #header {
   background: #7A1818;
-  border-bottom: 3px solid #555;
+
 }
 
 #header h1 a:link, #header h1 a:active, #header h1 a:hover, #header h1 a:visited {
@@ -69,8 +69,7 @@ hr {
 
 #main-navigation ul li.active {
   background: #eee;
-  border: 1px solid #91B96F;
-  border-bottom: none;
+
   font-weight: bold;
 }
 
