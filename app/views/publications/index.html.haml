@@ -2,15 +2,15 @@
   .head
     %h2.title Editais
   .content
-    .inner
-      - for publication in @publications
-        .block
-          %h3= link_to publication.title, publication
-          .gray=l publication.created_at
-          .content= publication.body
-
-      = will_paginate @publications
-      .clear
+    - for publication in @publications
+      .inner
+        %h3= link_to publication.title, publication
+        = publication.body
+        .gray
+          %p= "#{l publication.created_at} (#{time_ago_in_words(publication.created_at)})"
+        %break
+    = will_paginate @publications
+    .clear
 
 - content_for :sidebar do
   - if current_user

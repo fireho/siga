@@ -1,0 +1,29 @@
+- content_for :head do
+  =# stylesheet_link_tag "jquery/ui.core"
+  = stylesheet_link_tag "jquery/ui.theme"
+  = javascript_include_tag 'jquery/ui.core'
+  = javascript_include_tag 'jquery/ui.tabs'
+
+
+.block
+  - if current_user
+    #tabs
+      %ul
+        %li{:class => "active first"}= link_to "Todas", "#fragment-1"
+        %li= link_to "Notas", "#fragment-2"
+        %li= link_to "Mensagens", "#fragment-3"
+        %li= link_to "Análise", "#fragment-4"
+      .clear
+
+      #fragment-1
+        %h2 SIG@
+        .inner
+          %p{:class => :first}
+            = "Olá, #{current_user.name}."
+            = link_to pluralize(@messages, "mensagem", "mensagens"), "/inbox", :class => "icon mail"
+      #fragment-2
+        %h2 SIOOO
+        .inner
+          %p{:class => :first}
+            = "Olá, #{current_user.name}."
+            = link_to pluralize(@messages, "mensagem", "mensagens"), "/inbox", :class => "icon mail"

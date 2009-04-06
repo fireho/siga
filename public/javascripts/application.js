@@ -17,7 +17,7 @@ $.fn.clearClick = function() {
 $.fn.subMenu = function() {
     var menu = this
     var submenu = $(menu).find('ul')
-    
+
     $(menu).hover(function(){
         $(submenu).css('visibility', 'visible')
     },function(){
@@ -34,6 +34,9 @@ $.fn.subMenus = function() {
 $(document).ready(function () {
     $("#search").clearClick();
     $('#main-navigation > ul > li').subMenus()
+
+    if($("#tabs"))
+        $("#tabs").tabs();
 });
 
 

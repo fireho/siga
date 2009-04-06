@@ -89,6 +89,7 @@ body {
 #wrapper {
   padding-top: 20px;
 }
+.ui-tabs .ui-tabs-hide { display: none !important; }
 
 #main .block {
   margin-bottom: 20px;
