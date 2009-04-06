@@ -5,8 +5,8 @@
       - for publication in @publications
         .block
           %h3= link_to publication.title, publication
+          .gray=l publication.created_at
           .content= publication.body
-        .gray=l publication.created_at
 
       = will_paginate @publications
       .clear

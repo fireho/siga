@@ -45,13 +45,16 @@ hr {
 #main .block .content {
   background: #FFF;
   padding-top: 1px;
+  border:2px solid #EDEDED;
+  border-right:1px solid #ccc;
+  border-bottom:1px solid #ccc;
 }
 
 #main .block .content h2 {
   margin-left: 15px;
 }
 
-#main-navigation {
+#main-navigation {1
   /* background: #4c574f; */
   background: #262626;
   margin-right: 20px;
@@ -105,6 +108,8 @@ hr {
 
 #sidebar .block {
   background: #FFF;
+  border-right:1px solid #ccc;
+  border-bottom:1px solid #ccc;
 }
 
 #sidebar h3 {
