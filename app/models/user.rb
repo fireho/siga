@@ -2,6 +2,14 @@
 class User < ActiveRecord::Base
 
   belongs_to :person
+    has_attached_file :photo,
+                    :styles => { :normal => '40x40#' },
+                    :whiny_thumbnails => true,
+                    :default_style => :normal,
+                    :default_url => "bigicons/avatar.png",
+                    :path => ":rails_root/public/files/user/photos/:style_:id.:extension",
+                    :url => "/files/user/photos/:style_:id.:extension"
+
 
   #belongs_to :sector funcionarios...
 

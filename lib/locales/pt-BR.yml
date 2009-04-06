@@ -6,24 +6,34 @@ pt-BR:
         name: Nome
         sex: Sexo
         income: Salario
+        state: Estado
         marital: Estado Civil
         born_at: Nascido em
         profession: Profissao
         profession_state: Atualmente
-        birthplace: Cidade natal
+        birthplace: Cidade Natal
         arrival_at: Tempo Residencia
         blood: Sangue
         rooms: Quartos
         enums:
+          state:
+            moved: Mudou
+            active: Ativo
+            inactive: Desativado
+            suspended: Suspenso
+            deceased: Falecido
           marital:
             single: Solteiro(a)
+            divorced: Divorciado(a)
             married: Casado(a)
+            widowed: Viuvo(a)
+            unknown: Desconhecido
           profession_state:
             working: Trabalhando
             retired: Aposentado(a)
           sex:
-            true: Masculino
-            false: Feminino
+            "true": Masculino
+            "false": Feminino
       publication:
         title: Titulo
         body: Corpo

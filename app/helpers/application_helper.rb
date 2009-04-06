@@ -39,8 +39,11 @@ module ApplicationHelper
     attr.map!(&:to_s)
     attr.map do |a|
       if a =~ /text/
-        val = obj.send(a)
-        obj[a.gsub!(/_text/, "")] = val
+        if obj.respond_to?(:map)
+          obj.map { |o| o[a] = o.send(a) }
+        else
+          obj[a] = obj.send(a)
+        end
       end
     end
     attr
@@ -56,29 +59,27 @@ module ApplicationHelper
       when DateTime, Time then  value = I18n.l value
       when Numeric then value = number_with_delimiter value
       end
-      "<p><b>#{obj.class.human_attribute_name(a)}: </b>#{value}</p>"
+      "<p><b>#{obj.class.human_attribute_name(a.gsub(/_text/,""))}: </b>#{value}</p>"
     end
   end
 
   def simple_table_for(obj, *attr)
-   # attr = filter_enum obj, attr
     attr.map!(&:to_s)
-    attr.map do |a|
-      if a =~ /text/
-        obj.map do |o|
-          val = o.send(a)
-          o[a.gsub!(/_text/, "")] = val
-        end
-      end
-    end
+    attr = filter_enum(obj, attr)
     out = "<table class='table'><tr>"
-    out += attr.map { |a| "<th>#{obj[0].class.human_attribute_name(a)}</th>" }.to_s + "</tr>"
-    obj.map do |o|
-      o[attr[0]] = link_to o[attr[0]], o
-    end
-
+    out += attr.map { |a| "<th>#{obj[0].class.human_attribute_name(a.gsub(/_text/, ""))}</th>" }.to_s + "</tr>"
+    obj.map { |o| o[attr[0]] = link_to o[attr[0]], o }
     ss = obj.map { |o| attr.map { |a| "<td>#{o[a]}</td>" }}
     out += ss.map { |s| "<tr>#{s}</tr>" }.to_s
     out += "</table>"
+  end
+
+  def image_list_for(stuff, title)
+    out = "<div class='block' id='block-lists'><div class='content'><h2 class='title'>#{title}</h2><div class='inner'><ul class='list'>"
+    stuff.map do |s|
+      out += "<li><div class='left'><a href='#{s[:url]}'><img  src='#{s[:image]}' alt='avatar' /></a></div><div class='item'>"
+      out += "<p>#{s[:body]}</p></div></li>"
+    end
+    out += "</ul></div>"
   end
 end

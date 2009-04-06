@@ -7,10 +7,17 @@ class Zone < ActiveRecord::Base
 
   has_many :properties, :dependent => :nullify
 
-  TYPES = %w{ comercial industrial residential countryside }
+  symbolize :kind, :in => [:comercial, :industrial, :residential, :countryside]
 
   validates_presence_of :name
-  validates_inclusion_of :kind, :in => TYPES
+
+  def str_geom= value
+    self.geom = Polygon.from_coordinates([JSON.parse(value)])
+  end
+
+  def str_geom
+    geom.nil? ? '[]' : (geom[0].map { |p| [p.x,p.y] }).to_json
+  end
 
 end
 

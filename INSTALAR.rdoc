@@ -17,42 +17,43 @@ Extra:
 
 == Gems
 
-* rails       >=   2.3.x
-* postgres
-* postgis_adapter
-* haml
-* authlogic
-* bcrypt-ruby
-* paperclip
-* GeoRuby
-* rghost
-* will_paginate
-* nofxx-money
+  gem install rails postgres postgis_adapter haml authlogic bcrypt-ruby\
+  paperclip GeoRuby rghost will_paginate nofxx-money
+
 
 = Desenvolvedores
 
 == Test
 
-* RSpec
-* RSpec-Rails
-* Object Daddy
-* Faker
+  gem install rspec rspec-rails nofxx-object_daddy faker
 
 
 == PostgreSQL
 
-UTF Database:
+Se seu banco ja usa UTF8, pule essa parte.
+
+Criar um banco UTF8:
 
     export PGROOT="/var/lib/postgres"
     mkdir -p $PGROOT/data && chown postgres.postgres $PGROOT/data
+
+    # Arch
     su - postgres -c "/usr/bin/initdb -E utf8 --locale=en_US.UTF-8 $PGROOT/data"
+
+    # Debian
+    su - postgres -c "/usr/bin/postgresql/8.3/initdb -E utf8 --locale=en_US.UTF-8 $PGROOT/data"
+
 
 == PostGIS
 
-Instalando PostGIS no PostgreSQL:
+Instalando PostGIS e criando um template:
+
+Execute o terminal do PostgreSQL, exemplo:
 
   su postgres
   psql template1
+
+No terminal do postgresql, crie o template e a linguagen plpgsql:
 
   create database template_postgis with template = template1;
   UPDATE pg_database SET datistemplate = TRUE where datname = 'template_postgis';
@@ -82,7 +83,6 @@ Finalizando:
 
   GRANT ALL ON geometry_columns TO PUBLIC;
   GRANT ALL ON spatial_ref_sys TO PUBLIC;
-
   VACUUM FREEZE;
 
 
@@ -90,7 +90,9 @@ Finalizando:
 
   $ createdb -O <owner> -T template_postgis siga_development
 
+Troque <owner> pelo user do banco.
 Repetir para test e production.
+
 
 == Rails
 

@@ -9,11 +9,11 @@ class Person < ActiveRecord::Base
   has_money :income, :revenue
   has_permalink :name
 
-  symbolize :blood, :in => [:"A+", :"A-", :"O+", :"O-", :"B+", :"B-", :"AB+", :"AB-"]
-  symbolize :marital, :in => [:single, :married]
+  symbolize :blood, :in => [:"A+", :"A-", :"O+", :"O-", :"B+", :"B-", :"AB+", :"AB-"], :i18n => false
+  symbolize :marital, :in => [:unknown, :single, :divorced, :married, :widowed]
   symbolize :profession_state, :in => [:working, :retired]
-  symbolize :sex, :in => ["true", "false"]
-
+  symbolize :sex, :in => [true, false]
+  symbolize :state, :in => [:active, :inactive, :suspended, :moved, :deceased]
   validates_presence_of :name
  # validates_inclusion_of :sex, :in => [true, false]
 
@@ -36,27 +36,21 @@ class Person < ActiveRecord::Base
     event :suspend do
       transition all => :suspended
     end
+
+    event :death do
+      transition all => :deceased
+    end
   end
-
-  # def sex
-  #   "kdkd" #{ true => "Masculino", false => "Feminino"}[self.sex]
-  # end
-
-  # def name
-  #   "kdkd"
-  # end
 
   def calc_age
     write_attribute(:age, (Time.now - born_at)/60/60/24/360)
   end
-
 
   def self.search(filter, page)
     paginate :per_page => 10, :page => page,
     :conditions => ['name like ?', "%#{filter}%"],
     :order => 'name'
   end
-
 
 end
 
