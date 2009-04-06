@@ -3,8 +3,7 @@ class CreateProcurements < ActiveRecord::Migration
     create_table :procurements do |t|
       t.string :title, :null => false
       t.text :body, :null => false
-      t.limit_cents
-      t.value_cents
+      t.integer :limit_cents, :value_cents
       t.timestamp :due_at
 
       t.timestamps

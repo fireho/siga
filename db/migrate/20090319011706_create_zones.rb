@@ -4,6 +4,7 @@ class CreateZones < ActiveRecord::Migration
       t.references :city
       t.string :kind, :null => false
       t.string :name, :null => false
+      t.polygon :geom, :srid => 4326
 
       t.timestamps
     end

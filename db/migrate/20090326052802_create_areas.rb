@@ -4,7 +4,7 @@ class CreateAreas < ActiveRecord::Migration
       t.references :zone
       t.string :name
       t.string :kind
-      t.polygon :geom, :srid => 4236
+      t.polygon :geom, :srid => 4326
 
       t.timestamps
     end

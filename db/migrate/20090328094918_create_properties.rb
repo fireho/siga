@@ -4,7 +4,7 @@ class CreateProperties < ActiveRecord::Migration
       t.references :area, :person
       t.string :name
       t.string :condition, :kind, :limit => 20
-      t.multi_polygon :geom, :srid => 4236
+      t.multi_polygon :geom, :srid => 4326
       t.integer :rooms
       t.date :built_at
 
