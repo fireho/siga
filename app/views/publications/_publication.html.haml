@@ -1,10 +1,10 @@
-- content_for :header do
-  = stylesheet_link_tag "jquery/ui.theme"
-  = javascript_include_tag "jquery/ui.datepicker"
+- content_for :head do
+  = stylesheet_link_tag "jquery/ui.theme", "jquery/jquery.wysiwyg"
+  = javascript_include_tag "app/rich", "jquery/ui.datepicker", "jquery/jquery.wysiwyg"
 
 - semantic_form_for(@publication, :html => { :class => "form" }) do |f|
-  = f.input :title
-  = f.input :body
+  = f.input :title, :input_html => { :size => 60 }
+  = f.input :body, :input_html => { :size => "60x20" }
   = f.input :published_at, :as => :string, :input_html => { :id => "calendar" }
   .group.navform
     = f.submit 'Salvar', :class => :button
