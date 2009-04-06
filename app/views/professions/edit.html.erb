@@ -1,0 +1,24 @@
+<h1>Editing profession</h1>
+
+<% form_for(@profession) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :kind %><br />
+    <%= f.text_field :kind %>
+  </p>
+  <p>
+    <%= f.label :person_count %><br />
+    <%= f.text_field :person_count %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @profession %> |
+<%= link_to 'Back', professions_path %>

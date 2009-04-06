@@ -1,0 +1,13 @@
+.block
+  .content
+    %h2.title Licitacoes
+    .inner
+      = simple_table_for @procurements, :title
+      = will_paginate @procurements
+
+- content_for :sidebar do
+  .block
+    %h3 Menu
+    %ul.navigation
+      %li= link_to image_tag('../images/icons/add.png', :class=>'img')+' Novo Registro', new_procurement_path
+

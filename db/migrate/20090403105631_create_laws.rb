@@ -6,9 +6,9 @@ class CreateLaws < ActiveRecord::Migration
       #Nested Set
       t.integer :parent_id, :lft, :rgt
       t.string :state, :kind, :limit => 50
-      t.string :title
+      t.string :title, :code
       t.text :content
-      t.datetime :wrote_at, :valid_at, :expire_at
+      t.datetime :wrote_at, :publicated_at, :valid_at, :expire_at
 
       t.timestamps
     end

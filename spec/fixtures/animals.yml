@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  born_at: 2009-04-06 06:31:59
+  age: 1
+  sex: false
+  kind: MyString
+  fur: MyString
+  race: MyString
+
+two:
+  name: MyString
+  born_at: 2009-04-06 06:31:59
+  age: 1
+  sex: false
+  kind: MyString
+  fur: MyString
+  race: MyString

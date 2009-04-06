@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%=h @profession.name %>
+</p>
+
+<p>
+  <b>Kind:</b>
+  <%=h @profession.kind %>
+</p>
+
+<p>
+  <b>Person count:</b>
+  <%=h @profession.person_count %>
+</p>
+
+
+<%= link_to 'Edit', edit_profession_path(@profession) %> |
+<%= link_to 'Back', professions_path %>

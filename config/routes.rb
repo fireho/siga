@@ -2,12 +2,11 @@
 # SIG@ Routing Map  2009
 #
 ActionController::Routing::Routes.draw do |map|
-  map.resources :families
-
 
   map.root :controller => 'home', :action => 'index'
 
   map.resources :people,      :collection => { :report => :get  }
+  map.resources :families,    :collection => { :report => :get  }
   map.resources :properties,  :collection => { :report => :get  }
   map.resources :groups,      :collection => { :report => :get  }
   map.resources :areas,       :collection => { :report => :get  }
@@ -16,6 +15,13 @@ ActionController::Routing::Routes.draw do |map|
   map.inbox '/inbox', :controller => 'messages', :action => 'index'
   map.inbox_new '/inbox/new/:id', :controller => 'messages', :action => 'new'
 
+  map.resources :bills
+  map.resources :receipts
+  map.resources :services
+  map.resources :ads
+  map.resources :professions
+  map.resources :animals
+  map.resources :officials
   map.resources :laws
   map.resources :articles
   map.resources :heritages

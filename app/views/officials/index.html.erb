@@ -1,0 +1,22 @@
+<h1>Listing officials</h1>
+
+<table>
+  <tr>
+    <th>Hired at</th>
+    <th>Post</th>
+  </tr>
+
+<% @officials.each do |official| %>
+  <tr>
+    <td><%=h official.hired_at %></td>
+    <td><%=h official.post %></td>
+    <td><%= link_to 'Show', official %></td>
+    <td><%= link_to 'Edit', edit_official_path(official) %></td>
+    <td><%= link_to 'Destroy', official, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New official', new_official_path %>

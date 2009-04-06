@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  kind: MyString
+  title: MyString
+  body: MyText
+  value_cents: 1
+
+two:
+  kind: MyString
+  title: MyString
+  body: MyText
+  value_cents: 1

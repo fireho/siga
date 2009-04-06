@@ -1,0 +1,26 @@
+<h1>Listing receipts</h1>
+
+<table>
+  <tr>
+    <th>Kind</th>
+    <th>Title</th>
+    <th>Body</th>
+    <th>Value cents</th>
+  </tr>
+
+<% @receipts.each do |receipt| %>
+  <tr>
+    <td><%=h receipt.kind %></td>
+    <td><%=h receipt.title %></td>
+    <td><%=h receipt.body %></td>
+    <td><%=h receipt.value_cents %></td>
+    <td><%= link_to 'Show', receipt %></td>
+    <td><%= link_to 'Edit', edit_receipt_path(receipt) %></td>
+    <td><%= link_to 'Destroy', receipt, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New receipt', new_receipt_path %>

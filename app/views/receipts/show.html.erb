@@ -1,0 +1,23 @@
+<p>
+  <b>Kind:</b>
+  <%=h @receipt.kind %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%=h @receipt.title %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%=h @receipt.body %>
+</p>
+
+<p>
+  <b>Value cents:</b>
+  <%=h @receipt.value_cents %>
+</p>
+
+
+<%= link_to 'Edit', edit_receipt_path(@receipt) %> |
+<%= link_to 'Back', receipts_path %>

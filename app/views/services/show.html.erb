@@ -1,0 +1,33 @@
+<p>
+  <b>Name:</b>
+  <%=h @service.name %>
+</p>
+
+<p>
+  <b>Kind:</b>
+  <%=h @service.kind %>
+</p>
+
+<p>
+  <b>Value cents:</b>
+  <%=h @service.value_cents %>
+</p>
+
+<p>
+  <b>Start at:</b>
+  <%=h @service.start_at %>
+</p>
+
+<p>
+  <b>End at:</b>
+  <%=h @service.end_at %>
+</p>
+
+<p>
+  <b>Done:</b>
+  <%=h @service.done %>
+</p>
+
+
+<%= link_to 'Edit', edit_service_path(@service) %> |
+<%= link_to 'Back', services_path %>

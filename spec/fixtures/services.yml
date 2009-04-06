@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  kind: MyString
+  value_cents: 1
+  start_at: 2009-04-06 06:48:09
+  end_at: 2009-04-06 06:48:09
+  done: false
+
+two:
+  name: MyString
+  kind: MyString
+  value_cents: 1
+  start_at: 2009-04-06 06:48:09
+  end_at: 2009-04-06 06:48:09
+  done: false

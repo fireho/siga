@@ -1,0 +1,23 @@
+<p>
+  <b>Kind:</b>
+  <%=h @bill.kind %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%=h @bill.title %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%=h @bill.body %>
+</p>
+
+<p>
+  <b>Value cents:</b>
+  <%=h @bill.value_cents %>
+</p>
+
+
+<%= link_to 'Edit', edit_bill_path(@bill) %> |
+<%= link_to 'Back', bills_path %>

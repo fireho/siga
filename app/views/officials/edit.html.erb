@@ -1,0 +1,20 @@
+<h1>Editing official</h1>
+
+<% form_for(@official) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :hired_at %><br />
+    <%= f.datetime_select :hired_at %>
+  </p>
+  <p>
+    <%= f.label :post %><br />
+    <%= f.text_field :post %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @official %> |
+<%= link_to 'Back', officials_path %>
