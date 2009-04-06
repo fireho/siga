@@ -13,8 +13,27 @@ $.fn.clearClick = function() {
     });
 };
 
+
+$.fn.subMenu = function() {
+    var menu = this
+    var submenu = $(menu).find('ul')
+    
+    $(menu).hover(function(){
+        $(submenu).css('visibility', 'visible')
+    },function(){
+        $(submenu).css('visibility','hidden')
+    })
+}
+
+$.fn.subMenus = function() {
+    for(i=0; i < $(this).length; i++){
+        $($(this)[i]).subMenu()
+    }
+}
+
 $(document).ready(function () {
     $("#search").clearClick();
-
+    $('#main-navigation > ul > li').subMenus()
 });
+
 

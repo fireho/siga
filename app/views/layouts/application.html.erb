@@ -4,10 +4,10 @@
   <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
     <title>SIG@ { <%= controller.controller_name %> }</title>
-    <% bundle :name => :base do %>
+    <% #bundle :name => :base do %>
       <%= stylesheet_link_tag 'base', 'style' %>
       <%= javascript_include_tag 'jquery', 'application' %>
-    <% end %>
+    <% #end %>
     <%= yield :head %>
   </head>
   <body>
@@ -36,9 +36,36 @@
         </div>
         <div id="main-navigation">
           <ul>
-            <li class="first active"><a href="/">Home</a></li>
-            <li><a href="/publications">Editais</a></li>
-            <li><a href="/laws">Leis</a></li>
+            <li class="first active" ><a href="/">Home</a>
+              <ul>
+                <li><a href="#">AAAAAAAAAAA</a></li>
+                <li><a href="#">AAAAAAAAAAA</a></li>
+                <li><a href="#">AAAAAAAAAAA</a></li>
+                <li><a href="#">AAAAAAAAAAA</a></li>
+                <li><a href="#">AAAAAAAAAAA</a></li>
+                <li><a href="#">AAAAAAAAAAA</a></li>
+              </ul>
+            </li>
+            <li><a href="/publications">Editais</a>
+              <ul>
+                <li><a href="#">AAAAAAAAAAA</a></li>
+                <li><a href="#">AAAAAAAAAAA</a></li>
+                <li><a href="#">AAAAAAAAAAA</a></li>
+                <li><a href="#">AAAAAAAAAAA</a></li>
+                <li><a href="#">AAAAAAAAAAA</a></li>
+                <li><a href="#">AAAAAAAAAAA</a></li>
+              </ul>
+            </li>
+            <li><a href="/laws">Leis</a>
+              <ul>
+                <li><a href="#">AAAAAAAAAAA</a></li>
+                <li><a href="#">AAAAAAAAAAA</a></li>
+                <li><a href="#">AAAAAAAAAAA</a></li>
+                <li><a href="#">AAAAAAAAAAA</a></li>
+                <li><a href="#">AAAAAAAAAAA</a></li>
+                <li><a href="#">AAAAAAAAAAA</a></li>
+              </ul>
+            </li>
             <% if current_user %>
               <li><a href="/people">Municipes</a></li>
               <li><a href="/areas">Areas</a></li>
