@@ -43,7 +43,7 @@ hr {
 }
 
 #main .block {
-      border-right:1px solid #d2d2d2;
+  border-right:1px solid #d2d2d2;
   border-left:1px solid #e2e2e2;
   border-bottom:1px solid #ccc;
 }
@@ -55,18 +55,22 @@ hr {
 #main .block .head {
   background:#7A1818 none repeat scroll 0 0;
   border-bottom:2px solid #262626;
+
   color:#FFFFFF;
 }
 
 #main .block .head h2 {
   color: #fff;
-  margin-left: 15px;
   margin: 0;
-  padding: 8px 20px;
+  padding: 8px 15px;
+
 }
 
 #main .block .content h2 {
-  margin-left: 15px;
+        margin: 0;
+    margin-left: 15px;
+    padding-top: 20px;
+
 }
 
 #main-navigation {
@@ -152,7 +156,7 @@ hr {
 }
 
 .secondary-navigation ul li.active, .secondary-navigation ul li.active a:hover {
-  background-color: #8c8c8c;
+  background-color: #262626;
 }
 
 #footer .block {
