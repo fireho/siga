@@ -227,6 +227,7 @@ hr {
   -webkit-border-radius: 3px;
   text-align:center;
   margin: 0 auto 15px;
+  font-weight: bold;
 
 }
 
@@ -236,14 +237,26 @@ hr {
 .flash .error {
   border: 1px solid #fbb;
   background-color: #fdd;
+  background-image: url(../images/icons/cross.png);
+  background-repeat: no-repeat;
+  background-position: 12px 10px;
+  padding: 10px 0 10px 0;
 }
 .flash .warning {
   border: 1px solid #fffaaa;
   background-color: #ffffcc;
+  background-image: url(../images/icons/asterisk.png);
+  background-repeat: no-repeat;
+  background-position: 12px 10px;
+  padding: 10px 0 10px 0;
 }
 .flash .notice {
-  border: 1px solid #1FDF00;
   background-color: #BBFFB6;
+  border: 1px solid #1FDF00;
+  background-image: url(../images/icons/tick.png);
+  background-repeat: no-repeat;
+  background-position: 12px 10px;
+  padding: 10px 0 10px 0;
 }
 
 /* lists */
