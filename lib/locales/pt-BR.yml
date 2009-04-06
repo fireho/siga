@@ -57,6 +57,32 @@ pt-BR:
         to_id: Para
         subject: Assunto
         body: Corpo
+      property:
+        area_id: Lote
+        person_id: Proprietário
+        name: Nome
+        use: Finalidade
+        condition: Condição
+        kind: Tipo
+        road: Rua
+        water: Água encanada
+        drain: Esgoto
+        power: Rede elétrica
+        garbage: Coleta de Lixo
+        rooms: Salas/Cômodos
+        built_at: Construido em
+        enums:
+          use:
+            factory: Fábrica
+            public: Publica
+            residence: Residência
+            other: Outro
+            store: Comércio
+            terrain: Terreno Baldio
+          kind:
+            wood: Madeira
+            masonry: Alvenaria
+
   map: Mapa
   alerts: Alertas
   users: Usuários
