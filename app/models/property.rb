@@ -3,7 +3,7 @@ class Property < ActiveRecord::Base
   acts_as_geom :geom
 
   symbolize :use, :in  => [:public, :residence, :store, :factory, :terrain, :other]
-  symbolize :kind, :in => [:wood, ]
+  symbolize :kind, :in => [:wood, :masonry ]
   has_many :addresses, :as => :addressable
   belongs_to :zone
 

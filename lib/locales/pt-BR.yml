@@ -76,6 +76,7 @@ pt-BR:
             terrain: Terreno Baldio
           kind:
             wood: Madeira
+            masonry: Alvenaria
 
   map: Mapa
   alerts: Alertas
