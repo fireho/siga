@@ -1,6 +1,7 @@
 class Address < ActiveRecord::Base
   attr_writer :x, :y, :z
   acts_as_geom :geom
+  symbolize :prefix, :in => [:street, :airport, :area, :avenue, :lote]
 
   validates_presence_of :geom, :message => "Marque o ponto"
 

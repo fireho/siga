@@ -2,7 +2,7 @@ class LawsController < ApplicationController
   # GET /laws
   # GET /laws.xml
   def index
-    @laws = Law.all
+    @laws = Law.search(params[:filter], params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

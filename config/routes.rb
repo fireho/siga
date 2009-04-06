@@ -2,6 +2,8 @@
 # SIG@ Routing Map  2009
 #
 ActionController::Routing::Routes.draw do |map|
+  map.resources :families
+
 
   map.root :controller => 'home', :action => 'index'
 

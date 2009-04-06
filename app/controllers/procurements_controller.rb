@@ -2,7 +2,7 @@ class ProcurementsController < ApplicationController
   # GET /procurements
   # GET /procurements.xml
   def index
-    @procurements = Procurement.all
+    @procurements = Procurement.search(params[:filter], params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

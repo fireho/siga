@@ -1,4 +1,3 @@
-
 .block
   .content
     %h2.title Editais
@@ -6,8 +5,8 @@
       - for publication in @publications
         .block
           %h3= link_to publication.title, publication
-          .gray=l publication.created_at
           .content=h publication.body
+        .gray=l publication.created_at
 
       = will_paginate @publications
 

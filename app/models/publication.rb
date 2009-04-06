@@ -3,7 +3,7 @@ class Publication < ActiveRecord::Base
 
 
   def self.search(filter, page)
-    paginate :per_page => 10, :page => page,
+    paginate :per_page => 5, :page => page,
     :conditions => ['title like ?', "%#{filter}%"],
     :order => 'title'
   end

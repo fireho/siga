@@ -19,6 +19,11 @@ class Zone < ActiveRecord::Base
     geom.nil? ? '[]' : (geom[0].map { |p| [p.x,p.y] }).to_json
   end
 
+  def self.search(filter, page)
+    paginate :per_page => 10, :page => page,
+    :conditions => ['zones.name like ?', "%#{filter}%"],
+    :order => 'zones.name'
+  end
 end
 
 # == Schema Information

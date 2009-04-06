@@ -5,24 +5,31 @@ class Person < ActiveRecord::Base
   has_many :documents
   has_many :addresses, :as => :addressable
   has_many :contacts, :as => :contactable
+  has_one :user
 
-  has_money :income, :revenue
+  has_money :revenue
   has_permalink :name
 
   symbolize :blood, :in => [:"A+", :"A-", :"O+", :"O-", :"B+", :"B-", :"AB+", :"AB-"], :i18n => false
-  symbolize :marital, :in => [:unknown, :single, :divorced, :married, :widowed]
-  symbolize :profession_state, :in => [:working, :retired]
+  symbolize :marital, :in => [:unknown, :single, :divorced, :married, :widowed, :common_law]
+  symbolize :profession_state, :in => [:working, :retired], :allow_nil => true
   symbolize :sex, :in => [true, false]
+  symbolize :race, :in => [:caucasian, :asian, :african, :indian], :allow_nil => true
   symbolize :state, :in => [:active, :inactive, :suspended, :moved, :deceased]
   validates_presence_of :name
- # validates_inclusion_of :sex, :in => [true, false]
 
+  validates_numericality_of :height, :weight, :allow_nil => true
+
+  # Human url
   def to_param
     "#{id}-#{permalink}"
   end
+
+  # Filters
   def before_save
     calc_age
   end
+
   state_machine :state, :initial => :active do
 
     event :activate do
@@ -47,7 +54,7 @@ class Person < ActiveRecord::Base
   end
 
   def self.search(filter, page)
-    paginate :per_page => 10, :page => page,
+    paginate :per_page => 20, :page => page,
     :conditions => ['name like ?', "%#{filter}%"],
     :order => 'name'
   end

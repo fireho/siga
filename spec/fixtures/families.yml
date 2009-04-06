@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  people_count: 1
+  revenue_cents: 1
+  kind: MyString
+  state: MyString
+
+two:
+  name: MyString
+  people_count: 1
+  revenue_cents: 1
+  kind: MyString
+  state: MyString

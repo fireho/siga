@@ -2,7 +2,7 @@ class AreasController < ApplicationController
   # GET /areas
   # GET /areas.xml
   def index
-    @areas = Area.all
+    @areas = Area.search(params[:filter], params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

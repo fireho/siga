@@ -2,7 +2,7 @@ class HeritagesController < ApplicationController
   # GET /heritages
   # GET /heritages.xml
   def index
-    @heritages = Heritage.all
+    @heritages = Heritage.search(params[:filter], params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

@@ -64,6 +64,7 @@ module ApplicationHelper
   end
 
   def simple_table_for(obj, *attr)
+    return if obj.empty?
     attr.map!(&:to_s)
     attr = filter_enum(obj, attr)
     out = "<table class='table'><tr>"

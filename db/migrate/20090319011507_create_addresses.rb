@@ -3,9 +3,11 @@ class CreateAddresses < ActiveRecord::Migration
     create_table :addresses do |t|
       t.references :addressable, :polymorphic => true
       t.references :city, :null => false
-      t.references :zone
-      t.string :street, :complement, :number, :zip_code
+      t.references :area
+      t.string :prefix, :kind, :number, :zip_code, :limit => 40
+      t.string :name, :complement
       t.point :geom, :srid => 4326
+      t.text :info
 
       t.timestamps
     end
@@ -13,9 +15,12 @@ class CreateAddresses < ActiveRecord::Migration
     add_index :addresses, [:addressable_type, :addressable_id]
     add_index :addresses, :addressable_type
     add_index :addresses, :city_id
+    add_index :addresses, :area_id
+    add_index :addresses, :prefix
+    add_index :addresses, :kind
     add_index :addresses, :geom, :spatial => true
     add_index :addresses, :zip_code
-    add_index :addresses, :street
+    add_index :addresses, :name
   end
 
   def self.down

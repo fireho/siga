@@ -6,16 +6,19 @@
   .columns
     .column.left
       = f.input :name, :input_html => { :size => 40 }
-      = f.input :state, :as => :select, :collection => Person.get_state_values
       = f.input :sex, :as => :radio, :collection => Person.get_sex_values
       = f.input :marital, :as => :radio, :collection => Person.get_marital_values
       = f.input :born_at, :as => :string, :input_html => { :size => 15 }
       = f.input :birthplace_id, :as => :string
       = f.input :blood, :as => :select, :collection => Person.get_blood_values
     .column.right
+      - f.inputs :name => "Sistema", :id => "basic" do
+        = f.input :state, :as => :select, :collection => Person.get_state_values
+      - f.inputs :name => "Pessoal", :id => "basic" do
+        = f.input :race, :as => :select, :collection => Person.get_race_values
+        = f.inputs :height, :weight
       - f.inputs :name => "Profissional", :id => "basic" do
         = f.input :profession, :label => "Profissao"
-        = f.input :income
         = f.input :revenue
       - f.inputs :name => "Residencia", :id => "basic" do
         = f.input :arrival_at, :as => :string, :input_html => { :size => 10, :id => "calendar" }

@@ -1,0 +1,28 @@
+<p>
+  <b>Name:</b>
+  <%=h @family.name %>
+</p>
+
+<p>
+  <b>People count:</b>
+  <%=h @family.people_count %>
+</p>
+
+<p>
+  <b>Revenue cents:</b>
+  <%=h @family.revenue_cents %>
+</p>
+
+<p>
+  <b>Kind:</b>
+  <%=h @family.kind %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%=h @family.state %>
+</p>
+
+
+<%= link_to 'Edit', edit_family_path(@family) %> |
+<%= link_to 'Back', families_path %>

@@ -1,18 +1,15 @@
-.block{:id => "block-lists"}
+.block
   .content
     %h2 Noticias
     .inner
       - for article in @articles
         %ul{:class => "list"}
+          %h3= link_to article.title, article
           %li
             .left
-              %h3=h article.title
               Por:
               =h article.user.name
             .item
-              .message_icons
-                = link_to '', edit_article_path(article), :class => "icon edit"
-                = link_to '', article, :confirm => 'Apagar artigo?', :method => :delete, :class=>"icon delete"
-              %p
-                = link_to article.body, article
-
+              %p= article.body
+          .gray=l article.created_at
+      = will_paginate @articles

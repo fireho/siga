@@ -11,9 +11,13 @@ pt-BR:
         born_at: Nascido em
         profession: Profissao
         profession_state: Atualmente
-        birthplace: Cidade Natal
+        birthplace_id: Cidade Natal
         arrival_at: Tempo Residencia
         blood: Sangue
+        race: Cor Pele
+        height: Altura
+        weight: Peso
+        revenue: Renda
         rooms: Quartos
         enums:
           state:
@@ -27,10 +31,16 @@ pt-BR:
             divorced: Divorciado(a)
             married: Casado(a)
             widowed: Viuvo(a)
+            common_law: Amasiado(a)
             unknown: Desconhecido
           profession_state:
             working: Trabalhando
             retired: Aposentado(a)
+          race:
+            asian: Asiatica
+            indian: Indigena
+            caucasian: Caucasiana
+            african: Africana
           sex:
             "true": Masculino
             "false": Feminino

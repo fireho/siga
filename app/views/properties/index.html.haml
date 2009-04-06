@@ -1,0 +1,13 @@
+.block
+  .content
+    %h2.title Propriedades
+    .inner
+      = simple_table_for @properties, :name
+      = will_paginate @properties
+
+- content_for :sidebar do
+  .block
+    %h3 Menu
+    %ul.navigation
+      %li= link_to image_tag('../images/icons/add.png', :class=>'img')+' Novo Registro', new_property_path
+

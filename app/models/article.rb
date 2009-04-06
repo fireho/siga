@@ -11,5 +11,10 @@ class Article < ActiveRecord::Base
   named_scope :with_user, :include => [:user]
   named_scope :last_five, :limit => 5
 
+  def self.search(filter, page)
+    paginate :per_page => 10, :page => page,
+    :conditions => ['articles.title like ?', "%#{filter}%"],
+    :order => 'articles.created_at'
+  end
 end
 
