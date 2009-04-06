@@ -11,8 +11,4 @@
       = will_paginate @laws
 
 - content_for :sidebar do
-  - if current_user
-    .block
-      %h3 Menu
-      %ul.navigation
-        %li= link_to image_tag('../images/icons/add.png', :class=>'img')+' Criar Edital', new_law_path
+  = side_menu_for [{"#{image_tag('icons/add.png')} Nova Lei" => new_law_path}, {"Anteriores" => "/"}]

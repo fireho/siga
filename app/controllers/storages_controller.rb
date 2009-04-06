@@ -1,8 +1,10 @@
 class StoragesController < ApplicationController
+  before_filter :require_user
+
   # GET /storages
   # GET /storages.xml
   def index
-    @storages = Storage.all
+    @storages = Storage.search(params[:filter], params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

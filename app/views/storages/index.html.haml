@@ -1,0 +1,10 @@
+.block
+  .content
+    %h2.title Almoxarifado
+    .inner
+      = simple_table_for @storages, :amount, :unit, :value
+      = will_paginate @storages
+
+- content_for :sidebar do
+  = side_menu_for [{"#{image_tag('icons/add.png')} Novo Registro" => new_storage_path}, {"Relatorio" => "/"}]
+

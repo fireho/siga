@@ -14,3 +14,6 @@
           .gray=l article.created_at
       = will_paginate @articles
       .clear
+
+- content_for :sidebar do
+  = side_menu_for [{"#{image_tag('icons/add.png')} Novo Artigo" => new_article_path}, {"Anteriores" => "/"}]

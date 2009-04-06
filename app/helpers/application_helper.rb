@@ -75,6 +75,12 @@ module ApplicationHelper
     out += "</table>"
   end
 
+  def side_menu_for stuff
+    out = "<div class='block'><h3>Menu</h3><ul class='navigation'>"
+    stuff.each { |s| s.each { |s| out += "<li>#{link_to s[0], s[1]}</li>"}}
+    out += "</ul></div>"
+  end
+
   def image_list_for(stuff, title)
     out = "<div class='block' id='block-lists'><div class='content'><h2 class='title'>#{title}</h2><div class='inner'><ul class='list'>"
     stuff.map do |s|

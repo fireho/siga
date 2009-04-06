@@ -1,19 +1,14 @@
-- form_for(@article) do |f|
-  = f.error_messages
-  .forms.tabular
+- content_for :head do
+  = stylesheet_link_tag "jquery/ui.theme", "jquery/jquery.wysiwyg"
+  = javascript_include_tag "app/rich", "jquery/ui.datepicker", "jquery/jquery.wysiwyg"
 
-    %p
-      = f.label :titu
-      = f.text_field :title
-    %p
-      = f.label :corpo
-      = f.text_area :body
-    %p
-      = f.label :publica?
-      = f.check_box :public
-    .clear
-    %p
-      = f.label :exibir?
-      = f.check_box :published
-    .forms_buttons
-      = f.submit "Salvar"
+- semantic_form_for(@article, :html => { :class => "form" }) do |f|
+  = f.input :title, :input_html => { :size => 60 }
+  = f.input :body, :input_html => { :size => "60x20" }
+  = f.input :public
+  = f.input :published
+  =# f.input :published_at, :as => :string, :input_html => { :id => "calendar" }
+  .group.navform
+    = f.submit 'Salvar', :class => :button
+    ou
+    = link_to 'Cancelar', articles_path

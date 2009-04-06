@@ -48,6 +48,11 @@ pt-BR:
         title: Titulo
         body: Corpo
         published_at: Publicada em
+      article:
+        title: Titulo
+        body: Corpo
+        public: Publico
+        published_at: Publicada em
       message:
         to_id: Para
         subject: Assunto

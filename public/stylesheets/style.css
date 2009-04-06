@@ -69,7 +69,6 @@ hr {
 
 #main-navigation ul li.active {
   background: #eee;
-
   font-weight: bold;
 }
 
@@ -90,6 +89,8 @@ hr {
   color: #262626;
 }
 #main-navigation ul li a:hover {background-color: #555;  }
+#main-navigation ul li.active a:hover { background-color: #eee;  }
+
 
 #main-navigation ul li a:link, #main-navigation ul li a:visited, #main-navigation ul li a:hover, #main-navigation ul li a:active,
 .secondary-navigation ul li a:link, .secondary-navigation ul li a:visited, .secondary-navigation ul li a:hover, .secondary-navigation ul li a:active,
@@ -109,7 +110,7 @@ hr {
 #sidebar h3 {
   background: #7A1818;
   color: #FFF;
-  border-bottom: 5px solid #262626;
+  border-bottom: 3px solid #262626;
 }
 
 
