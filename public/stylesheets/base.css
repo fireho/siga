@@ -20,6 +20,7 @@ body {
 
 #header, #wrapper {
   padding: 0 20px;
+
 }
 
 #header {
@@ -38,7 +39,7 @@ body {
 }
 
 #main {
-  width: 70%;
+  width: 73%;
   float: left;
 }
 
@@ -91,7 +92,7 @@ body {
 
 #main .block {
   margin-bottom: 20px;
-  padding-top: 1px;
+  padding-top: 0px;
 }
 
 #main .block .content .inner {
@@ -184,7 +185,7 @@ body {
 }
 
 .table th {
-  padding: 10px;
+  padding: 5px;
   font-weight: bold;
   text-align: left;
 }
