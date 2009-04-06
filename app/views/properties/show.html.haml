@@ -1,13 +1,9 @@
-<p>
-  <b>Name:</b>
-  <%=h @property.name %>
-</p>
+.block
+  .content
+    %h2.title= @property.name
+    .inner
+      .gray=l  @property.created_at
 
-<p>
-  <b>Built at:</b>
-  <%=h @property.built_at %>
-</p>
-
-
-<%= link_to 'Edit', edit_property_path(@property) %> |
-<%= link_to 'Back', properties_path %>
+      = link_to 'Edit', edit_property_path(@property)
+      \|
+      = link_to 'Back', properties_path

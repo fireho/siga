@@ -1,0 +1,23 @@
+- content_for :head do
+  = stylesheet_link_tag "jquery/ui.theme", "jquery/jquery.wysiwyg"
+  = javascript_include_tag "app/rich", "jquery/ui.datepicker", "jquery/jquery.wysiwyg"
+
+- semantic_form_for(@property, :html => { :class => "form" }) do |f|
+  = f.error_messages
+  = f.input :area_id
+  = f.input :person_id
+  = f.input :name, :input_html => { :size => 60 }
+  = f.input :use, :as => :select, :collection => Property.get_use_values
+  = f.input :condition, :input_html => { :size => 60 }
+  = f.input :kind, :as => :select, :collection => Property.get_kind_values
+  = f.input :road, :input_html => { :size => 60 }
+  = f.input :drain, :input_html => { :size => 60 }
+  = f.input :power, :input_html => { :size => 60 }
+  = f.input :garbage, :input_html => { :size => 60 }
+  = f.input :rooms, :input_html => { :size => 60 }
+  = f.input :built_at, :as => :string, :input_html => { :id => "calendar" }
+  = f.input :info, :input_html => { :size => '60x10' }
+  .group.navform
+    = f.submit 'Salvar', :class => :button
+    ou
+    = link_to 'Cancelar', publications_path
