@@ -228,7 +228,9 @@ hr {
   text-align:center;
   margin: 0 auto 15px;
   font-weight: bold;
-
+  padding: 9px 0 9px 0;
+  background-repeat: no-repeat;
+  background-position: 8px 8px;
 }
 
 .flash .message p {
@@ -238,25 +240,16 @@ hr {
   border: 1px solid #fbb;
   background-color: #fdd;
   background-image: url(../images/icons/cross.png);
-  background-repeat: no-repeat;
-  background-position: 12px 10px;
-  padding: 10px 0 10px 0;
 }
 .flash .warning {
   border: 1px solid #fffaaa;
   background-color: #ffffcc;
   background-image: url(../images/icons/asterisk.png);
-  background-repeat: no-repeat;
-  background-position: 12px 10px;
-  padding: 10px 0 10px 0;
 }
 .flash .notice {
   background-color: #BBFFB6;
   border: 1px solid #1FDF00;
   background-image: url(../images/icons/tick.png);
-  background-repeat: no-repeat;
-  background-position: 12px 10px;
-  padding: 10px 0 10px 0;
 }
 
 /* lists */
