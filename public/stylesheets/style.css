@@ -204,6 +204,10 @@ hr {
   border-color: #262626;
 }
 
+.pagination span.disabled {
+  color: #e2e2e2;
+  border-color: #e2e2e2  ;
+}
 .pagination a {
   color: #262626;
   border-color: #262626;
@@ -490,7 +494,7 @@ form.formtastic fieldset ol li.date fieldset ol li label input,
 form.formtastic fieldset ol li.time fieldset ol li label input,
 form.formtastic fieldset ol li.datetime fieldset ol li label input { display:inline; margin:0; padding:0; }
 form.formtastic fieldset legend span.label { font-weight:bold;color:#222222; }
-div.pagination { padding-top: 20px; }
+div.pagination { padding-bottom: 40px; padding-left:20px;  }
 ul.submenu, ul.submenu2 { visibility : hidden; position: absolute; background-color: #eeeeee ; padding: 10px 0; border-bottom: 2px solid #8c8c8c; z-index: 9999}
 ul.submenu2 li { width: 164px }
 div#main-navigation ul li ul.submenu li , ul.submenu2 li ul li { float: none }

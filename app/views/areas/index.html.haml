@@ -3,8 +3,8 @@
     %h2.title Areas
     .inner
       = simple_table_for @areas, :name
-      = will_paginate @areas
-      .clear
+    = will_paginate @areas
+
 
 - content_for :sidebar do
   .block

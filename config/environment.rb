@@ -37,6 +37,6 @@ Rails::Initializer.run do |config|
 end
 
 require "will_paginate"
-WillPaginate::ViewHelpers.pagination_options[:prev_label] = "<< Anterior"
-WillPaginate::ViewHelpers.pagination_options[:next_label] = "Próximo >>"
+WillPaginate::ViewHelpers.pagination_options[:prev_label] = "&laquo; Anterior"
+WillPaginate::ViewHelpers.pagination_options[:next_label] = "Próximo &raquo;"
 GeoRuby::SimpleFeatures.const_set :DEFAULT_SRID, 4326

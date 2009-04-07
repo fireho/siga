@@ -30,6 +30,6 @@
           = @map.div
 
     = simple_table_for @pois, :name, :kind_text, :x_text, :y_text
-    .pagination= will_paginate @pois
+    = will_paginate @pois
 
 =link_to 'Voltar', "/", :class => 'icon back'

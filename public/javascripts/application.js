@@ -33,10 +33,7 @@ $.fn.subMenus = function() {
 
 $(document).ready(function () {
     $("#search").clearClick();
-    $('#main-navigation > ul > li').subMenus()
-
-    if($("#tabs"))
-        $("#tabs").tabs();
+    $('#main-navigation > ul > li').subMenus();
 });
 
 

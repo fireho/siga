@@ -8,9 +8,9 @@
         = publication.body
         .gray
           %p= "#{l publication.created_at} (#{time_ago_in_words(publication.created_at)})"
-        %break
+        %hr
     = will_paginate @publications
-    .clear
+
 
 - content_for :sidebar do
   - if current_user
