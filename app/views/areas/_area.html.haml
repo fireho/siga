@@ -1,0 +1,10 @@
+- semantic_form_for(@area, :html => { :class => "form" }) do |f|
+  = f.input :person_id
+  = f.input :zone_id
+  = f.input :name, :input_html => { :size => 60 }
+  = f.input :kind, :as => :select
+  = f.input :geom, :as => :string
+  .group.navform
+    = f.submit 'Salvar', :class => :button
+    ou
+    = link_to 'Cancelar', areas_path

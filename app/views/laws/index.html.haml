@@ -4,8 +4,8 @@
     .inner
       - for law in @laws
         .block
-          %h3=# link_to law.title, law
-          .content=# law.body
+          %h3= link_to law.title, law
+          .content= law.body
         .gray=l law.created_at
 
       = will_paginate @laws
