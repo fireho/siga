@@ -37,35 +37,31 @@
         <div id="main-navigation">
           <ul>
             <li class="first active" ><a href="/">Home</a>
-              <ul>
-                <li><a href="#">AAAAAAAAAAA</a></li>
-                <li><a href="#">AAAAAAAAAAA</a></li>
-                <li><a href="#">AAAAAAAAAAA</a></li>
-                <li><a href="#">AAAAAAAAAAA</a></li>
-                <li><a href="#">AAAAAAAAAAA</a></li>
-                <li><a href="#">AAAAAAAAAAA</a></li>
+              <ul class='submenu'>
+                <li>
+                  <ul>
+                    <li class='submenu_item'><a href="#">AAAAAAAAAAA</a></li>
+                    <li><a href="#">AAAAAAAAAAA</a></li>
+                    <li><a href="#">AAAAAAAAAAA</a></li>
+                    <li><a href="#">AAAAAAAAAAA</a></li>
+                    <li><a href="#">AAAAAAAAAAA</a></li>
+                    <li><a href="#">AAAAAAAAAAA</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <ul>
+                    <li><a href="#">AAAAAAAAAAA</a></li>
+                    <li><a href="#">AAAAAAAAAAA</a></li>
+                    <li><a href="#">AAAAAAAAAAA</a></li>
+                    <li><a href="#">AAAAAAAAAAA</a></li>
+                    <li><a href="#">AAAAAAAAAAA</a></li>
+                    <li><a href="#">AAAAAAAAAAA</a></li>
+                  </ul>
+                </li>
               </ul>
             </li>
-            <li><a href="/publications">Editais</a>
-              <ul>
-                <li><a href="#">AAAAAAAAAAA</a></li>
-                <li><a href="#">AAAAAAAAAAA</a></li>
-                <li><a href="#">AAAAAAAAAAA</a></li>
-                <li><a href="#">AAAAAAAAAAA</a></li>
-                <li><a href="#">AAAAAAAAAAA</a></li>
-                <li><a href="#">AAAAAAAAAAA</a></li>
-              </ul>
-            </li>
-            <li><a href="/laws">Leis</a>
-              <ul>
-                <li><a href="#">AAAAAAAAAAA</a></li>
-                <li><a href="#">AAAAAAAAAAA</a></li>
-                <li><a href="#">AAAAAAAAAAA</a></li>
-                <li><a href="#">AAAAAAAAAAA</a></li>
-                <li><a href="#">AAAAAAAAAAA</a></li>
-                <li><a href="#">AAAAAAAAAAA</a></li>
-              </ul>
-            </li>
+            <li><a href="/publications">Editais</a></li>
+            <li><a href="/laws">Leis</a></li>
             <% if current_user %>
               <li><a href="/people">Municipes</a></li>
               <li><a href="/areas">Areas</a></li>
