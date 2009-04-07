@@ -1,6 +1,7 @@
 class Publication < ActiveRecord::Base
   generator_for :title, :method => :fake_title
   generator_for :body, :method => :fake_body
+  generator_for :kind => "note"
   generator_for :published, true
 
   def self.fake_title

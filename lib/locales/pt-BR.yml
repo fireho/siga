@@ -48,6 +48,12 @@ pt-BR:
         title: Titulo
         body: Corpo
         published_at: Publicada em
+        enums:
+          kind:
+            edict: Edital
+            decree: Decreto
+            order: Portaria
+            note: Nota
       article:
         title: Titulo
         body: Corpo

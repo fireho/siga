@@ -10,10 +10,6 @@ class AddData < ActiveRecord::Migration
       [Publication, Article, Person, Group, Law, Area, Procurement].each do |k|
         20.times {  k.generate! }
       end
-      # 80.times { Publication.generate! }
-      # 80.times { Person.generate! }
-      # 80.times { Group.generate! }
-      # 80.times { Law.generate! }
     end
 
   end
