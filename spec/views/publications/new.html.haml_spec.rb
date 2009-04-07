@@ -1,8 +1,8 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
-describe "/publications/new.html.erb" do
+describe "/publications/new.html.haml" do
   include PublicationsHelper
-  
+
   before(:each) do
     assigns[:publication] = stub_model(Publication,
       :new_record? => true,
@@ -12,8 +12,8 @@ describe "/publications/new.html.erb" do
   end
 
   it "should render new form" do
-    render "/publications/new.html.erb"
-    
+    render "/publications/new.html.haml"
+
     response.should have_tag("form[action=?][method=post]", publications_path) do
       with_tag("input#publication_title[name=?]", "publication[title]")
       with_tag("textarea#publication_body[name=?]", "publication[body]")

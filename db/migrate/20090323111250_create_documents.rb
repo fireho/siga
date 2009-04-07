@@ -2,7 +2,7 @@ class CreateDocuments < ActiveRecord::Migration
   def self.up
     create_table :documents do |t|
       t.references :documentable, :polymorphic => true, :null => false
-      t.string :kind, :null => false, :limit => 10
+      t.string :kind, :null => false, :limit => 20
       t.string :value, :null => false
       t.string :extra, :note, :state, :emitter
       t.date :emit_at, :invalid_at

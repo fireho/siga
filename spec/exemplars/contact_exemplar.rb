@@ -1,7 +1,7 @@
 class Contact < ActiveRecord::Base
   generator_for :value, "email@email.com"
-  generator_for :contact_type, 'Email'
-  generator_for :contactable_type, 'user'
+  generator_for :kind, "email"
+  generator_for :contactable_type, "user"
 
 #  def self.next_number
 #    @last ||= 1456367

@@ -19,13 +19,14 @@
 #
 #
 class Property < ActiveRecord::Base
+  belongs_to :zone
+  belongs_to :person
   belongs_to :area
-  acts_as_geom :geom
+  has_many :addresses, :as => :addressable
 
+  acts_as_geom :geom
   symbolize :use, :in  => [:public, :residence, :store, :factory, :terrain, :other]
   symbolize :kind, :in => [:wood, :masonry ]
-  has_many :addresses, :as => :addressable
-  belongs_to :zone
 
   def str_geom= value
     self.geom = Polygon.from_coordinates([JSON.parse(value)])
@@ -54,6 +55,7 @@ end
 #  condition  :string(20)
 #  kind       :string(20)
 #  road       :string(20)
+#  use        :string(20)
 #  drain      :string(20)
 #  power      :string(20)
 #  garbage    :string(20)

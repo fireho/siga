@@ -2,7 +2,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe Poi do
 
-  it { should have_indices :geom, :poi_type }
+  it { should have_indices :geom, :kind }
 
   it "should generate!" do
     @poi = Poi.generate
@@ -10,13 +10,13 @@ describe Poi do
   end
 
   it "should require type" do
-    @poi = Poi.generate(:poi_type => nil)
-    @poi.should have(2).errors_on(:poi_type)
+    @poi = Poi.generate(:kind => nil)
+    @poi.should have(1).error_on(:kind)
   end
 
   it "should require a poi type that exists" do
-    @poi = Poi.generate(:poi_type => "blablablu")
-    @poi.should have(1).errors_on(:poi_type)
+    @poi = Poi.generate(:kind => "blablablu")
+    @poi.should have(1).error_on(:kind)
   end
 
   it "should require geom" do

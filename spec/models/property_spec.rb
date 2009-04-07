@@ -1,16 +1,12 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe Property do
-  before(:each) do
-    @valid_attributes = {
-      :name => "value for name",
-      :built_at => Date.today
-    }
-  end
 
-  it "should create a new instance given valid attributes" do
-    Property.create!(@valid_attributes)
-  end
+  it { should belong_to :person }
+  it { should belong_to :area }
+
+  it { Property.generate! }
+
 end
 
 # == Schema Information

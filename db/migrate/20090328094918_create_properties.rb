@@ -3,7 +3,7 @@ class CreateProperties < ActiveRecord::Migration
     create_table :properties do |t|
       t.references :area, :person
       t.string :name
-      t.string :condition, :kind, :road, :drain,
+      t.string :condition, :kind, :road, :drain, :use,
                :power, :garbage, :water, :limit => 20
       t.multi_polygon :geom, :srid => 4326
       t.integer :rooms
