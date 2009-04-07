@@ -6,7 +6,7 @@ class CreatePublications < ActiveRecord::Migration
       t.string :kind, :null => false
       t.string :title, :permalink, :null => false
       t.boolean :published, :null => false, :default => false
-      t.timestamp :published_at
+      t.timestamp :published_at, :wrote_at
       t.text :body
 
       t.timestamps

@@ -2,6 +2,9 @@ ActionView::Base.send :include, Showtastic::SemanticShowHelper
 
 class Person < ActiveRecord::Base
   belongs_to :birthplace, :class_name => "City"
+  belongs_to :mom, :class_name => "Person"
+  belongs_to :dad, :class_name => "Person"
+  belongs_to :spouse, :class_name => "Person"
   has_many :documents
   has_many :addresses, :as => :addressable
   has_many :contacts, :as => :contactable

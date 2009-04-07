@@ -3,10 +3,16 @@
   = javascript_include_tag "app/rich", "jquery/ui.datepicker", "jquery/jquery.wysiwyg"
 
 - semantic_form_for(@publication, :html => { :class => "form" }) do |f|
-  = f.input :title, :input_html => { :size => 60 }
-  = f.input :kind, :as => :select, :collection => Publication.get_kind_values
-  = f.input :body, :input_html => { :size => "60x20" }
-  = f.input :published_at, :as => :string, :input_html => { :id => "calendar" }
+  .columns
+    .column.left
+      = f.input :title, :input_html => { :size => 50 }
+      = f.input :wrote_at, :as => :string, :input_html => { :id => "calendar" }
+      = f.input :body, :input_html => { :size => "60x20" }
+      = f.input :published_at, :as => :string, :input_html => { :id => "calendar" }
+      = f.input :published
+    .column.right
+      = f.input :kind, :as => :select, :collection => Publication.get_kind_values
+    .clear
   .group.navform
     = f.submit 'Salvar', :class => :button
     ou

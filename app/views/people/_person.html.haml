@@ -10,18 +10,24 @@
       = f.input :marital, :as => :radio, :collection => Person.get_marital_values
       = f.input :born_at, :as => :string, :input_html => { :size => 15 }
       = f.input :birthplace_id, :as => :string
-      = f.input :blood, :as => :select, :collection => Person.get_blood_values
-    .column.right
-      - f.inputs :name => "Sistema", :id => "basic" do
-        = f.input :state, :as => :select, :collection => Person.get_state_values
-      - f.inputs :name => "Pessoal", :id => "basic" do
-        = f.input :race, :as => :select, :collection => Person.get_race_values
-        = f.inputs :height, :weight
-      - f.inputs :name => "Profissional", :id => "basic" do
-        = f.input :profession, :label => "Profissao"
-        = f.input :revenue
       - f.inputs :name => "Residencia", :id => "basic" do
         = f.input :arrival_at, :as => :string, :input_html => { :size => 10, :id => "calendar" }
+        = f.input :leave_at, :as => :string, :input_html => { :size => 10, :id => "calendar" }
+    .column.right
+      = f.input :state, :as => :select, :collection => Person.get_state_values
+      - f.inputs :name => "Pessoal", :id => "basic" do
+        = f.input :prefix, :as => :select, :collection => %w{Sr Sra}
+        = f.input :mom
+        = f.input :dad
+        = f.input :spouse
+        = f.input :blood, :as => :select, :collection => Person.get_blood_values
+        = f.input :race, :as => :select, :collection => Person.get_race_values
+        = f.input :weight
+        = f.input :height
+      - f.inputs :name => "Profissional", :id => "basic" do
+        = f.input :profession, :label => "Profissao"
+        = f.input :profession_state, :as => :select, :collection => Person.get_profession_state_values
+        = f.input :revenue
     .clear
     .group.navform
       = f.submit "Salvar &rarr;", :class => "button"
