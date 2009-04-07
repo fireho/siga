@@ -12,6 +12,7 @@ describe Zone do
   end
 end
 
+
 # == Schema Information
 # Schema version: 99999999999999
 #
@@ -19,8 +20,10 @@ end
 #
 #  id         :integer         not null, primary key
 #  city_id    :integer
-#  name       :string(255)
-#  created_at :datetime
-#  updated_at :datetime
+#  kind       :string(255)     not null
+#  name       :string(255)     not null
+#  created_at :timestamp
+#  updated_at :timestamp
+#  geom       :geometry        polygon, 4326
 #
 

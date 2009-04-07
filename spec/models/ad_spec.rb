@@ -15,3 +15,21 @@ describe Ad do
     Ad.create!(@valid_attributes)
   end
 end
+
+# == Schema Information
+# Schema version: 99999999999999
+#
+# Table name: ads
+#
+#  id         :integer         not null, primary key
+#  user_id    :integer
+#  title      :string(255)
+#  kind       :string(255)
+#  body       :text
+#  start_at   :timestamp
+#  end_at     :timestamp
+#  published  :boolean
+#  created_at :timestamp
+#  updated_at :timestamp
+#
+

@@ -14,3 +14,18 @@ describe PersonImpairment do
     PersonImpairment.create!(@valid_attributes)
   end
 end
+
+# == Schema Information
+# Schema version: 99999999999999
+#
+# Table name: person_impairments
+#
+#  id         :integer         not null, primary key
+#  person_id  :integer
+#  kind       :string(255)
+#  start_at   :timestamp
+#  info       :text
+#  created_at :timestamp
+#  updated_at :timestamp
+#
+

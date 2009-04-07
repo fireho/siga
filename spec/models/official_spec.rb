@@ -12,3 +12,17 @@ describe Official do
     Official.create!(@valid_attributes)
   end
 end
+
+# == Schema Information
+# Schema version: 99999999999999
+#
+# Table name: officials
+#
+#  id         :integer         not null, primary key
+#  person_id  :integer
+#  hired_at   :timestamp
+#  post       :string(255)
+#  created_at :timestamp
+#  updated_at :timestamp
+#
+

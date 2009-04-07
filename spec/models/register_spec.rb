@@ -15,3 +15,21 @@ describe Register do
     Register.create!(@valid_attributes)
   end
 end
+
+# == Schema Information
+# Schema version: 99999999999999
+#
+# Table name: registers
+#
+#  id               :integer         not null, primary key
+#  registrable_id   :integer
+#  registrable_type :string(255)
+#  name             :string(255)
+#  value_cents      :integer         default(0), not null
+#  sign             :boolean         not null
+#  due_at           :timestamp
+#  cleared_at       :timestamp
+#  created_at       :timestamp
+#  updated_at       :timestamp
+#
+

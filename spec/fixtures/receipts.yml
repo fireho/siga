@@ -11,3 +11,18 @@ two:
   title: MyString
   body: MyText
   value_cents: 1
+
+# == Schema Information
+# Schema version: 99999999999999
+#
+# Table name: receipts
+#
+#  id          :integer         not null, primary key
+#  kind        :string(255)
+#  title       :string(255)
+#  body        :text
+#  value_cents :integer
+#  created_at  :timestamp
+#  updated_at  :timestamp
+#
+

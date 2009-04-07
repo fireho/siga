@@ -13,13 +13,16 @@ class Country < ActiveRecord::Base
   end
 end
 
+
 # == Schema Information
-# Schema version: 20090301000300
+# Schema version: 99999999999999
 #
 # Table name: countries
 #
-#  id   :integer         not null, primary key
-#  name :string(30)      not null
-#  abbr :string(2)       not null
+#  id         :integer         not null, primary key
+#  name       :string(255)
+#  abbr       :string(255)
+#  created_at :timestamp
+#  updated_at :timestamp
 #
 

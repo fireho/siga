@@ -13,3 +13,28 @@ describe Law do
     Law.create!(@valid_attributes)
   end
 end
+
+# == Schema Information
+# Schema version: 99999999999999
+#
+# Table name: laws
+#
+#  id            :integer         not null, primary key
+#  person_id     :integer
+#  user_id       :integer
+#  parent_id     :integer
+#  lft           :integer
+#  rgt           :integer
+#  state         :string(50)
+#  kind          :string(50)
+#  title         :string(255)
+#  code          :string(255)
+#  content       :text
+#  wrote_at      :timestamp
+#  publicated_at :timestamp
+#  valid_at      :timestamp
+#  expire_at     :timestamp
+#  created_at    :timestamp
+#  updated_at    :timestamp
+#
+

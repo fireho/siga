@@ -12,3 +12,16 @@ describe Charter do
     Charter.create!(@valid_attributes)
   end
 end
+
+# == Schema Information
+# Schema version: 99999999999999
+#
+# Table name: charters
+#
+#  id           :integer         not null, primary key
+#  code         :string(255)
+#  restrictions :text
+#  created_at   :timestamp
+#  updated_at   :timestamp
+#
+

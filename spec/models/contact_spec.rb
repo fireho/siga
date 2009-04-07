@@ -6,6 +6,7 @@ describe Contact do
 
 end
 
+
 # == Schema Information
 # Schema version: 99999999999999
 #
@@ -17,7 +18,7 @@ end
 #  kind             :string(20)      not null
 #  value            :string(30)      not null
 #  info             :string(255)
-#  created_at       :datetime
-#  updated_at       :datetime
+#  created_at       :timestamp
+#  updated_at       :timestamp
 #
 

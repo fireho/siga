@@ -8,16 +8,20 @@ class City < ActiveRecord::Base
 end
 
 
+
 # == Schema Information
-# Schema version: 20090301000300
+# Schema version: 99999999999999
 #
 # Table name: cities
 #
 #  id          :integer         not null, primary key
-#  province_id :integer
 #  country_id  :integer         not null
-#  name        :string(50)      not null
-#  geom        :geometry        point, 4326
-#  area        :geometry        polygon, 4326
+#  province_id :integer
+#  name        :string(255)     not null
+#  permalink   :string(255)     not null
+#  pop         :integer         default(1), not null
+#  created_at  :timestamp
+#  updated_at  :timestamp
+#  geom        :geometry        polygon, 4326
 #
 

@@ -13,6 +13,7 @@ describe Opt do
   end
 end
 
+
 # == Schema Information
 # Schema version: 99999999999999
 #
@@ -21,7 +22,7 @@ end
 #  id         :integer         not null, primary key
 #  key        :string(255)
 #  value      :string(255)
-#  created_at :datetime
-#  updated_at :datetime
+#  created_at :timestamp
+#  updated_at :timestamp
 #
 

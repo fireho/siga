@@ -14,3 +14,24 @@ describe Heritage do
     Heritage.create!(@valid_attributes)
   end
 end
+
+# == Schema Information
+# Schema version: 99999999999999
+#
+# Table name: heritages
+#
+#  id          :integer         not null, primary key
+#  property_id :integer
+#  name        :string(255)
+#  code        :string(255)
+#  down_kind   :string(255)
+#  state       :string(255)
+#  value_cents :integer
+#  sold_cents  :integer
+#  info        :text
+#  bought_at   :date
+#  down_at     :date
+#  created_at  :timestamp
+#  updated_at  :timestamp
+#
+

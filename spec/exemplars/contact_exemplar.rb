@@ -10,16 +10,19 @@ class Contact < ActiveRecord::Base
 end
 
 
+
 # == Schema Information
-# Schema version: 20090301000300
+# Schema version: 99999999999999
 #
 # Table name: contacts
 #
 #  id               :integer         not null, primary key
 #  contactable_id   :integer
-#  contactable_type :string(50)
-#  contact_type     :string(10)      not null
-#  value            :string(50)      not null
+#  contactable_type :string(255)
+#  kind             :string(20)      not null
+#  value            :string(30)      not null
 #  info             :string(255)
+#  created_at       :timestamp
+#  updated_at       :timestamp
 #
 

@@ -13,6 +13,7 @@ describe Country do
   end
 end
 
+
 # == Schema Information
 # Schema version: 99999999999999
 #
@@ -21,7 +22,7 @@ end
 #  id         :integer         not null, primary key
 #  name       :string(255)
 #  abbr       :string(255)
-#  created_at :datetime
-#  updated_at :datetime
+#  created_at :timestamp
+#  updated_at :timestamp
 #
 

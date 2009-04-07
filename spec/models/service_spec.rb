@@ -16,3 +16,20 @@ describe Service do
     Service.create!(@valid_attributes)
   end
 end
+
+# == Schema Information
+# Schema version: 99999999999999
+#
+# Table name: services
+#
+#  id          :integer         not null, primary key
+#  name        :string(255)
+#  kind        :string(255)
+#  value_cents :integer
+#  start_at    :timestamp
+#  end_at      :timestamp
+#  done        :boolean
+#  created_at  :timestamp
+#  updated_at  :timestamp
+#
+

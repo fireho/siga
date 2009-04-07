@@ -13,3 +13,17 @@ describe Profession do
     Profession.create!(@valid_attributes)
   end
 end
+
+# == Schema Information
+# Schema version: 99999999999999
+#
+# Table name: professions
+#
+#  id           :integer         not null, primary key
+#  name         :string(255)
+#  kind         :string(255)
+#  person_count :integer
+#  created_at   :timestamp
+#  updated_at   :timestamp
+#
+

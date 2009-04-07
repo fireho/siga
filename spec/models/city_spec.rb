@@ -13,17 +13,20 @@ describe City do
   end
 end
 
+
 # == Schema Information
 # Schema version: 99999999999999
 #
 # Table name: cities
 #
 #  id          :integer         not null, primary key
-#  country_id  :integer
+#  country_id  :integer         not null
 #  province_id :integer
-#  name        :string(255)
-#  pop         :integer
-#  created_at  :datetime
-#  updated_at  :datetime
+#  name        :string(255)     not null
+#  permalink   :string(255)     not null
+#  pop         :integer         default(1), not null
+#  created_at  :timestamp
+#  updated_at  :timestamp
+#  geom        :geometry        polygon, 4326
 #
 

@@ -51,17 +51,17 @@ end
 
 
 
+
 # == Schema Information
-# Schema version: 20090301000300
+# Schema version: 99999999999999
 #
 # Table name: pois
 #
 #  id         :integer         not null, primary key
-#  group_id   :integer         not null
 #  name       :string(255)     not null
+#  kind       :string(20)      default("poi"), not null
 #  created_at :timestamp
 #  updated_at :timestamp
-#  poi_type   :string(20)      default("poi"), not null
 #  geom       :geometry        not null, point, 4326
 #
 

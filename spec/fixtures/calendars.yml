@@ -11,3 +11,18 @@ two:
   business: false
   yearly: false
   note: MyText
+
+# == Schema Information
+# Schema version: 99999999999999
+#
+# Table name: calendars
+#
+#  id         :integer         not null, primary key
+#  day        :date
+#  business   :boolean
+#  yearly     :boolean
+#  note       :text
+#  created_at :timestamp
+#  updated_at :timestamp
+#
+

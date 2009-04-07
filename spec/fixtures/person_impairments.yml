@@ -11,3 +11,18 @@ two:
   kind: MyString
   start_at: 2009-04-06 06:17:30
   info: MyText
+
+# == Schema Information
+# Schema version: 99999999999999
+#
+# Table name: person_impairments
+#
+#  id         :integer         not null, primary key
+#  person_id  :integer
+#  kind       :string(255)
+#  start_at   :timestamp
+#  info       :text
+#  created_at :timestamp
+#  updated_at :timestamp
+#
+

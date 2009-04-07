@@ -14,3 +14,18 @@ describe Calendar do
     Calendar.create!(@valid_attributes)
   end
 end
+
+# == Schema Information
+# Schema version: 99999999999999
+#
+# Table name: calendars
+#
+#  id         :integer         not null, primary key
+#  day        :date
+#  business   :boolean
+#  yearly     :boolean
+#  note       :text
+#  created_at :timestamp
+#  updated_at :timestamp
+#
+

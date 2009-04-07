@@ -17,3 +17,22 @@ describe Animal do
     Animal.create!(@valid_attributes)
   end
 end
+
+# == Schema Information
+# Schema version: 99999999999999
+#
+# Table name: animals
+#
+#  id         :integer         not null, primary key
+#  person_id  :integer
+#  name       :string(255)
+#  born_at    :timestamp
+#  age        :integer
+#  sex        :boolean
+#  kind       :string(255)
+#  fur        :string(255)
+#  race       :string(255)
+#  created_at :timestamp
+#  updated_at :timestamp
+#
+

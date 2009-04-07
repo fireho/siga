@@ -15,3 +15,19 @@ describe Family do
     Family.create!(@valid_attributes)
   end
 end
+
+# == Schema Information
+# Schema version: 99999999999999
+#
+# Table name: families
+#
+#  id            :integer         not null, primary key
+#  name          :string(255)
+#  people_count  :integer
+#  revenue_cents :integer
+#  kind          :string(255)
+#  state         :string(255)
+#  created_at    :timestamp
+#  updated_at    :timestamp
+#
+

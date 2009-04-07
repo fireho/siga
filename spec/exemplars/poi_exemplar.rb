@@ -12,3 +12,17 @@ class Poi < ActiveRecord::Base
     @last = @last.succ
   end
 end
+
+# == Schema Information
+# Schema version: 99999999999999
+#
+# Table name: pois
+#
+#  id         :integer         not null, primary key
+#  name       :string(255)     not null
+#  kind       :string(20)      default("poi"), not null
+#  created_at :timestamp
+#  updated_at :timestamp
+#  geom       :geometry        not null, point, 4326
+#
+
