@@ -4,7 +4,7 @@
 
 - semantic_form_for(@publication, :html => { :class => "form" }) do |f|
   = f.input :title, :input_html => { :size => 60 }
-  = f.input :kind, :as => :select, :collection => Publication.get_kind_value
+  = f.input :kind, :as => :select, :collection => Publication.get_kind_values
   = f.input :body, :input_html => { :size => "60x20" }
   = f.input :published_at, :as => :string, :input_html => { :id => "calendar" }
   .group.navform

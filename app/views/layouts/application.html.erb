@@ -59,36 +59,37 @@
             </li>
             <li><a href="/publications">Publicacoes</a>
               <ul class='submenu'>
-                <li><a href="#">Artigos</a></li>
+                <li><a href="/articles">Artigos</a></li>
+                <li><a href="/procurements">Licitacoes</a></li>
                 <li><a href="/laws">Leis</a></li>
-                <li><a href="#">Editais</a></li>
-                <li><a href="#">Eventos</a></li>
-              </ul>
-            </li>
-            <li><a href="/publications">Social</a>
-              <ul class='submenu'>
-              <li><a href="/people">Municipes</a></li>
-                <li><a href="#">Artigos</a></li>
-                <li><a href="/laws">Leis</a></li>
-                <li><a href="#">Editais</a></li>
-                <li><a href="#">Eventos</a></li>
-              </ul>
-            </li>
-            <li><a href="/publications">Areas</a>
-              <ul class='submenu'>
-              <li><a href="/areas">Areas</a></li>
-              <li><a href="/properties">Propriedades</a></li>
-              <li><a href="/people">Municipes</a></li>
-                <li><a href="#">Artigos</a></li>
-                <li><a href="/laws">Leis</a></li>
-                <li><a href="#">Editais</a></li>
-                <li><a href="#">Eventos</a></li>
+                <li><a href="/publications">Editais</a></li>
+                <li><a href="/publications">Decretos</a></li>
+                <li><a href="/publications">Portarias</a></li>
               </ul>
             </li>
             <% if current_user %>
-
-              <li><a href="/procurements">Licitacoes</a></li>
-              <li class="last"><a href="/storages">Almoxarifado</a></li>
+              <li><a href="/people">Social</a>
+		<ul class='submenu'>
+		  <li><a href="/people">Municipes</a></li>
+		  <li><a href="/families">Familias</a></li>
+		  <li><a href="/groups">Empresas</a></li>
+		</ul>
+              </li>
+              <li><a href="/areas">Areas</a>
+		<ul class='submenu'>
+		  <li><a href="/areas">Areas</a></li>
+		  <li><a href="/zones">Zonas</a></li>
+		  <li><a href="/properties">Propriedades</a></li>
+		</ul>
+              </li>
+              <li><a href="/heritages">Patrimonio</a>
+		<ul class='submenu'>
+		  <li><a href="/storages">Almoxarifado</a></li>
+		  <li><a href="/areas">Areas</a></li>
+		  <li><a href="/zones">Zonas</a></li>
+		  <li><a href="/properties">Propriedades</a></li>
+		</ul>
+              </li>
             <% end %>
           </ul>
           <div class="clear"></div>

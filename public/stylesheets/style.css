@@ -296,14 +296,24 @@ ul.list li {
   border-bottom-color: #F0F0EE;
   border-bottom-width: 1px;
   border-bottom-style: solid;
+  padding:8px;
 }
 
 ul.list li .item .avatar {
   border-color: #F0F0EE;
   border-width: 1px;
   border-style: solid;
-  padding: 2px;
+  text-align:center;
+    padding: 2px;
 }
+
+ul.list li .left {
+  text-align:center;
+
+  padding:10px;
+
+}
+
 
 /* box */
 
