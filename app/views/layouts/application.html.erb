@@ -40,17 +40,14 @@
               <ul class='submenu2'>
                 <li>
                   <ul>
-                    <li><a href="#">AAAAAAAAAAA</a></li>
-                    <li><a href="#">AAAAAAAAAAA</a></li>
-                    <li><a href="#">AAAAAAAAAAA</a></li>
-                    <li><a href="#">AAAAAAAAAAA</a></li>
-                    <li><a href="#">AAAAAAAAAAA</a></li>
-                    <li><a href="#">AAAAAAAAAAA</a></li>
+                    <li><a href="#">Minha Conta</a></li>
+                    <li><a href="#">Opcoes</a></li>
+                    <li><a href="#">Mensagens</a></li>
                   </ul>
                 </li>
                 <li>
                   <ul>
-                    <li><a href="#">AAAAAAAAAAA</a></li>
+                    <li><a href="#">Teste</a></li>
                     <li><a href="#">AAAAAAAAAAA</a></li>
                     <li><a href="#">AAAAAAAAAAA</a></li>
                     <li><a href="#">AAAAAAAAAAA</a></li>
@@ -60,20 +57,36 @@
                 </li>
               </ul>
             </li>
-            <li><a href="/publications">Editais</a>
+            <li><a href="/publications">Publicacoes</a>
               <ul class='submenu'>
-                <li><a href="#">BBBBBBBBBBBBBB</a></li>
-                <li><a href="#">BBBBBBBBBBBBBB</a></li>
-                <li><a href="#">BBBBBBBBBBBBBB</a></li>
-                <li><a href="#">BBBBBBBBBBBBBB</a></li>
-                <li><a href="#">BBBBBBBBBBBBBB</a></li>
+                <li><a href="#">Artigos</a></li>
+                <li><a href="/laws">Leis</a></li>
+                <li><a href="#">Editais</a></li>
+                <li><a href="#">Eventos</a></li>
               </ul>
             </li>
-            <li><a href="/laws">Leis</a></li>
-            <% if current_user %>
+            <li><a href="/publications">Social</a>
+              <ul class='submenu'>
               <li><a href="/people">Municipes</a></li>
+                <li><a href="#">Artigos</a></li>
+                <li><a href="/laws">Leis</a></li>
+                <li><a href="#">Editais</a></li>
+                <li><a href="#">Eventos</a></li>
+              </ul>
+            </li>
+            <li><a href="/publications">Areas</a>
+              <ul class='submenu'>
               <li><a href="/areas">Areas</a></li>
               <li><a href="/properties">Propriedades</a></li>
+              <li><a href="/people">Municipes</a></li>
+                <li><a href="#">Artigos</a></li>
+                <li><a href="/laws">Leis</a></li>
+                <li><a href="#">Editais</a></li>
+                <li><a href="#">Eventos</a></li>
+              </ul>
+            </li>
+            <% if current_user %>
+
               <li><a href="/procurements">Licitacoes</a></li>
               <li class="last"><a href="/storages">Almoxarifado</a></li>
             <% end %>

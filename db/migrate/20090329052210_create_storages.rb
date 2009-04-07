@@ -2,9 +2,10 @@ class CreateStorages < ActiveRecord::Migration
   def self.up
     create_table :storages do |t|
       t.string :name
-      t.string :amount
-      t.string :unit
-      t.integer :value_cents
+      t.string :kind, :unit
+      t.decimal :amount, :precision => 15, :scale => 3
+      t.integer :unit_cents
+      t.integer :total_cents
 
       t.timestamps
     end
