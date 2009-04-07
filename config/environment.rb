@@ -17,7 +17,7 @@ Rails::Initializer.run do |config|
 
 
   config.gem "postgres"
-  config.gem "GeoRuby"
+  config.gem "GeoRuby", :lib => 'geo_ruby'
   config.gem "postgis_adapter"
   config.gem "authlogic"
   config.gem "haml"
