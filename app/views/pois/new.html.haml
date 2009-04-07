@@ -1,0 +1,8 @@
+- content_for :content_header do
+  #content_header
+    %h1 Novo Ponto de Referência
+    .poicity
+      = text_field_tag :poicity, "Ir para city:", :class => 'autocity poi'
+= render @poi
+%br/
+= link_to 'Voltar', pois_path, :class => "icon back"

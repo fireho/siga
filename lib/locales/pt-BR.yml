@@ -53,6 +53,21 @@ pt-BR:
         body: Corpo
         public: Publico
         published_at: Publicada em
+      poi:
+        name: Nome
+        kind: Tipo
+        enums:
+          kind:
+            poi: Ponto
+            bank: Banco
+            company: Empresa
+            factory: Fabrica
+            airport: Aeroporto
+            hostel: Hotel
+            bank: Banco
+            attraction: Atracao
+            food: Restaurante
+            police: Policia
       message:
         to_id: Para
         subject: Assunto

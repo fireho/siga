@@ -1,0 +1,35 @@
+- content_for :header do
+  =# GMap.header
+  = javascript_include_tag 'markerGroup'
+  = @map.to_html
+
+- content_for :sidebar do
+  .block
+    %h3 Procura
+    .content
+      %p
+        - form_tag request.path, :method => 'get' do
+          = text_field_tag :search, params[:search]
+
+  .block
+    %h3 Menu
+    %ul{:class => :navigation}
+      %li= link_to image_tag('../images/icons/add.png', :class=>'img')+' Novo Ponto', new_poi_path
+      %li= link_to image_tag('../images/icons/notebook.png', :class=>'img')+' Relatório', "/"
+      %li= link_to image_tag('../images/icons/graphs/chart_bar.png', :class=>'img')+' Graficos', "/contas"
+
+
+.block
+  .header
+    %h2 Pontos de Referencia
+  .clear
+  .content
+    - if @map
+      .m1{ :style => "position:relative; height:512px; width:100%" }
+        .m2{ :id=> "map", :style => "position:absolute; width:100%; height:100%; z-index:100" }
+          = @map.div
+
+    = simple_table_for @pois, :name, :kind_text, :x_text, :y_text
+    .pagination= will_paginate @pois
+
+=link_to 'Voltar', "/", :class => 'icon back'

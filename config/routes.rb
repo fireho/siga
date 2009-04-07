@@ -15,6 +15,7 @@ ActionController::Routing::Routes.draw do |map|
   map.inbox '/inbox', :controller => 'messages', :action => 'index'
   map.inbox_new '/inbox/new/:id', :controller => 'messages', :action => 'new'
 
+  map.resources :pois
   map.resources :bills
   map.resources :receipts
   map.resources :services

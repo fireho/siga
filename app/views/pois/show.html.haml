@@ -1,0 +1,17 @@
+- content_for :header do
+  = GMap.header
+  = @map.to_html
+
+%h1= "Ponto #{@poi.name}"
+
+%p
+  .m1{ :style => "position:relative; height:512px; width:100%" }
+    .m2{ :id=> "map", :style => "position:absolute; width:100%; height:100%; z-index:100" }
+      = @map.div
+
+%br/
+= link_to 'Voltar', pois_path, :class => "icon back"
+|
+= link_to 'Editar', edit_poi_path(@poi), :class => "icon edit"
+|
+= link_to 'Apagar Ponto', edit_poi_path(@poi), :class => "icon delete"

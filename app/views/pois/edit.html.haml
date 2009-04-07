@@ -1,0 +1,7 @@
+- content_for :content_header do
+  #content_header 
+    %h1= "Editando ponto #{@poi.name}"
+        
+= partial 'pois/poi', :metodo => "put"
+%br
+= link_to 'Voltar', pois_path, :class => "icon back"

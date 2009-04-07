@@ -1,0 +1,24 @@
+- content_for :header do
+  =# GMap.header
+  = @map.to_html
+  = javascript_include_tag 'jquery/jquery-autocomplete-1.4.2.js'
+  = javascript_include_tag 'app/pois'
+  = stylesheet_link_tag 'search_box.css'
+  = javascript_include_tag 'app/poi'
+
+- form_for(@poi) do |f|
+  = f.error_messages
+  = hidden_field_tag 'poi_geom_x', @poi.x, :name => "poi[x]"
+  = hidden_field_tag 'poi_geom_y', @poi.y, :name => "poi[y]"
+  = hidden_field_tag 'poi_geom_z', @poi.z, :name => "poi[z]"
+  %p
+    .forms_buttons
+      - semantic_form_remote_for(@poi, :html => {:id => 'poi_form'} ) do |f|
+        .poidata
+          = f.input :kind, :as => :select, :collection => Poi.get_kind_values, :prompt => "Selecione"
+          = f.input :name, :size => 30
+          = f.submit "Salvar"
+
+.m1{ :style => "position:relative; height:512px; width:100%" }
+  .m2{ :id=> "map", :style => "position:absolute; width:100%; height:100%; z-index:100" }
+    = @map.div
