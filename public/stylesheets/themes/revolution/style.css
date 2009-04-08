@@ -483,4 +483,6 @@ div#main-navigation ul li ul.submenu li , ul.submenu2 li ul li { float: none }
 ul.submenu li a, ul.submneu2 li ul li a { display: block; padding: 10px; font-size: 12px}
 ul.submenu li { width: 150px }
 ul.submenu2 li { width: 164px }
+ul.submenu2 li strong { display: block; padding: 15px 0 0 5px}
+#main-navigation ul li.active ul li a { font-weight: normal }
 
