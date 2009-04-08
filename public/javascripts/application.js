@@ -31,9 +31,21 @@ $.fn.subMenus = function() {
     }
 }
 
+$.fn.changeTheme = function() {
+  $(this).change(function(){
+    var links = $('link')
+    for(i=0; i<links.length; i++){
+      link = $(links[i])
+      theme = $(this).val()
+      link.attr('href', link.attr('href').replace(/themes\/\w+\//, 'themes/' + theme + '/') )
+    }
+  })
+}
+
 $(document).ready(function () {
     $("#search").clearClick();
     $('#main-navigation > ul > li').subMenus();
+    $('#themes').changeTheme();
 });
 
 
