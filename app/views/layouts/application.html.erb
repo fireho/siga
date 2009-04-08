@@ -5,8 +5,8 @@
     <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
     <title>SIG@ { <%= controller.controller_name %> }</title>
     <% #bundle :name => :base do %>
-      <%= stylesheet_link_tag 'application', "themes/#{SIGA_THEME}/style", "themes/#{SIGA_THEME}/ui.theme" %>
-      <%= javascript_include_tag 'jquery', 'application' %>
+      <%= stylesheet_link_tag 'application', "themes/#{cookies[:theme] || SIGA_THEME}/style", "themes/#{cookies[:theme] || SIGA_THEME}/ui.theme" %>
+      <%= javascript_include_tag 'jquery', 'cookie', 'application' %>
     <% #end %>
     <%= yield :head %>
   </head>
@@ -149,9 +149,7 @@
             <a href="/about"> Sobre </a> -
             Mudar Tema:
               <select id="themes">
-                <option value="revolution">Revolution</option>
-                <option value="natural">Natural</option>
-                <option value="cupertino">Cupertino</option>
+                <%= options_for_select SIGA_THEMES, (cookies[:theme] || SIGA_THEME) %>
               </select>
           </div>
 

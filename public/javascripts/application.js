@@ -33,6 +33,7 @@ $.fn.subMenus = function() {
 
 $.fn.changeTheme = function() {
   $(this).change(function(){
+    $.cookie('theme',$(this).val())
     var links = $('link')
     for(i=0; i<links.length; i++){
       link = $(links[i])
