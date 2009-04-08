@@ -1,8 +1,12 @@
+/*
+ *  SIG@ Natural Theme
+ *
+ */
 .small { font-size:11px; }
 .gray { color:#999999; }
 .hightlight { background-color:#FFFFCC; }
 
-a:link, a:visited, a:hover, a:active, h1, h2, h3 { color: #7A1818; }
+a:link, a:visited, a:hover, a:active, h1, h2, h3 { color: #1b4601; }
 h3 a { text-decoration:none }
 a { -moz-outline: none; }
 
@@ -18,7 +22,7 @@ hr {
 }
 
 #header {
-  background: #7A1818;
+  background: #1b4601;
 
 }
 
@@ -55,7 +59,7 @@ hr {
 }
 
 #main .block .head {
-  background:#7A1818 none repeat scroll 0 0;
+  background:#1b4601 none repeat scroll 0 0;
   border-bottom:2px solid #262626;
   color:#FFFFFF;
 }
@@ -123,7 +127,7 @@ hr {
 }
 
 .secondary-navigation li a:hover {
-  background: #470E0E;
+  background: #2b5611;
 }
 
 #sidebar .block {
@@ -133,7 +137,7 @@ hr {
 }
 
 #sidebar h3 {
-  background: #7A1818;
+  background: #1b4601;
   color: #FFF;
   border-bottom: 2px solid #8c8c8c;
 }
@@ -146,12 +150,12 @@ hr {
 }
 
 #sidebar ul li a:hover, #sidebar ul li a:active {
-  background: #470E0E;
+  background: #2b5611;
   color: #FFF;
 }
 
 .secondary-navigation {
-  background: #7A1818;
+  background: #1b4601;
   border-bottom-color: #8c8c8c;
 }
 
@@ -243,16 +247,6 @@ hr {
   cursor: pointer;
 }
 
-.searchbutton {
-    background-image: url(../images/icons/magnifier.png);
-background-repeat: no-repeat;
-background-position: 2px 2px;
-
-  color: #262626;
-  padding: 0px 5px 0px 25px;
-  border: 1px solid #262626;
-  cursor: pointer;
-}
 
 .form .description {
   font-style: italic;
@@ -260,36 +254,6 @@ background-position: 2px 2px;
   font-size: .9em;
 }
 
-/* flash-messages */
-.flash .message {
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  text-align:center;
-  margin: 0 auto 15px;
-  font-weight: bold;
-  padding: 9px 0 9px 0;
-  background-repeat: no-repeat;
-  background-position: 8px 8px;
-}
-
-.flash .message p {
-  margin:8px;
-}
-.flash .error {
-  border: 1px solid #fbb;
-  background-color: #fdd;
-  background-image: url(../images/icons/cross.png);
-}
-.flash .warning {
-  border: 1px solid #fffaaa;
-  background-color: #ffffcc;
-  background-image: url(../images/icons/asterisk.png);
-}
-.flash .notice {
-  background-color: #BBFFB6;
-  border: 1px solid #1FDF00;
-  background-image: url(../images/icons/tick.png);
-}
 
 /* lists */
 
@@ -323,7 +287,7 @@ ul.list li .left {
 }
 
 #box .block h2 {
-  background: #7A1818;
+  background: #1b4601;
   color: #FFF;
 }
 
@@ -442,16 +406,7 @@ form.formtastic fieldset ol li p.inline-errors { color:red; margin:0.5em 0 0 25%
 form.formtastic fieldset ol li ul.errors { color:red; margin:0.5em 0 0 25%; list-style:square; }
 form.formtastic fieldset ol li ul.errors li { padding:0; border:none; display:list-item; }
 
-form.formtastic li p.inline-errors {
-  background-repeat: no-repeat;
-  background-position: 1px 4px;
-  background-image: url(../images/icons/cross.png);
-  font-weight:bold; color:red;
-  padding-left: 20px;
-}
-form.formtastic li.error {
-      background-color: #fdd;
-    border: 1px solid #fbb; display:list-item; }
+
 
 /* STRING & NUMERIC OVERRIDES
 --------------------------------------------------------------------------------------------------*/

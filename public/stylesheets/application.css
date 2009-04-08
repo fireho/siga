@@ -350,3 +350,55 @@ ul.list li .item .avatar {
 }
 
 
+.searchbutton {
+    background-image: url(../images/icons/magnifier.png);
+background-repeat: no-repeat;
+background-position: 2px 2px;
+
+  color: #262626;
+  padding: 0px 5px 0px 25px;
+  border: 1px solid #262626;
+  cursor: pointer;
+}
+
+/* flash-messages */
+.flash .message {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  text-align:center;
+  margin: 0 auto 15px;
+  font-weight: bold;
+  padding: 9px 0 9px 0;
+  background-repeat: no-repeat;
+  background-position: 8px 8px;
+}
+
+.flash .message p {
+  margin:8px;
+}
+.flash .error {
+  border: 1px solid #fbb;
+  background-color: #fdd;
+  background-image: url(../images/icons/cross.png);
+}
+.flash .warning {
+  border: 1px solid #fffaaa;
+  background-color: #ffffcc;
+  background-image: url(../images/icons/asterisk.png);
+}
+.flash .notice {
+  background-color: #BBFFB6;
+  border: 1px solid #1FDF00;
+  background-image: url(../images/icons/tick.png);
+}
+
+form.formtastic li p.inline-errors {
+  background-repeat: no-repeat;
+  background-position: 1px 4px;
+  background-image: url(../images/icons/cross.png);
+  font-weight:bold; color:red;
+  padding-left: 20px;
+}
+form.formtastic li.error {
+      background-color: #fdd;
+    border: 1px solid #fbb; display:list-item; }

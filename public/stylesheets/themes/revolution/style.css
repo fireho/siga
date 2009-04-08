@@ -1,0 +1,486 @@
+ /*
+ *  SIG@ Revolution Theme
+ *
+ */
+.small { font-size:11px; }
+.gray { color:#999999; }
+.hightlight { background-color:#FFFFCC; }
+
+a:link, a:visited, a:hover, a:active, h1, h2, h3 { color: #7A1818; }
+h3 a { text-decoration:none }
+a { -moz-outline: none; }
+
+body {
+  color: #262626;
+  background: #f2f2f2;
+  font-family: helvetica, arial, sans-serif;
+}
+
+hr {
+  background: #f0f0ee;
+  color: #f0f0ee;
+}
+
+#header {
+  background: #7A1818;
+
+}
+
+#header h1 a:link, #header h1 a:active, #header h1 a:hover, #header h1 a:visited {
+  color: #FFF;
+}
+
+#user-navigation ul li a:link,
+#user-navigation ul li a:visited,
+#user-navigation ul li a:active {
+        color: #e2f7d8;
+}
+
+#user-navigation ul li a:hover { color: #fff; text-decoration: underline; }
+
+#user-drop-navigation {
+  font-weight: bold;
+  color:#fff;
+  bottom:5px;
+  right:25px;
+  top:auto;
+  position:absolute;
+}
+
+#main .block {
+  border-right:1px solid #d2d2d2;
+  border-left:1px solid #e2e2e2;
+  border-bottom:1px solid #ccc;
+}
+
+#main .block .content {
+  background: #FFF;
+  border-top:1px solid #e2e2e2;
+}
+
+#main .block .head {
+  background:#7A1818 none repeat scroll 0 0;
+  border-bottom:2px solid #262626;
+  color:#FFFFFF;
+}
+
+#main .block .head h2 {
+  color: #fff;
+  margin: 0;
+  padding: 8px 15px;
+
+}
+
+#main .block .content h2 {
+        margin: 0;
+    margin-left: 15px;
+    padding-top: 20px;
+
+}
+
+#main-navigation {
+  background: #d9d9d9;
+  margin-right: 20px;
+  padding: 0 0 0 0;
+}
+
+#main-navigation ul li {
+  margin-right: 0px;
+}
+
+#main-navigation ul li a:link,
+#main-navigation ul li a:visited,
+#main-navigation ul li a:active {
+        color: #2e2e2e;
+}
+#main-navigation ul li a {
+    padding: 7px 12px 7px 12px;
+}
+
+#main-navigation ul li.active {
+  background: #eee;
+  font-weight: bold;
+}
+
+#main-navigation ul li.active {
+  margin-left: 15px;
+}
+
+#main-navigation ul li a:link,
+#main-navigation ul li a:visited,
+#main-navigation ul li a:active,
+.secondary-navigation ul li a:link, .secondary-navigation ul li a:visited,
+.secondary-navigation ul li a:hover, .secondary-navigation ul li a:active {
+  text-decoration: none;
+}
+
+#main-navigation ul li.active a:link, #main-navigation ul li.active a:visited, #main-navigation ul li.active a:hover, #main-navigation ul li.active a:active {
+  color: #262626;
+}
+#main-navigation ul li a:hover { background-color: #fff; color: #000;  }
+
+
+.secondary-navigation ul li a:link, .secondary-navigation ul li a:visited, .secondary-navigation ul li a:hover, .secondary-navigation ul li a:active,
+#user-navigation ul li a:link, #user-navigation ul li a:visited, #user-navigation ul li a:hover, #user-navigation ul li a:active {
+  text-decoration: none;
+  color: #FFF;
+}
+
+.secondary-navigation li a:hover {
+  background: #470E0E;
+}
+
+#sidebar .block {
+  background: #FFF;
+  border-right:1px solid #ccc;
+  border-bottom:1px solid #ccc;
+}
+
+#sidebar h3 {
+  background: #7A1818;
+  color: #FFF;
+  border-bottom: 2px solid #8c8c8c;
+}
+
+
+#sidebar ul li a:link, #sidebar ul li a:visited {
+  background: #FFF;
+  border-bottom: 1px solid #F0F0EE;
+  text-decoration: none;
+}
+
+#sidebar ul li a:hover, #sidebar ul li a:active {
+  background: #470E0E;
+  color: #FFF;
+}
+
+.secondary-navigation {
+  background: #7A1818;
+  border-bottom-color: #8c8c8c;
+}
+
+.secondary-navigation ul li.active, .secondary-navigation ul li.active a:hover {
+  background-color: #262626;
+}
+
+#footer .block {
+  border-top: 3px solid #d2d2d2;
+  border-bottom: 1px solid #aaa;
+  color: #262626;
+  background: #d9d9d9;
+}
+
+#footer .links {
+  padding: 10px;
+  text-align:center;
+}
+
+#footer a {
+  font-weight: bold;
+  color: #262626;
+  text-decoration: none;
+}
+
+#footer a:hover {
+  text-decoration: underline;
+}
+
+#footer .block p {
+  margin: 0;
+  padding: 10px;
+}
+
+#footer div.left {
+  float: left;
+  padding: 10px;
+}
+
+#footer div.right {
+  float: right;
+      padding: 10px;
+}
+
+/* pagination */
+
+.pagination span.current {
+  background: #262626;
+  color: #FFF;
+  border-color: #262626;
+}
+
+.pagination span.disabled {
+  color: #e2e2e2;
+  border-color: #e2e2e2  ;
+}
+.pagination a {
+  color: #262626;
+  border-color: #262626;
+}
+
+.pagination a:hover {
+    color: #FFF;
+    background: #262626;
+}
+
+/* tables */
+
+.table th {
+  background: #e2e2e2;
+}
+
+.table td {
+  border-bottom:1px solid #F0F0EE;
+}
+
+/* forms */
+
+.form input.text_field, .form textarea.text_area {
+  width: 100%;
+  border: 1px solid #262626;
+}
+
+.form input.button {
+  background: #EEE;
+  color: #262626;
+  padding: 2px 5px;
+  border: 1px solid #262626;
+  cursor: pointer;
+}
+
+.form .description {
+  font-style: italic;
+  color: #8C8C8C;
+  font-size: .9em;
+}
+
+/* lists */
+
+ul.list li {
+  border-bottom-color: #F0F0EE;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  padding:8px;
+}
+
+ul.list li .item .avatar {
+  border-color: #F0F0EE;
+  border-width: 1px;
+  border-style: solid;
+  text-align:center;
+    padding: 2px;
+}
+
+ul.list li .left {
+  text-align:center;
+
+  padding:10px;
+
+}
+
+
+/* box */
+
+#box .block {
+  background: #FFF;
+}
+
+#box .block h2 {
+  background: #7A1818;
+  color: #FFF;
+}
+
+
+/* rounded borders */
+
+#main, #main-navigation, #main .block .head, .secondary-navigation, #main .block, #sidebar .block, #sidebar h3, ul.list li,
+.form input.button, .searchbutton,  #box .block, #box .block h2 {
+  -moz-border-radius-topleft: 4px;
+  -webkit-border-top-left-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
+}
+
+#main-navigation .first, .secondary-navigation li.first a, .secondary-navigation ul li.first, .table th.first, .table th.first {
+  -moz-border-radius-topleft: 4px;
+  -webkit-border-top-left-radius: 4px;
+}
+
+#main-navigation .last,.table th.last {
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
+}
+
+.secondary-navigation ul li.first {
+  -moz-border-radius-topleft: 4px;
+  -webkit-border-top-left-radius: 4px;
+}
+
+#sidebar, #sidebar .block, #main .block, #sidebar ul.navigation, ul.list li, .form input.button, .searchbutton, #box .block {
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+}
+
+/* Terminal like */
+div.code {
+  font-size: 14px;
+  font-family: monospace;
+  color: #33EE33;
+  background-color: #222;
+  margin-left: 10px;
+  padding-left: 15px;
+  padding-top: 8px;
+  margin-right: 10px;
+
+}
+
+div.code h1,div.code h3 {
+  color: #33EE33;
+}
+
+/*-------- FORMTASTIC ----------------------- */
+
+/* obviously inspired by Yahoo's reset.css, but scoped to just form.formtastic elements that we care about */
+form.formtastic, form.formtastic ul, form.formtastic ol, form.formtastic li, form.formtastic fieldset, form.formtastic legend, form.formtastic input, form.formtastic textarea, form.formtastic p { margin:0 10px 0 3px; padding:3px; margin-bottom:3px; }
+form.formtastic fieldset { border:0; }
+form.formtastic em, form.formtastic strong { font-style:normal; font-weight:normal; }
+form.formtastic ol, form.formtastic ul { list-style:none; }
+form.formtastic abbr, form.formtastic acronym { border:0; font-variant:normal; }
+form.formtastic input, form.formtastic textarea, form.formtastic select { font-family:inherit; font-size:inherit; font-weight:inherit; }
+form.formtastic input, form.formtastic textarea, form.formtastic select { font-size:100%; }
+form.formtastic legend { color:#888; }
+
+/* Rails wraps error fields with divs */
+div.fieldWithErrors { display:inline; margin:0; padding:0; }
+
+
+/* FIELDSETS & LISTS
+--------------------------------------------------------------------------------------------------*/
+
+form.formtastic fieldset { }
+form.formtastic fieldset.inputs { border-top:1px solid #eee; }
+form.formtastic fieldset.buttons { padding:10px; }
+form.formtastic fieldset ol { }
+
+/* clearfixing the fieldsets */
+form.formtastic fieldset { display: inline-block; }
+form.formtastic fieldset:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+html[xmlns] form.formtastic fieldset { display: block; }
+* html form.formtastic fieldset { height: 1%; }
+
+
+/* INPUT LIs
+--------------------------------------------------------------------------------------------------*/
+
+form.formtastic fieldset ol li { border-bottom:1px solid #eee; padding:10px; }
+
+form.formtastic li { list-style-type: none }
+/* clearfixing the li's */
+form.formtastic fieldset ol li { display: inline-block; }
+form.formtastic fieldset ol li:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+html[xmlns] form.formtastic fieldset ol li { display: block; }
+* html form.formtastic fieldset ol li { height: 1%; }
+
+form.formtastic fieldset ol li.required { }
+form.formtastic fieldset ol li.optional { }
+form.formtastic fieldset ol li.error { background:#FFCCCC; }
+
+
+/* LABELS
+--------------------------------------------------------------------------------------------------*/
+
+/* form.formtastic fieldset ol li label {  display:block; width:75%; float:left; } */
+
+
+/* INLINE HINTS
+--------------------------------------------------------------------------------------------------*/
+form.formtastic fieldset ol li p.inline-hints { color:#666; margin:0.5em 0 0 25%; }
+
+
+/* INLINE ERRORS
+--------------------------------------------------------------------------------------------------*/
+form.formtastic fieldset ol li p.inline-errors { color:red; margin:0.5em 0 0 25%; }
+form.formtastic fieldset ol li ul.errors { color:red; margin:0.5em 0 0 25%; list-style:square; }
+form.formtastic fieldset ol li ul.errors li { padding:0; border:none; display:list-item; }
+
+/* STRING & NUMERIC OVERRIDES
+--------------------------------------------------------------------------------------------------*/
+form.formtastic fieldset ol li.string input { width:74%; }
+form.formtastic fieldset ol li.numeric input { width:74%; }
+
+/* TEXTAREA OVERRIDES
+--------------------------------------------------------------------------------------------------*/
+form.formtastic fieldset ol li.text textarea { width:74%; }
+
+
+/* BOOLEAN (CHECKBOX) OVERRIDES
+--------------------------------------------------------------------------------------------------*/
+form.formtastic fieldset ol li.boolean label { padding-left:25%; width:auto; }
+form.formtastic fieldset ol li.boolean label input { margin:0 0.5em 0 0.2em; }
+
+
+/* BELONGS_TO (RADIO) OVERRIDES
+--------------------------------------------------------------------------------------------------*/
+form.formtastic fieldset ol li.radio fieldset { }
+form.formtastic fieldset ol li.radio fieldset legend {  display:block; float:left; width:25%; position:relative; }
+form.formtastic fieldset ol li.radio fieldset legend span { }
+form.formtastic fieldset ol li.radio fieldset ol { float:left; width:74%; }
+form.formtastic fieldset ol li.radio fieldset ol li { padding:0; border:0; margin-bottom:.2em; }
+form.formtastic fieldset ol li.radio fieldset ol li label { float:none; width:100%; }
+form.formtastic fieldset ol li.radio fieldset ol li label input {  margin-right:0.5em; }
+
+
+/* DATE & TIME OVERRIDES
+--------------------------------------------------------------------------------------------------*/
+
+form.formtastic fieldset ol li.date fieldset,
+form.formtastic fieldset ol li.time fieldset,
+form.formtastic fieldset ol li.datetime fieldset {}
+
+form.formtastic fieldset ol li.date fieldset legend,
+form.formtastic fieldset ol li.time fieldset legend,
+form.formtastic fieldset ol li.datetime fieldset legend,
+
+form.formtastic fieldset ol li.date fieldset legend,
+form.formtastic fieldset ol li.time fieldset legend,
+form.formtastic fieldset ol li.datetime fieldset legend { display:block; float:left; width:25%; position:relative; }
+
+form.formtastic fieldset ol li.date fieldset legend span,
+form.formtastic fieldset ol li.time fieldset legend span,
+form.formtastic fieldset ol li.datetime fieldset legend span { }
+
+form.formtastic fieldset ol li.date fieldset ol,
+form.formtastic fieldset ol li.time fieldset ol,
+form.formtastic fieldset ol li.datetime fieldset ol { float:left; width:74%; margin:0; padding:0; }
+
+form.formtastic fieldset ol li.date fieldset ol li,
+form.formtastic fieldset ol li.time fieldset ol li,
+form.formtastic fieldset ol li.datetime fieldset ol li { float:left; width:auto; margin:0; padding:0; border:0; }
+
+form.formtastic fieldset ol li.date fieldset ol li label,
+form.formtastic fieldset ol li.time fieldset ol li label,
+form.formtastic fieldset ol li.datetime fieldset ol li label { display:none; }
+
+form.formtastic fieldset ol li.date fieldset ol li label input,
+form.formtastic fieldset ol li.time fieldset ol li label input,
+form.formtastic fieldset ol li.datetime fieldset ol li label input { display:inline; margin:0; padding:0; }
+form.formtastic fieldset legend span.label { font-weight:bold;color:#222222; }
+div.pagination { padding-bottom: 40px; padding-left:20px;  }
+
+/* Submenu */
+ul.submenu, ul.submenu2 {
+    visibility : hidden;
+    position: absolute;
+    background-color: #e2e2e2 ;
+    padding: 10px 0;
+    border-right: 1px solid #d2d2d2;
+    border-left: 1px solid #b2b2b2;
+    border-bottom: 1px solid #a2a2a2;
+    z-index: 9999
+}
+div#main-navigation ul li ul.submenu li , ul.submenu2 li ul li { float: none }
+ul.submenu li a, ul.submneu2 li ul li a { display: block; padding: 10px; font-size: 12px}
+ul.submenu li { width: 150px }
+ul.submenu2 li { width: 164px }
+
