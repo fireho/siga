@@ -10,5 +10,6 @@
 
       = will_paginate @laws
 
-- content_for :sidebar do
-  = side_menu_for [{"#{image_tag('icons/add.png')} Nova Lei" => new_law_path}, {"Anteriores" => "/"}]
+- sidebar do
+  = link "#{image_tag('icons/add.png')} Nova Lei", new_law_path
+  = link "Anteriores", "/"

@@ -89,4 +89,17 @@ module ApplicationHelper
     end
     out += "</ul></div>"
   end
+
+  def sidebar(&block)
+    content_for :sidebar do
+      concat "<div class='block'><h3>Menu</h3><ul class='navigation'>"
+      yield
+      concat '</ul></div>'
+    end
+  end
+
+  def link(name, path, *args)
+    return link_to "<li>#{name}</li>", path, *(args)
+  end
+
 end
