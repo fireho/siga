@@ -44,6 +44,15 @@ pt-BR:
           sex:
             "true": Masculino
             "false": Feminino
+      group:
+        name: Nome Fantasia
+        official_name: Razao Sociao
+        creation: Criada em
+        kind: Tipo
+        enums:
+          kind:
+            filantropic: Filantropica
+            comercial: Comercial
       publication:
         title: Titulo
         body: Corpo

@@ -20,6 +20,8 @@
 #
 class Group < ActiveRecord::Base
 
+  symbolize :kind, :in => [:filantropic, :comercial]
+
   def self.search(filter, page)
     paginate :per_page => 10, :page => page,
     :conditions => ['groups.name like ?', "%#{filter}%"],

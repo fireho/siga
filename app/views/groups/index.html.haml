@@ -1,0 +1,9 @@
+.block
+  .head
+    %h2.title Empresas
+  .content
+    = simple_table_for @groups, :name, :official_name, :kind_text
+    = will_paginate @groups
+
+- content_for :sidebar do
+  = side_menu_for [{"#{image_tag('icons/add.png')} Novo Registro" => new_group_path}, {"Relatorio" => "/"}]

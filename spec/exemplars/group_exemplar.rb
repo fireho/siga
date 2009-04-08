@@ -1,6 +1,7 @@
 class Group < ActiveRecord::Base
   generator_for :name, :method => :next_group_name
   generator_for :official_name, :method => :next_group_name
+  generator_for :kind => :filantropic
 
   # generator_for :state => 'active'
 

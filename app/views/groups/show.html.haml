@@ -1,0 +1,9 @@
+.block
+  .content
+    .inner
+      = show @group, :name, :offical_name, :kind_text
+      =l @group.started_at if @group.started_at
+    = link_to 'Edit', edit_group_path(@group)
+    |
+    = link_to 'Back', groups_path
+
