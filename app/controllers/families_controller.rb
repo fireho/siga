@@ -2,7 +2,7 @@ class FamiliesController < ApplicationController
   # GET /families
   # GET /families.xml
   def index
-    @families = Family.all
+    @families = Family.search(params[:search], params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

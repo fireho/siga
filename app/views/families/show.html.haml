@@ -1,28 +1,7 @@
-<p>
-  <b>Name:</b>
-  <%=h @family.name %>
-</p>
-
-<p>
-  <b>People count:</b>
-  <%=h @family.people_count %>
-</p>
-
-<p>
-  <b>Revenue cents:</b>
-  <%=h @family.revenue_cents %>
-</p>
-
-<p>
-  <b>Kind:</b>
-  <%=h @family.kind %>
-</p>
-
-<p>
-  <b>State:</b>
-  <%=h @family.state %>
-</p>
-
-
-<%= link_to 'Edit', edit_family_path(@family) %> |
-<%= link_to 'Back', families_path %>
+.block
+  .content
+    .inner
+      = show @family, :name, :people_count, :revenue, sex_text, :state_text
+    = link_to 'Editar', edit_family_path(@family)
+    |
+    = link_to 'Voltar', families_path

@@ -1,0 +1,13 @@
+- semantic_form_for(@family, :html => { :class => "form" }) do |f|
+  .columns
+    .column.left
+      = f.input :name, :input_html => { :size => 40 }
+      = f.input :revenue, :input_html => { :size => 40 }
+    .column.right
+      = f.input :kind, :as => :select, :collection => Group.get_kind_values
+      = f.input :state, :as => :select, :collection => Group.get_kind_values
+    .clear
+    .group.navform
+      = f.submit "Salvar &rarr;", :class => "button"
+      ou
+      = link_to 'Cancelar', people_path

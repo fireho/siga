@@ -19,6 +19,14 @@
 #
 #
 class Family < ActiveRecord::Base
+
+
+  def self.search(filter, page)
+    paginate :per_page => 10, :page => page,
+    :conditions => ['families.name like ?', "%#{filter}%"],
+    :order => 'families.created_at'
+  end
+
 end
 
 # == Schema Information

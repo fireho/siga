@@ -1,28 +1,9 @@
-<h1>Listing families</h1>
+.block
+  .head
+    %h2.title Familias
+  .content
+    = simple_table_for @families, :name, :people_count
+    = will_paginate @families
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>People count</th>
-    <th>Revenue cents</th>
-    <th>Kind</th>
-    <th>State</th>
-  </tr>
-
-<% @families.each do |family| %>
-  <tr>
-    <td><%=h family.name %></td>
-    <td><%=h family.people_count %></td>
-    <td><%=h family.revenue_cents %></td>
-    <td><%=h family.kind %></td>
-    <td><%=h family.state %></td>
-    <td><%= link_to 'Show', family %></td>
-    <td><%= link_to 'Edit', edit_family_path(family) %></td>
-    <td><%= link_to 'Destroy', family, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New family', new_family_path %>
+- content_for :sidebar do
+  = side_menu_for [{"#{image_tag('icons/add.png')} Novo Registro" => new_family_path}, {"Relatorio" => "/"}]
