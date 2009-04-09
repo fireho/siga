@@ -1,6 +1,6 @@
 - content_for :head do
   = stylesheet_link_tag "jquery/ui.theme"
-  = javascript_include_tag "jquery/ui.datepicker"
+  = javascript_include_tag "jquery/ui.datepicker", "jquery/jquery.template"
 
 - semantic_form_for(@person, :html => { :class => "form" }) do |f|
   .columns
@@ -13,13 +13,16 @@
       - f.inputs :name => "Residencia", :id => "basic" do
         = f.input :arrival_at, :as => :string, :input_html => { :size => 10, :id => "calendar" }
         = f.input :leave_at, :as => :string, :input_html => { :size => 10, :id => "calendar" }
+      - f.inputs :name => "Documentos", :id => "documents" do
+        = f.add_associated_link "+ Novo documento", @person.documents.build
+        = f.render_associated_form @person.documents, :new => 2
     .column.right
       = f.input :state, :as => :select, :collection => Person.get_state_values
       - f.inputs :name => "Pessoal", :id => "basic" do
+        =# f.input :mom, :as => :string
+        =# f.input :dad, :as => :string
+        =# f.input :spouse, :as => :string
         = f.input :prefix, :as => :select, :collection => %w{Sr Sra}
-        = f.input :mom
-        = f.input :dad
-        = f.input :spouse
         = f.input :blood, :as => :select, :collection => Person.get_blood_values
         = f.input :race, :as => :select, :collection => Person.get_race_values
         = f.input :weight
@@ -28,6 +31,13 @@
         = f.input :profession, :label => "Profissao"
         = f.input :profession_state, :as => :select, :collection => Person.get_profession_state_values
         = f.input :revenue
+
+      //- f.semantic_fields_for :contact do |con|
+      - f.inputs :name => "Contatos", :id => "contacts" do
+        = f.add_associated_link "+ Novo contato", @person.contacts.build
+        = f.render_associated_form @person.contacts, :new => 2
+        //= con.input :value, :as => :string, :input_html => { :size => 10, :id => "calendar" }
+
     .clear
     .group.navform
       = f.submit "Salvar &rarr;", :class => "button"

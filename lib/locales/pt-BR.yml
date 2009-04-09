@@ -53,6 +53,22 @@ pt-BR:
           kind:
             filantropic: Filantropica
             comercial: Comercial
+      contact:
+        value: Valor
+        kind: Tipo
+        enums:
+          kind:
+            tel: Telefone
+            cel: Celular
+            email: Email
+      document:
+        value: Valor
+        kind: Tipo
+        enums:
+          kind:
+            rg: RG
+            cpf: CPF
+            cnh: CNH
       publication:
         title: Titulo
         body: Corpo

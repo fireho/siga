@@ -1,8 +1,19 @@
 .block
   .content
     .inner
-      = show @person, :name, :sex_text, :state_text, :arrival_at, :profession_state_text
-      = show @person, :profession, :income, :revenue, :marital_text, :born_at, :blood
-    = link_to 'Edit', edit_person_path(@person)
+      .column.left
+        = show @person, :name, :sex_text, :state_text, :arrival_at, :profession_state_text
+        = show @person, :profession, :income, :revenue, :marital_text, :born_at, :blood
+      .column.right
+        %h3 Contatos
+        - for contact in @person.contacts
+          %p
+            %b= contact.kind
+            = ": #{contact.value}"
+        %h3 Documentos
+        - for document in @person.documents
+          = show document, :value
+      .clear
+    = link_to 'Editar', edit_person_path(@person)
     |
-    = link_to 'Back', people_path
+    = link_to 'Voltar', people_path

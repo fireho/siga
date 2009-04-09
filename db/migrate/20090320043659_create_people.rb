@@ -5,9 +5,9 @@ class CreatePeople < ActiveRecord::Migration
       t.string :name, :permalink, :null => false
       t.string :state, :null => false
       t.boolean :sex, :null => false, :default => false
-      t.string :marital, :education
+      t.string :marital, :education, :race, :limit => 10
       t.string :profession, :profession_state
-      t.string :prefix, :blood, :race, :limit => 5
+      t.string :prefix, :blood, :limit => 5
 
       t.integer :revenue_cents, :age, :height, :weight
 

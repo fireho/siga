@@ -18,16 +18,16 @@
 #   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 #
-ActionView::Base.send :include, Showtastic::SemanticShowHelper
-
 class Person < ActiveRecord::Base
   belongs_to :birthplace, :class_name => "City"
+  belongs_to :family, :counter_cache => true
   belongs_to :mom, :class_name => "Person"
   belongs_to :dad, :class_name => "Person"
   belongs_to :spouse, :class_name => "Person"
-  has_many :documents
+  has_many :documents, :as => :documentable
   has_many :addresses, :as => :addressable
   has_many :contacts, :as => :contactable
+  accepts_nested_attributes_for :documents, :addresses, :contacts
   has_one :user
 
   has_money :revenue
@@ -73,6 +73,7 @@ class Person < ActiveRecord::Base
   end
 
   def calc_age
+    return unless born_at
     write_attribute(:age, (Time.now - born_at)/60/60/24/360)
   end
 

@@ -20,8 +20,10 @@
 #
 
 class Document < ActiveRecord::Base
-  belongs_to :person
+  belongs_to :documentable, :polymorphic => true
+
   # :cpf, :cnh, :rg, cert_nasc, tipo sanguineo
+  symbolize :kind, :in => [:cpf, :cnh, :rg]
 
 end
 

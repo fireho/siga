@@ -19,6 +19,10 @@
 #
 
 class Contact < ActiveRecord::Base
+  belongs_to :contactable, :polymorphic => true
+
+  symbolize :kind, :in => [:email, :tel, :cel]
+
 end
 
 

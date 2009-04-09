@@ -244,6 +244,18 @@ input.checkbox {
   float: right;
 }
 
+.content .inner .column {
+  width: 48%;
+}
+
+.content .inner .left {
+  float: left;
+}
+
+.content .inner .right {
+  float: right;
+}
+
 .form .form input.text_field, .form textarea.text_area {
   font-size: 1.2em;
   padding: 1px 0;
