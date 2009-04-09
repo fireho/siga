@@ -168,7 +168,7 @@ input.checkbox {  margin: 0;  padding: 0;}
   border-style: solid;
 }
 
-.form .navform {
+.form .navform, .content .navform {
   padding:10px;
   background-color: #eee;
   font-size:14px;

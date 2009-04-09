@@ -14,6 +14,7 @@
         - for document in @person.documents
           = show document, :value
       .clear
-    = link_to 'Editar', edit_person_path(@person)
-    |
-    = link_to 'Voltar', people_path
+    .navform
+      = link_to 'Editar', edit_person_path(@person)
+      |
+      = link_to 'Voltar', people_path
