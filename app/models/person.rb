@@ -24,10 +24,10 @@ class Person < ActiveRecord::Base
   belongs_to :mom, :class_name => "Person"
   belongs_to :dad, :class_name => "Person"
   belongs_to :spouse, :class_name => "Person"
-  has_many :documents, :as => :documentable
-  has_many :addresses, :as => :addressable
-  has_many :contacts, :as => :contactable
-  accepts_nested_attributes_for :documents, :addresses, :contacts
+  has_many :documents, :as => :documentable#, :attributes => true
+  has_many :addresses, :as => :addressable#, :attributes => true
+  has_many :contacts, :as => :contactable#, :attributes => true
+  accepts_nested_attributes_for :documents, :addresses, :contacts, :allow_destroy => true
   has_one :user
 
   has_money :revenue
@@ -40,7 +40,7 @@ class Person < ActiveRecord::Base
   symbolize :race, :in => [:caucasian, :asian, :african, :indian], :allow_nil => true
   symbolize :state, :in => [:active, :inactive, :suspended, :moved, :deceased]
   validates_presence_of :name
-
+  validates_length_of :name, :minimum => 5
   validates_numericality_of :height, :weight, :allow_nil => true
 
   # Human url

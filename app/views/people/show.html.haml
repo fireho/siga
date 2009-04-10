@@ -2,7 +2,8 @@
   .content
     .inner
       .column.left
-        = show @person, :name, :sex_text, :state_text, :arrival_at, :profession_state_text
+        %h3= @person.name
+        = show @person, :sex_text, :state_text, :arrival_at, :profession_state_text
         = show @person, :profession, :income, :revenue, :marital_text, :born_at, :blood
       .column.right
         %h3 Contatos

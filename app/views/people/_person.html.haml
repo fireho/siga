@@ -14,8 +14,8 @@
         = f.input :arrival_at, :as => :string, :input_html => { :size => 10, :id => "calendar" }
         = f.input :leave_at, :as => :string, :input_html => { :size => 10, :id => "calendar" }
       - f.inputs :name => "Documentos", :id => "documents" do
-        = f.add_associated_link "+ Novo documento", @person.documents.build
-        = f.render_associated_form @person.documents, :new => 2
+        = f.add_associated_link "+ Novo documento", :documents
+        = f.render_associated_form @person.documents
     .column.right
       = f.input :state, :as => :select, :collection => Person.get_state_values
       - f.inputs :name => "Pessoal", :id => "basic" do
@@ -34,12 +34,12 @@
 
       //- f.semantic_fields_for :contact do |con|
       - f.inputs :name => "Contatos", :id => "contacts" do
-        = f.add_associated_link "+ Novo contato", @person.contacts.build
-        = f.render_associated_form @person.contacts, :new => 2
+        = f.render_associated_form @person.contacts
+        = f.add_associated_link "+ Novo contato", :contacts
         //= con.input :value, :as => :string, :input_html => { :size => 10, :id => "calendar" }
 
     .clear
-    .group.navform
-      = f.submit "Salvar &rarr;", :class => "button"
-      ou
-      = link_to 'Cancelar', people_path
+  .navform
+    = f.submit "Salvar &rarr;", :class => "button"
+    ou
+    = link_to 'Cancelar', people_path

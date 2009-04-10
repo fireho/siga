@@ -1,29 +1,21 @@
 <% @user_session ||=  UserSession.new(params[:user_session]) %>
+<div class="clear"></div>
+<% form_for @user_session, :url => user_session_path, :html => { :class => "form login" } do |f| %>
 
-  <div class="block">
+<div class="group">
+  <div class="left"><%= f.label :user %></div>
+  <div class="right"> <%= f.text_field :login, :size => 15 %> </div>
+  <div class="clear"></div>
+</div>
 
-    <div class="content">
-      <div class="clear"></div>
+<div class="group">
+  <div class="left"> <%= f.label :pass %></div>
+  <div class="right"> <%= f.password_field :password, :size => 15 %></div>
+  <div class="clear"></div>
+</div>
 
-      <% form_for @user_session, :url => user_session_path, :html => { :class => "form login" } do |f| %>
-
-      <div class="group">
-        <div class="left"><%= f.label :user %></div>
-        <div class="right"> <%= f.text_field :login, :size => 20 %> </div>
-        <div class="clear"></div>
-      </div>
-
-      <div class="group">
-        <div class="left"> <%= f.label :pass %></div>
-        <div class="right"> <%= f.password_field :password, :size => 20 %></div>
-        <div class="clear"></div>
-      </div>
-
-      <div class="group navform">
-        <%= f.submit 'Entrar', :class => :button %>
-      </div>
+<div class="navform">
+  <%= f.submit 'Entrar', :class => :button %>
+</div>
 
 <% end %>
-</div>
-
-</div>

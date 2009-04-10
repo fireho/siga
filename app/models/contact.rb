@@ -23,6 +23,7 @@ class Contact < ActiveRecord::Base
 
   symbolize :kind, :in => [:email, :tel, :cel]
 
+  validates_presence_of :value
 end
 
 

@@ -6,12 +6,12 @@ Info p/ desenvolvedores.
 
 * Person       =>   Cadastro Municipe
   * Relatives  =>   Familia
-  * Document   =>   Cad. Documentos (CPF, RG..)
+  * Documents  =>   Cad. Documentos (CPF, RG..)
   * Contact
   * Address
 
 * Group        =>   Pessoa Juridica
-  * Document   =>   Cad. Documentos (CNPJ, Inscricoes, etc)
+  * Documents  =>   Cad. Documentos (CNPJ, Inscricoes, etc)
   * Contact
   * Address
 

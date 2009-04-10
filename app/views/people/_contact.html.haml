@@ -1,4 +1,5 @@
 .contact
-  = f.input :kind, :as => :select, :collection => Contact.get_kind_values
-  = f.remove_link "Remover"
-  = f.input :value, :html_options => { :size => 6 }
+  - f.inputs do
+    = f.input :kind, :as => :select, :collection => Contact.get_kind_values
+    = f.input :value, :input_html => { :size => 15 }
+    = f.remove_link "remove"

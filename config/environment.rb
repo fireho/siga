@@ -36,7 +36,7 @@ Rails::Initializer.run do |config|
   config.gem "bcrypt-ruby", :lib => "bcrypt"
   config.gem "thoughtbot-paperclip" , :lib => "paperclip"
   config.gem "giraffesoft-is_taggable", :lib => "is_taggable"
-  config.gem "formtastic", :lib => "formtastic"
+  config.gem "nofxx-formtastic", :lib => "formtastic"
   config.gem "nofxx-money", :lib => "money"
 
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
