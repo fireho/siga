@@ -4,10 +4,6 @@
 #   gem install ruby-postgres
 # On Mac OS X:
 #   gem install ruby-postgres -- --include=/usr/local/pgsql
-# On Windows:
-#   gem install ruby-postgres
-#       Choose the win32 build.
-#       Install PostgreSQL and put its /bin directory on your path.
 development:
   adapter: postgresql
   encoding: unicode
@@ -16,20 +12,7 @@ development:
   username: postgres
   #host: localhost
   #port: 5432
-
-  # Connect on a TCP socket. Omitted by default since the client uses a
-  # domain socket that doesn't need configuration. Windows does not have
-  # domain sockets, so uncomment these lines.
-  #host: localhost
-  #port: 5432
-
-  # Schema search path. The server defaults to $user,public
   #schema_search_path: myapp,sharedapp,public
-
-  # Minimum log levels, in increasing order:
-  #   debug5, debug4, debug3, debug2, debug1,
-  #   log, notice, warning, error, fatal, and panic
-  # The server defaults to notice.
   #min_messages: warning
 
 # Warning: The database defined as "test" will be erased and
@@ -41,21 +24,9 @@ test:
   database: siga_test
   pool: 5
   username: postgres
-
-
-  # Connect on a TCP socket. Omitted by default since the client uses a
-  # domain socket that doesn't need configuration. Windows does not have
-  # domain sockets, so uncomment these lines.
   #host: localhost
   #port: 5432
-
-  # Schema search path. The server defaults to $user,public
   #schema_search_path: myapp,sharedapp,public
-
-  # Minimum log levels, in increasing order:
-  #   debug5, debug4, debug3, debug2, debug1,
-  #   log, notice, warning, error, fatal, and panic
-  # The server defaults to notice.
   #min_messages: warning
 
 production:
@@ -64,20 +35,12 @@ production:
   database: siga_production
   pool: 5
   username: postgres
-
-
-  # Connect on a TCP socket. Omitted by default since the client uses a
-  # domain socket that doesn't need configuration. Windows does not have
-  # domain sockets, so uncomment these lines.
   #host: localhost
   #port: 5432
-
   # Schema search path. The server defaults to $user,public
   #schema_search_path: myapp,sharedapp,public
-
   # Minimum log levels, in increasing order:
   #   debug5, debug4, debug3, debug2, debug1,
   #   log, notice, warning, error, fatal, and panic
   # The server defaults to notice.
   #min_messages: warning
-

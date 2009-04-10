@@ -4,9 +4,20 @@ Info p/ desenvolvedores.
 
 = Models
 
+== Sistema
+
+* User         =>   Usuario com acesso sistema (Deve ser person tb)
+* Message      =>   Mensagens entre usuarios.
+* Attachement  =>   Polimorfico pra uso geral anexos.
+* Opt          =>   Opcoes do sistema
+
+== Social
+
+* Family       =>   Agrupa Municipes em uma moradia
 * Person       =>   Cadastro Municipe
-  * Relatives  =>   Familia
+  * Relatives  =>   Filho/Irmao...
   * Documents  =>   Cad. Documentos (CPF, RG..)
+  * P Inpairment =>
   * Contact
   * Address
 
@@ -15,34 +26,37 @@ Info p/ desenvolvedores.
   * Contact
   * Address
 
-* User         =>   Usuario com acesso sistema (Deve ser person tb)
-* Message      =>   Mensagens entre usuarios.
-* Publication  =>   Editais
-* Article      =>   Noticias/Informativos
-
-* Storage      =>   Almoxarifado
-* Heritage     =>   Patrimonio
-
-* Procurement  =>   Licitacao
-* Calendar     =>   Calendario Oficial da Cidade
-* Law          =>   Leis
-* Charter      =>   Alvara/Permissoes
-
-* Employee     =>   Funcionario
+* Profession   =>   Cadastro de Profissoes
+* Official     =>   Funcionario Publico
 * Sector       =>   Setor do usuario do sistema
-* Opt          =>   Opcoes do sistema
+
+
+== Publicate
+
+* Publication  =>   Editais/Decretos/Notas/Portarias
+* Article      =>   Noticias/Informativos
+* Calendar     =>   Calendario Oficial da Cidade
+* Charter      =>   Alvara/Permissoes
+* Law          =>   Leis
+
 
 == Financeiro
 
+* Procurement  =>   Licitacao
+* Storage      =>   Almoxarifado
+* Heritage     =>   Patrimonio
+* Register     =>   Balanco Geral Caixa
 * Tax
-* Register
 * Account
 
 == Saude
 
-== Educacao
+== Vigilancia Social
 
-== Social
+* Animal       =>  Cad Animais
+
+
+== Educacao
 
 == GIS
 
@@ -55,9 +69,19 @@ Info p/ desenvolvedores.
     * Property   =>   Representa Imovel Construido | MULTIPOLYGON
     * Address    =>   Geolocatable
 
+* POI            =>   Ponto de Interesse
+
+
 == Defaults
 
+Siga o padrao de views de app/views/people e app/views/articles !!
 
+Formtastic + jquery ui
+Nao use h1
+Campo datas => Jquery Datepicker
+Enums => activerecord_symbolize
+Todos os campos de nome pessoa/grupo => jquery autocomplete (TODO)
 
 = SPEC
 
+Use `autospec` ou `spec spec`

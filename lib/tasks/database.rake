@@ -65,8 +65,6 @@ namespace :db do
 
   #
   # REMIGRATE
-  #
-  #
   desc "Migrate schema to version 0 and back up again. DESTROYS all data in tables!!"
   task :remigrate => :environment do
     require 'highline/import'
@@ -86,6 +84,44 @@ namespace :db do
     end
   end
 
+  #
+  # BACKUP DB
+  desc "Backup db to tmp"
+  task :backup do
+    require 'yaml'
+
+    env   = ENV['RAILS_ENV'] || ENV['DB'] || 'production'
+    db_config = YAML.load_file("config/database.yml")
+    db_user = db_config[env]["username"]
+    db_pass = db_config[env]["password"]
+    db_host = db_config[env]["hostname"] || "localhost"
+    db_name = db_config[env]["database"]
+
+    #base_path = ENV["DIR"] || "db"
+    datestamp = Time.now.strftime("%Y%m%d%H%M%S")
+    file  = "siga_#{env}-#{datestamp}.sql.bz2"
+
+    cmd = "pg_dump --clean --no-owner --no-privileges -U#{db_user} -h#{db_host} #{db_name}"
+    cmd += " -p#{db_pass}" if db_pass
+    cmd += " | bzip2 > tmp/#{file}"
+    puts "Dump Start => tmp/#{file}"
+    t = Time.now
+    result =  system cmd
+    raise("database dump failed.  msg: #{$?}") unless result
+    puts "Done. (#{Time.now - t}s)"
+  end
+
+  #
+  # BOOTSTRAP DB
+  desc "Loads db with fake data"
+  task :bootstrap do
+    require 'object_daddy'
+    require 'faker'
+    [Publication, Article, Person, Group, Law, Area, Procurement, Poi,
+    User, Official, Sector, Zone, Property].each do |k|
+      80.times {  k.generate! }
+    end
+  end
 
   #
   # SHORTCUT MIGRATE DEV ENV
