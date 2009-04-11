@@ -1,6 +1,6 @@
 - content_for :head do
-  = stylesheet_link_tag "jquery/ui.theme"
   = javascript_include_tag "jquery/ui.datepicker", "jquery/jquery.template"
+  = javascript_include_tag "jquery/jquery.autocomplete.min", "app/person"
 
 - semantic_form_for(@person, :html => { :class => "form" }) do |f|
   .columns
@@ -14,12 +14,12 @@
         = f.input :arrival_at, :as => :string, :input_html => { :size => 10, :id => "calendar" }
         = f.input :leave_at, :as => :string, :input_html => { :size => 10, :id => "calendar" }
       - f.inputs :name => "Documentos", :id => "documents" do
-        = f.add_associated_link "+ Novo documento", :documents
         = f.render_associated_form @person.documents
+        = f.add_associated_link "+ Novo documento", :documents
     .column.right
       = f.input :state, :as => :select, :collection => Person.get_state_values
       - f.inputs :name => "Pessoal", :id => "basic" do
-        =# f.input :mom, :as => :string
+        = f.input :mom_text, :as => :string
         =# f.input :dad, :as => :string
         =# f.input :spouse, :as => :string
         = f.input :prefix, :as => :select, :collection => %w{Sr Sra}

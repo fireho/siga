@@ -8,7 +8,9 @@
 pt-PT:
   support:
     array:
-      sentence_connector: "e"
+      words_connector: ", "
+      two_words_connector: " e "
+      last_word_connector: " e "
       skip_last_comma: true
   date:
     formats:

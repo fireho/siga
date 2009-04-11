@@ -77,6 +77,10 @@ class Person < ActiveRecord::Base
     write_attribute(:age, (Time.now - born_at)/60/60/24/360)
   end
 
+  def mom_text
+    mom.name if mom
+  end
+
   def self.search(filter, page)
     paginate :per_page => 20, :page => page,
     :conditions => ['name like ?', "%#{filter}%"],

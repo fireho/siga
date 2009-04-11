@@ -161,6 +161,7 @@ input.checkbox {  margin: 0;  padding: 0;}
 
 .form div.fieldWithErrors label.label {  display: inline;}
 .form .fieldWithErrors .error {  color: red;}
+.fieldWithErrors > input, .fieldWithErrors > textarea { background-color:#FFFF80;}
 
 .form input.text_field, .form textarea.text_area {
   width: 100%;

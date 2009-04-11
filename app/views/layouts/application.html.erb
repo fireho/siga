@@ -6,7 +6,7 @@
     <title>SIG@ { <%= controller.controller_name %> }</title>
     <% #bundle :name => :base do %>
       <%= stylesheet_link_tag 'application', "themes/#{cookies[:theme] || SIGA_THEME}/style", "themes/#{cookies[:theme] || SIGA_THEME}/ui.theme" %>
-      <%= javascript_include_tag 'jquery', 'cookie', 'application' %>
+      <%= javascript_include_tag 'jquery', 'xhr',  'cookie', 'application' %>
     <% #end %>
     <%= yield :head %>
   </head>
