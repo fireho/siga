@@ -1,19 +1,9 @@
 class AdminController < ApplicationController
-  # GET /opts
-  # GET /opts.xml
+
+  # GET /admin
   def index
     @opts = Opt.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @opts }
-    end
-  end
-
-  # GET /opts/1
-  # GET /opts/1.xml
-  def show
-    @opt = Opt.find(params[:id])
+    @backups = Dir['tmp/*.bz2'].map { |f| f.gsub(/\D|2$/, "") }
 
     respond_to do |format|
       format.html # show.html.erb
@@ -21,20 +11,19 @@ class AdminController < ApplicationController
     end
   end
 
-  # GET /opts/new
-  # GET /opts/new.xml
-  def new
-    @opt = Opt.new
+  def backup
+    if params[:id]
+      f = Dir['tmp/*.bz2'].select { |f| f =~ /#{params[:id]}/ }.first
+      send_file(f, :filename => f.gsub(/tmp\//, ""))
+    else
+      cmd = system("rake db:backup")
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @opt }
+      respond_to do |format|
+        flash[:notice] = 'Backup concluido.'
+        format.html  {  redirect_to(admin_index_url) }
+        format.xml  { render :xml => 'OK' }
+      end
     end
-  end
-
-  # GET /opts/1/edit
-  def edit
-    @opt = Opt.find(params[:id])
   end
 
   # POST /opts

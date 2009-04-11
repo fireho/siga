@@ -254,3 +254,49 @@ form.formtastic li p.inline-errors {
   padding-left: 20px;
 }
 form.formtastic li.error {      background-color: #fdd;    border: 1px solid #fbb; display:list-item; }
+
+
+/*
+ *  Icons
+ *
+ *
+*/
+div#container a.icon {
+        padding-left: 20px;
+}
+a.home { background: transparent url(../images/icons/home.png) no-repeat scroll left 3px; }
+a.login {        background: transparent url(../images/icons/key.png) no-repeat scroll left 3px;}
+a.contact {        background: transparent url(../images/icons/telephone.png) no-repeat scroll left 3px;}
+a.add {        background: transparent url(../images/icons/add.png) no-repeat scroll left 3px;}
+a.accept {        background: transparent url(../images/icons/accept.png) no-repeat scroll left 3px;}
+a.delete {        background: transparent url(../images/icons/delete.png) no-repeat scroll left 3px;}
+a.edit {        background: transparent url(../images/icons/edit.png) no-repeat scroll left 3px;}
+a.back {        background: transparent url(../images/icons/arrow/arrow_left.png) no-repeat scroll left 3px;}
+a.show {        background: transparent url(../images/icons/application_view_columns.png) no-repeat scroll left 3px;}
+a.activate {        background: transparent url(../images/icons/lock_unlock.png) no-repeat scroll left 3px;}
+a.deactivate {        background: transparent url(../images/icons/lock.png) no-repeat scroll left 3px;}
+a.warn {        background: transparent url(../images/icons/error.png) no-repeat scroll left 3px;}
+a.table {        background: transparent url(../images/icons/table.png) no-repeat scroll left 3px;}
+a.maps {        background: transparent url(../images/icons/maps.png) no-repeat scroll left 3px;}
+a.feed {        background: transparent url(../images/icons/feed.png) no-repeat scroll left 3px;}
+a.address {        background: transparent url(../images/icons/address.png) no-repeat scroll left 3px;}
+a.help {        background: transparent url(../images/icons/lifebuoy.png) no-repeat scroll left 3px;}
+a.print {        background: transparent url(../images/icons/doc/printer.png) no-repeat scroll left 3px;}
+a.pdf {        background: transparent url(../images/icons/doc/pdf.png) no-repeat scroll left 3px;}
+a.xls {        background: transparent url(../images/icons/doc/xls.png) no-repeat scroll left 3px;}
+a.xml {        background: transparent url(../images/icons/doc/xml.png) no-repeat scroll left 3px;}
+a.csv {        background: transparent url(../images/icons/doc/csv.png) no-repeat scroll left 3px;}
+a.report {        background: transparent url(../images/icons/doc/report.png) no-repeat scroll left 3px;}
+a.info {        background: transparent url(../images/icons/information.png) no-repeat scroll left 3px;}
+a.asterisk {        background: transparent url(../images/icons/asterisk.png) no-repeat scroll left 3px;}
+a.pin {        background: transparent url(../images/icons/map/pin.png) no-repeat scroll left 3px;}
+a.funnel {        background: transparent url(../images/icons/funnel.png) no-repeat scroll left 3px;}
+a.arrow {  background: transparent url(../images/icons/arrow/arrow.png) no-repeat scroll right 3px;}
+a.macros {        background: transparent url(../images/icons/letter.png) no-repeat scroll left 3px;}
+a.mail {        background: transparent url(../images/icons/letter.png) no-repeat scroll left 1px;}
+a.mail_read {        background: transparent url(../images/icons/letter_read.png) no-repeat scroll left 3px;}
+a.lorry {        background: transparent url(../images/icons/truck/lorry.png) no-repeat scroll left 1px;}
+a.note {        background: transparent url(../images/icons/note.png) no-repeat scroll left 3px;}
+a.safe {        background: transparent url(../images/icons/safe.png) no-repeat scroll left 3px;}
+a.bank {        background: transparent url(../images/icons/bank.png) no-repeat scroll left 3px;}
+a.bell {        background: transparent url(../images/icons/bell.png) no-repeat scroll left 4px;}

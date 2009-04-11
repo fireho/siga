@@ -9,7 +9,7 @@ class People
       ppl = Person.all(:select => "people.name, people.id", :order => "people.name",
                        :conditions => ["name LIKE ?","%#{request[:name]}%"])
 
-      [200, {"Content-Type" => "text/html"}, ppl.to_json]
+      [200, {"Content-Type" => "text/html"}, ppl.map { |p| "#{p.name}|#{p.id}\n" }]
     else
       [404, {"Content-Type" => "text/html"}, ["Not Found"].to_json]
     end

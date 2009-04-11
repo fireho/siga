@@ -61,7 +61,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :contacts
   map.resources :sectors
   map.resources :reports
-  map.resources :admin
+  map.resources  :admin, :collection => { :backup => :get }, :member => { :destroy => :get, :backup => :get }
   map.resource  :config, :controller => "config"
   map.resource  :about, :controller => "about"
   map.resource  :help, :controller => "help"

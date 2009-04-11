@@ -1,0 +1,52 @@
+- content_for :head do
+  = javascript_include_tag 'app/tabs', 'jquery/ui.core', 'jquery/ui.tabs'
+
+.block
+  - if current_user
+    #tabs
+      %ul
+        %li= link_to "Info", "#fragment-1"
+        %li= link_to "Opcoes", "#fragment-2"
+        %li= link_to "Estatisticas", "#fragment-3"
+        %li= link_to "Backup", "#fragment-4"
+        %li= link_to "Permissoes", "#fragment-5"
+        %li= link_to "Alertas", "#fragment-6"
+      .clear
+      #fragment-1
+        %h2 SIG@
+        .inner
+          %p{:class => :first}
+            = "Olá, #{current_user.name}."
+            = link_to pluralize(@messages, "mensagem", "mensagens"), "/inbox", :class => "icon mail"
+      #fragment-2
+        %h2 SIOOO
+        .inner
+          %p{:class => :first}
+            = "Olá, #{current_user.name}."
+            = link_to pluralize(@messages, "mensagem", "mensagens"), "/inbox", :class => "icon mail"
+      #fragment-3
+        %h2 STATS
+        .inner
+          %p{:class => :first}
+            = "Olá, #{current_user.name}."
+            = link_to pluralize(@messages, "mensagem", "mensagens"), "/inbox", :class => "icon mail"
+      #fragment-4
+        %h2 BACKUP
+        .inner
+          %p= link_to "Novo backup", backup_admin_path
+          - for backup in @backups
+            %p
+              = link_to l(Time.parse(backup)), "admin/#{backup}/backup"
+              = link_to "", "admin/#{backup}/destroy", :class => "icon delete"
+      #fragment-5
+        %h2 SIG@
+        .inner
+          Admin
+      #fragment-6
+        %h2 SIOOO
+        .inner
+          %p{:class => :first}
+            = "Olá, #{current_user.name}."
+            = link_to pluralize(@messages, "mensagem", "mensagens"), "/inbox", :class => "icon mail"
+
+
