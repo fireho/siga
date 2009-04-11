@@ -19,6 +19,10 @@
 #
 #
 class Group < ActiveRecord::Base
+  has_many :documents, :as => :documentable
+  has_many :addresses, :as => :addressable
+  has_many :contacts, :as => :contactable
+  accepts_nested_attributes_for :documents, :addresses, :contacts, :allow_destroy => true
 
   symbolize :kind, :in => [:filantropic, :comercial]
 

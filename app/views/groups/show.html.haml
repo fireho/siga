@@ -3,6 +3,15 @@
     .inner
       = show @group, :name, :offical_name, :kind_text
       =l @group.started_at if @group.started_at
+      .column.right
+        %h3 Contatos
+        - for contact in @group.contacts
+          %p
+            %b= contact.kind
+            = ": #{contact.value}"
+        %h3 Documentos
+        - for document in @group.documents
+          = show document, :value
     = link_to 'Edit', edit_group_path(@group)
     |
     = link_to 'Back', groups_path

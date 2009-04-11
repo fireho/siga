@@ -1,15 +1,26 @@
 - content_for :head do
   = stylesheet_link_tag "jquery/ui.theme"
-  = javascript_include_tag "jquery/ui.datepicker"
+  = javascript_include_tag "jquery/ui.datepicker", "jquery/jquery.template"
 
 - semantic_form_for(@group, :html => { :class => "form" }) do |f|
   .columns
     .column.left
       = f.input :name, :input_html => { :size => 40 }
       = f.input :official_name, :input_html => { :size => 40 }
+      - f.inputs :name => "Enderecos", :id => "addresses" do
+        = f.render_associated_form @group.addresses, :partial => "addresses/address"
+        = f.add_associated_link "+ Novo endereco", :addresses, :partial => "addresses/address"
+
+      //- f.inputs :name => "Documentos", :id => "documents" do
+      //  = f.render_associated_form @group.documents
+      //  = f.add_associated_link "+ Novo documento", :documents
     .column.right
       = f.input :kind, :as => :select, :collection => Group.get_kind_values
       = f.input :started_at, :as => :string, :input_html => { :size => 15, :id => "calendar" }
+      - f.inputs :name => "Contatos", :id => "contacts" do
+        = f.render_associated_form @group.contacts, :partial => "contacts/contact"
+        = f.add_associated_link "+ Novo contato", :contacts, :partial => "contacts/contact"
+
     .clear
     .group.navform
       = f.submit "Salvar &rarr;", :class => "button"

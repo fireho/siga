@@ -1,0 +1,7 @@
+.address
+  - f.inputs do
+    //= f.input :kind, :as => :select, :collection => Contact.get_kind_values
+    = f.input :prefix, :as => :select, :collection => Address.get_prefix_values
+    = f.input :name
+    = f.input :number, :input_html => { :size => 15 }
+    = f.remove_link "remove"

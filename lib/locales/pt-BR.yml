@@ -61,6 +61,14 @@ pt-BR:
             tel: Telefone
             cel: Celular
             email: Email
+      address:
+        prefix: Prefixo
+        name: Nome
+        enums:
+          prefix:
+            street: Rua
+            cel: Celular
+            email: Email
       document:
         value: Valor
         kind: Tipo
