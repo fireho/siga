@@ -22,6 +22,8 @@ class Group < ActiveRecord::Base
   has_many :documents, :as => :documentable
   has_many :addresses, :as => :addressable
   has_many :contacts, :as => :contactable
+  has_many :group_people
+  has_many :people, :through => :group_people
   accepts_nested_attributes_for :documents, :addresses, :contacts, :allow_destroy => true
 
   symbolize :kind, :in => [:filantropic, :comercial]

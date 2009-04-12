@@ -19,6 +19,9 @@
 #
 #
 class Profession < ActiveRecord::Base
+  symbolize :kind, :in => [:graduated, :ungraduated]
+
+  validates_presence_of :name
 end
 
 # == Schema Information

@@ -1,24 +1,8 @@
-<h1>Listing professions</h1>
+.block
+  .head
+    %h2.title Profissoes
+  .content
+    = simple_table_for @professions, :name, :kind_text, :person_count
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Kind</th>
-    <th>Person count</th>
-  </tr>
-
-<% @professions.each do |profession| %>
-  <tr>
-    <td><%=h profession.name %></td>
-    <td><%=h profession.kind %></td>
-    <td><%=h profession.person_count %></td>
-    <td><%= link_to 'Show', profession %></td>
-    <td><%= link_to 'Edit', edit_profession_path(profession) %></td>
-    <td><%= link_to 'Destroy', profession, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New profession', new_profession_path %>
+- content_for :sidebar do
+  = side_menu_for [{"#{image_tag('icons/add.png')} Novo Registro" => new_profession_path}, {"Relatorio" => "/"}]
