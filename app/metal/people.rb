@@ -7,7 +7,7 @@ class People
     if env["PATH_INFO"] =~ /^\/people.json/
       request = Rack::Request.new(env)
       ppl = Person.all(:select => "people.name, people.id", :order => "people.name",
-                       :conditions => ["name LIKE ?","%#{request[:name]}%"])
+                       :conditions => ["name LIKE ? and sex = ?", "%#{request[:q]}%", request[:sex]])
 
       [200, {"Content-Type" => "text/html"}, ppl.map { |p| "#{p.name}|#{p.id}\n" }]
     else
