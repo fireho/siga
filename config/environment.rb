@@ -25,7 +25,7 @@ Rails::Initializer.run do |config|
 
   config.time_zone = "UTC"
   config.i18n.load_path += Dir[Rails.root.join("lib", "locales", "*.{rb,yml}")]
-  config.i18n.default_locale = "pt-BR"
+  config.i18n.default_locale = "pt"
 
   config.gem "postgres"
   config.gem "postgis_adapter"
