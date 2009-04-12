@@ -3,26 +3,24 @@ class AdminController < ApplicationController
   # GET /admin
   def index
     @opts = Opt.all
-    @backups = Dir['tmp/*.bz2'].map { |f| f.gsub(/\D|2$/, "") }
+    @stats = [User, Person, Group, Publication, Property, Zone].map { |k| "#{k}: #{k.count}"}
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html   # show.html.erb
       format.xml  { render :xml => @opt }
     end
   end
 
-  def backup
-    if params[:id]
-      f = Dir['tmp/*.bz2'].select { |f| f =~ /#{params[:id]}/ }.first
-      send_file(f, :filename => f.gsub(/tmp\//, ""))
-    else
-      cmd = system("rake db:backup")
 
-      respond_to do |format|
-        flash[:notice] = 'Backup concluido.'
-        format.html  {  redirect_to(admin_index_url) }
-        format.xml  { render :xml => 'OK' }
-      end
+  # DELETE /opts/1
+  # DELETE /opts/1.xml
+  def destroy
+    @opt = Opt.find(params[:id])
+    @opt.destroy
+
+    respond_to do |format|
+      format.html { redirect_to(opts_url) }
+      format.xml  { head :ok }
     end
   end
 
@@ -60,15 +58,5 @@ class AdminController < ApplicationController
     end
   end
 
-  # DELETE /opts/1
-  # DELETE /opts/1.xml
-  def destroy
-    @opt = Opt.find(params[:id])
-    @opt.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(opts_url) }
-      format.xml  { head :ok }
-    end
-  end
 end

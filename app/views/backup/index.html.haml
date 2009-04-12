@@ -1,0 +1,13 @@
+%p= link_to "Gerar backup", new_backup_path
+- semantic_form_for :backup, :action => :create, :html => { :multipart => true } do |f|
+  = f.input :file, :as => :file, :label => "Enviar"
+  = f.submit
+%table.table
+  %tr
+    %th{:colspan => 2} Backups
+  - for backup in @backups
+    %tr
+      %td= link_to l(Time.parse(backup)), "backup/#{backup}"
+      %td
+        = link_to "Restore", "backup/#{backup}/restore", :confirm => "Restaurar?", :class => "icon down"
+        = link_to "", "backup/#{backup}", :confirm => "Apagar este backup?", :method => :delete, :class => "icon delete"

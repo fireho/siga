@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   helper :all
   helper_method :current_user_session, :current_user
   filter_parameter_logging :password, :password_confirmation
-
+  # layout proc{ |c| c.request.xhr? ? false : "application" }
   before_filter :set_time_zone
   before_filter :set_locale
 
