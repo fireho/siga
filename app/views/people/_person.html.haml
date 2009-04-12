@@ -19,8 +19,8 @@
     .column.right
       = f.input :state, :as => :select, :collection => Person.get_state_values
       - f.inputs :name => "Pessoal", :id => "basic" do
-        = f.input :mom_id, :as => :string
-        = f.hidden_field :mom_id, :value => "1"
+        = f.input :mom_text, :as => :string
+        = f.hidden_field :mom_id
         =# f.input :dad, :as => :string
         =# f.input :spouse, :as => :string
         = f.input :prefix, :as => :select, :collection => %w{Sr Sra}

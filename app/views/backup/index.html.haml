@@ -7,7 +7,8 @@
     %th{:colspan => 2} Backups
   - for backup in @backups
     %tr
-      %td= link_to l(Time.parse(backup)), "backup/#{backup}"
+      %td= link_to l(Time.parse(backup[:name])), "backup/#{backup[:name]}"
+      %td= number_to_human_size backup[:size]
       %td
-        = link_to "Restore", "backup/#{backup}/restore", :confirm => "Restaurar?", :class => "icon down"
-        = link_to "", "backup/#{backup}", :confirm => "Apagar este backup?", :method => :delete, :class => "icon delete"
+        = link_to "Restore", "backup/#{backup[:name]}/restore", :confirm => "Restaurar?", :class => "icon down"
+        = link_to "", "backup/#{backup[:name]}", :confirm => "Apagar este backup?", :method => :delete, :class => "icon delete"

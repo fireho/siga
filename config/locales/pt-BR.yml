@@ -85,10 +85,12 @@ pt-BR:
     human:
       storage_units:
         units:
-          byte: b
-        format: "%u"
-        precision: 1
-        delimiter: '.'
+          byte: B
+          kb: KB
+          mb: MB
+          gb: GB
+          gb: TB
+        format: "%n %u"
   support:
     array:
       sentence_connector: "e"

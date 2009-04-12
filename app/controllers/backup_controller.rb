@@ -2,7 +2,10 @@ class BackupController < ApplicationController
   layout false
 
   def index
-    @backups = Dir['tmp/*.bz2'].map { |f| f.gsub(/\D|2$/, "") }.sort.reverse
+    files = Dir['tmp/*.bz2'].sort.reverse
+    @backups = files.map do |f|
+      { :name => f.gsub(/\D|2$/, ""), :size => File.size(f)}
+    end
 
     respond_to do |format|
       format.html
@@ -54,7 +57,7 @@ class BackupController < ApplicationController
   def restore
     f = find_file(params[:id])
     send_file(f, :filename => f.gsub(/tmp\//, ""))
-    
+
     respond_to do |format|
       flash[:notice] = 'Backup restaurado.'
       format.html { redirect_to(admin_index_url) }

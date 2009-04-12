@@ -81,6 +81,10 @@ class Person < ActiveRecord::Base
     mom.name if mom
   end
 
+  def mom_text=(v)
+    @mom_text = v
+  end
+
   def self.search(filter, page)
     paginate :per_page => 20, :page => page,
     :conditions => ['name like ?', "%#{filter}%"],
