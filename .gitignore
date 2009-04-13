@@ -27,3 +27,4 @@ public/rubyrun_rss/*
 *#*#
 *.#*
 config/deploy.rb
+nbproject/*
