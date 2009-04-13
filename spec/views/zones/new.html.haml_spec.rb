@@ -1,8 +1,8 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
-describe "/zones/new.html.erb" do
+describe "/zones/new.html.haml" do
   include ZonesHelper
-  
+
   before(:each) do
     assigns[:zone] = stub_model(Zone,
       :new_record? => true,
@@ -11,8 +11,8 @@ describe "/zones/new.html.erb" do
   end
 
   it "should render new form" do
-    render "/zones/new.html.erb"
-    
+    render "/zones/new.html.haml"
+
     response.should have_tag("form[action=?][method=post]", zones_path) do
       with_tag("input#zone_name[name=?]", "zone[name]")
     end

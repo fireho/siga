@@ -46,7 +46,7 @@ pt-BR:
             "false": Feminino
       group:
         name: Nome Fantasia
-        official_name: Razao Sociao
+        official_name: Razao Social
         creation: Criada em
         kind: Tipo
         enums:

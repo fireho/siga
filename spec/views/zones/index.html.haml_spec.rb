@@ -1,8 +1,8 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
-describe "/zones/index.html.erb" do
+describe "/zones/index.html.haml" do
   include ZonesHelper
-  
+
   before(:each) do
     assigns[:zones] = [
       stub_model(Zone,
@@ -15,7 +15,7 @@ describe "/zones/index.html.erb" do
   end
 
   it "should render list of zones" do
-    render "/zones/index.html.erb"
+    render "/zones/index.html.haml"
     response.should have_tag("tr>td", "value for name".to_s, 2)
   end
 end

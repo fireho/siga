@@ -1,6 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
-describe "/professions/show.html.erb" do
+describe "/professions/show.html.haml" do
   include ProfessionsHelper
   before(:each) do
     assigns[:profession] = @profession = stub_model(Profession,
