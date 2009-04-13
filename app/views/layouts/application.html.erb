@@ -4,10 +4,8 @@
   <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
     <title>SIG@ { <%= controller.controller_name %> }</title>
-    <% #bundle :name => :base do %>
-      <%= stylesheet_link_tag 'application', "themes/#{cookies[:theme] || SIGA_THEME}/style", "themes/#{cookies[:theme] || SIGA_THEME}/ui.theme" %>
+      <%= stylesheet_link_tag 'application', "icons", "themes/#{cookies[:theme] || SIGA_THEME}/style", "themes/#{cookies[:theme] || SIGA_THEME}/ui.theme" %>
       <%= javascript_include_tag 'jquery', 'xhr',  'cookie', 'application' %>
-    <% #end %>
     <%= yield :head %>
   </head>
   <body>
@@ -32,70 +30,70 @@
         <div id="user-drop-navigation">
           <input id="search" name="search[query]" size="18" type="text" />
           <%#= image_tag "icons/magnifier.png" %>
-          <%= submit_tag "Procura", :class => :searchbutton %>
+          <%= submit_tag "Buscar", :class => :searchbutton %>
         </div>
         <div id="main-navigation">
           <ul>
-            <li class="first active" ><a href="/">Home</a>
+            <li class="first active" ><a href="/" class="ihome">Home</a>
               <ul class='submenu2'>
                 <li>
                   <ul>
                     <li><strong>Opções do usuário:</strong></li>
-                    <li><a href="#">Minha Conta</a></li>
-                    <li><a href="#">Opcoes</a></li>
-                    <li><a href="#">Mensagens</a></li>
+                    <li><a href="#" class="ireport">Minha Conta</a></li>
+                    <li><a href="#" class="iwrench">Opções</a></li>
+                    <li><a href="#" class="imail">Mensagens</a></li>
                     <li><strong>Opções de administrador:</strong></li>
-                    <li><a href="#">Novo usuário</a></li>
-                    <li><a href="#">Remover usuário</a></li>
-                    <li><a href="#">Bloquear usuário</a></li>
+                    <li><a href="#" class="icard__plus">Novo usuário</a></li>
+                    <li><a href="#" class="icard__minus">Remover usuário</a></li>
+                    <li><a href="#" class="icard__exclamation">Bloquear usuário</a></li>
                   </ul>
                 </li>
                 <li>
                   <ul>
                     <li><strong>Atualizações:</strong></li>
-                    <li><a href="#">Leis</a></li>
-                    <li><a href="#">Famílias</a></li>
-                    <li><a href="#">Propriedades</a></li>
-                    <li><a href="#">Areas</a></li>
-                    <li><a href="#">Zonas</a></li>
+                    <li><a href="#" class="iaddress">Leis</a></li>
+                    <li><a href="#" class="icard_address">Famílias</a></li>
+                    <li><a href="#" class="icard_address">Propriedades</a></li>
+                    <li><a href="#" class="icard_address">Areas</a></li>
+                    <li><a href="#" class="icard_address">Zonas</a></li>
                     <li><strong>Relatórios:</strong></li>
-                    <li><a href="#">Fiscal</a></li>
-                    <li><a href="#">Sei la</a></li>
+                    <li><a href="#" class="icard_address">Fiscal</a></li>
+                    <li><a href="#" class="icard_address">Sei la</a></li>
                   </ul>
                 </li>
               </ul>
             </li>
-            <li><a href="/publications">Publicacoes</a>
+            <li><a href="/publications" class="icard_address">Publicações</a>
               <ul class='submenu'>
-                <li><a href="/articles">Artigos</a></li>
-                <li><a href="/procurements">Licitacoes</a></li>
-                <li><a href="/laws">Leis</a></li>
-                <li><a href="/publications">Editais</a></li>
-                <li><a href="/publications">Decretos</a></li>
-                <li><a href="/publications">Portarias</a></li>
+                <li><a href="/articles" class="icard_address">Artigos</a></li>
+                <li><a href="/procurements" class="icard_address">Licitações</a></li>
+                <li><a href="/laws" class="iaddress">Leis</a></li>
+                <li><a href="/publications" class="icard_address">Editais</a></li>
+                <li><a href="/publications" class="icard_address">Decretos</a></li>
+                <li><a href="/publications" class="icard_address">Portarias</a></li>
               </ul>
             </li>
             <% if current_user %>
-              <li><a href="/people">Social</a>
+              <li><a href="/people" class="icard_address">Social</a>
                 <ul class='submenu'>
-                  <li><a href="/people">Municipes</a></li>
-                  <li><a href="/families">Familias</a></li>
-                  <li><a href="/groups">Empresas</a></li>
+                  <li><a href="/people" class="icard_address">Cidadãos</a></li>
+                  <li><a href="/families" class="icard_address">Famílias</a></li>
+                  <li><a href="/groups" class="icard_address">Empresas</a></li>
                 </ul>
               </li>
-              <li><a href="/areas">Areas</a>
+              <li><a href="/areas" class="icard_address">Áreas</a>
                 <ul class='submenu'>
-                  <li><a href="/areas">Areas</a></li>
-                  <li><a href="/zones">Zonas</a></li>
-                  <li><a href="/properties">Propriedades</a></li>
+                  <li><a href="/areas" class="icard_address">Áreas</a></li>
+                  <li><a href="/zones" class="icard_address">Zonas</a></li>
+                  <li><a href="/properties" class="icard_address">Propriedades</a></li>
                 </ul>
               </li>
-              <li><a href="/heritages">Patrimonio</a>
+              <li><a href="/heritages" class="icard_address">Patrimônio</a>
                 <ul class='submenu'>
-                  <li><a href="/storages">Almoxarifado</a></li>
-                  <li><a href="/areas">Areas</a></li>
-                  <li><a href="/zones">Zonas</a></li>
-                  <li><a href="/properties">Propriedades</a></li>
+                  <li><a href="/storages" class="icard_address">Almoxarifado</a></li>
+                  <li><a href="/areas" class="icard_address">Áreas</a></li>
+                  <li><a href="/zones" class="icard_address">Zonas</a></li>
+                  <li><a href="/properties" class="icard_address">Propriedades</a></li>
                 </ul>
               </li>
             <% end %>
@@ -114,12 +112,12 @@
             <div class="block">
               <h3>Menu Principal</h3>
               <ul class="navigation">
-                <li><a href="#"> Editais </a></li>
-                <li><a href="#"> Cadastro Unico </a></li>
-                <li><a href="#"> Relatorio </a></li>
-                <li><a href="#"> Documentos </a></li>
-                <li><a href="#"> Contas </a></li>
-                <li><a href="#"> Saude </a></li>
+                <li><a href="#" class="icon iclipboard"> Editais </a></li>
+                <li><a href="#" class="icon icard_address"> Cadastro Unico </a></li>
+                <li><a href="#" class="icon ifolder_open_document"> Relatório </a></li>
+                <li><a href="#" class="icon idocuments"> Documentos </a></li>
+                <li><a href="#" class="icon icards"> Contas </a></li>
+                <li><a href="#" class="icon iheart"> Saúde </a></li>
               </ul>
             </div>
           <% end %>

@@ -11,5 +11,5 @@
       = will_paginate @laws
 
 - sidebar do
-  = link "#{image_tag('icons/add.png')} Nova Lei", new_law_path
+  = link "Nova Lei", new_law_path, :class => 'icon iadd'
   = link "Anteriores", "/"

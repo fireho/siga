@@ -93,9 +93,6 @@ hr {
 #main-navigation ul li a:active {
         color: #2e2e2e;
 }
-#main-navigation ul li a {
-    padding: 7px 12px 7px 12px;
-}
 
 #main-navigation ul li.active {
   background: #eee;
@@ -144,7 +141,7 @@ hr {
 
 
 #sidebar ul li a:link, #sidebar ul li a:visited {
-  background: #FFF;
+/*  background: #FFF; */
   border-bottom: 1px solid #F0F0EE;
   text-decoration: none;
 }
@@ -467,22 +464,4 @@ form.formtastic fieldset ol li.time fieldset ol li label input,
 form.formtastic fieldset ol li.datetime fieldset ol li label input { display:inline; margin:0; padding:0; }
 form.formtastic fieldset legend span.label { font-weight:bold;color:#222222; }
 div.pagination { padding-bottom: 40px; padding-left:20px;  }
-
-/* Submenu */
-ul.submenu, ul.submenu2 {
-    visibility : hidden;
-    position: absolute;
-    background-color: #e2e2e2 ;
-    padding: 10px 0;
-    border-right: 1px solid #d2d2d2;
-    border-left: 1px solid #b2b2b2;
-    border-bottom: 1px solid #a2a2a2;
-    z-index: 9999
-}
-div#main-navigation ul li ul.submenu li , ul.submenu2 li ul li { float: none }
-ul.submenu li a, ul.submneu2 li ul li a { display: block; padding: 10px; font-size: 12px}
-ul.submenu li { width: 150px }
-ul.submenu2 li { width: 164px }
-ul.submenu2 li strong { display: block; padding: 15px 0 0 5px}
-#main-navigation ul li.active ul li a { font-weight: normal }
 
