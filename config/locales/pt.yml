@@ -4,7 +4,7 @@
 # Based on the work done by Ricardo Otero <oterosantos@gmail.com>
 #
 
-pt-BR:
+pt:
   support:
     array:
       words_connector: ", "

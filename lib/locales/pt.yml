@@ -1,5 +1,5 @@
 # Portuguese Brasil (default)
-pt-BR:
+pt:
   activerecord:
     attributes:
       person:

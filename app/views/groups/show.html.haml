@@ -1,8 +1,13 @@
 .block
   .content
     .inner
-      = show @group, :name, :offical_name, :kind_text
-      =l @group.started_at if @group.started_at
+      .column.left
+        %h3= @group.name
+        = show @group, :offical_name, :kind_text
+        =l @group.started_at if @group.started_at
+        %h3 Proprietarios
+        - for holder in @group.holders
+          %p= link_to holder.person.name, holder.person
       .column.right
         %h3 Contatos
         - for contact in @group.contacts
@@ -12,6 +17,7 @@
         %h3 Documentos
         - for document in @group.documents
           = show document, :value
+      .clear
     = link_to 'Edit', edit_group_path(@group)
     |
     = link_to 'Back', groups_path
