@@ -5,5 +5,6 @@
     = simple_table_for @people, :name, :sex_text, :marital_text, :profession_state_text
     = will_paginate @people
 
-- content_for :sidebar do
-  = side_menu_for [{"#{image_tag('icons/add.png')} Novo Registro" => new_person_path}, {"Relatorio" => "/"}]
+- sidebar do
+  = link "Novo Registro", new_person_path, :class => 'icon iadd'
+  = link "Relatorio", "/"

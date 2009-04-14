@@ -6,9 +6,6 @@
       = will_paginate @procurements
       .clear
 
-- content_for :sidebar do
-  .block
-    %h3 Menu
-    %ul.navigation
-      %li= link_to image_tag('../images/icons/add.png', :class=>'img')+' Novo Registro', new_procurement_path
+- sidebar do
+  = link "Novo Registro", new_procurement_path, :class => 'icon iadd'
 

@@ -15,5 +15,6 @@
       = will_paginate @articles
       .clear
 
-- content_for :sidebar do
-  = side_menu_for [{"#{image_tag('icons/add.png')} Novo Artigo" => new_article_path}, {"Anteriores" => "/"}]
+- sidebar do
+  = link "Novo Artigo", new_article_path, :class => 'icon iadd'
+  = link "Anteriores", "/"

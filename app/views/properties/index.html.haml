@@ -5,9 +5,6 @@
       = simple_table_for @properties, :name
       = will_paginate @properties
 
-- content_for :sidebar do
-  .block
-    %h3 Menu
-    %ul.navigation
-      %li= link_to image_tag('icons/add.png', :class=>'img')+' Novo Registro', new_property_path
+- sidebar do
+  = link "Novo Registro", new_property_path, :class => 'icon iadd'
 

@@ -99,7 +99,7 @@ module ApplicationHelper
   end
 
   def link(name, path, *args)
-    return link_to "<li>#{name}</li>", path, *(args)
+    return "<li>" + link_to(name, path, *(args)) + "</li>"
   end
 
 end
