@@ -21,6 +21,8 @@
 class Family < ActiveRecord::Base
 
 
+  has_money :revenue
+
   def self.search(filter, page)
     paginate :per_page => 10, :page => page,
     :conditions => ['families.name like ?', "%#{filter}%"],

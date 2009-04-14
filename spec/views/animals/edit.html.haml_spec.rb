@@ -1,8 +1,8 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
-describe "/animals/edit.html.erb" do
+describe "/animals/edit.html.haml" do
   include AnimalsHelper
-  
+
   before(:each) do
     assigns[:animal] = @animal = stub_model(Animal,
       :new_record? => false,
@@ -17,7 +17,7 @@ describe "/animals/edit.html.erb" do
 
   it "renders the edit animal form" do
     render
-    
+
     response.should have_tag("form[action=#{animal_path(@animal)}][method=post]") do
       with_tag('input#animal_name[name=?]', "animal[name]")
       with_tag('input#animal_age[name=?]', "animal[age]")

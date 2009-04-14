@@ -1,8 +1,8 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
-describe "/families/new.html.erb" do
+describe "/families/new.html.haml" do
   include FamiliesHelper
-  
+
   before(:each) do
     assigns[:family] = stub_model(Family,
       :new_record? => true,
@@ -16,7 +16,7 @@ describe "/families/new.html.erb" do
 
   it "renders new family form" do
     render
-    
+
     response.should have_tag("form[action=?][method=post]", families_path) do
       with_tag("input#family_name[name=?]", "family[name]")
       with_tag("input#family_people_count[name=?]", "family[people_count]")

@@ -1,26 +1,31 @@
-<h1>Listing heritages</h1>
+%h1
+  Listing heritages
+%table
+  %tr
+    %th
+      Name
+    %th
+      Code
+    %th
+      Bought at
+    %th
+      Value cents
+  - @heritages.each do |heritage|
+    %tr
+      %td
+        = h heritage.name
+      %td
+        = h heritage.code
+      %td
+        = h heritage.bought_at
+      %td
+        = h heritage.value_cents
+      %td
+        = link_to 'Show', heritage
+      %td
+        = link_to 'Edit', edit_heritage_path(heritage)
+      %td
+        = link_to 'Destroy', heritage, :confirm => 'Are you sure?', :method => :delete
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Code</th>
-    <th>Bought at</th>
-    <th>Value cents</th>
-  </tr>
-
-<% @heritages.each do |heritage| %>
-  <tr>
-    <td><%=h heritage.name %></td>
-    <td><%=h heritage.code %></td>
-    <td><%=h heritage.bought_at %></td>
-    <td><%=h heritage.value_cents %></td>
-    <td><%= link_to 'Show', heritage %></td>
-    <td><%= link_to 'Edit', edit_heritage_path(heritage) %></td>
-    <td><%= link_to 'Destroy', heritage, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New heritage', new_heritage_path %>
+%br
+= link_to 'New heritage', new_heritage_path

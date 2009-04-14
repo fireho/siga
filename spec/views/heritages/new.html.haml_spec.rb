@@ -1,8 +1,8 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
-describe "/heritages/new.html.erb" do
+describe "/heritages/new.html.haml" do
   include HeritagesHelper
-  
+
   before(:each) do
     assigns[:heritage] = stub_model(Heritage,
       :new_record? => true,
@@ -14,7 +14,7 @@ describe "/heritages/new.html.erb" do
 
   it "renders new heritage form" do
     render
-    
+
     response.should have_tag("form[action=?][method=post]", heritages_path) do
       with_tag("input#heritage_name[name=?]", "heritage[name]")
       with_tag("input#heritage_code[name=?]", "heritage[code]")

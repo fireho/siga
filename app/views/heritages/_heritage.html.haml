@@ -1,0 +1,22 @@
+- form_for(@heritage) do |f|
+  = f.error_messages
+  %p
+    = f.label :name
+    %br
+    = f.text_field :name
+  %p
+    = f.label :code
+    %br
+    = f.text_field :code
+  %p
+    = f.label :bought_at
+    %br
+    = f.date_select :bought_at
+  %p
+    = f.label :value_cents
+    %br
+    = f.text_field :value_cents
+  %p
+    = f.submit 'Create'
+
+= link_to 'Back', heritages_path

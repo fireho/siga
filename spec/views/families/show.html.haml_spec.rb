@@ -1,6 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
-describe "/families/show.html.erb" do
+describe "/families/show.html.haml" do
   include FamiliesHelper
   before(:each) do
     assigns[:family] = @family = stub_model(Family,

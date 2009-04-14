@@ -1,8 +1,8 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
-describe "/heritages/index.html.erb" do
+describe "/heritages/index.html.haml" do
   include HeritagesHelper
-  
+
   before(:each) do
     assigns[:heritages] = [
       stub_model(Heritage,

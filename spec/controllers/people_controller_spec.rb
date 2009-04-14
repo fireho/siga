@@ -6,10 +6,17 @@ describe PeopleController do
     @mock_person ||= mock_model(Person, stubs)
   end
 
+    describe "When Logged In" do
+
+    before(:each) do
+      @login_warning= nil #{}"You need to be logged in to do that"
+      autho_login_as :admin
+    end
+
   describe "GET index" do
 
     it "exposes all people as @people" do
-      Person.should_receive(:find).with(:all).and_return([mock_person])
+      Person.should_receive(:search).with(nil, nil).and_return([mock_person])
       get :index
       assigns[:people].should == [mock_person]
     end
@@ -17,7 +24,7 @@ describe PeopleController do
     describe "with mime type of xml" do
 
       it "renders all people as xml" do
-        Person.should_receive(:find).with(:all).and_return(people = mock("Array of People"))
+        Person.should_receive(:search).with(nil, nil).and_return(people = mock("Array of People"))
         people.should_receive(:to_xml).and_return("generated XML")
         get :index, :format => 'xml'
         response.body.should == "generated XML"
@@ -168,4 +175,5 @@ describe PeopleController do
 
   end
 
+end
 end

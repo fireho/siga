@@ -5,24 +5,31 @@ describe GroupsController do
   def mock_group(stubs={})
     @mock_group ||= mock_model(Group, stubs)
   end
-  
+
+    describe "When Logged In" do
+
+    before(:each) do
+      @login_warning= nil #{}"You need to be logged in to do that"
+      autho_login_as :admin
+    end
+
   describe "GET index" do
 
     it "exposes all groups as @groups" do
-      Group.should_receive(:find).with(:all).and_return([mock_group])
+      Group.should_receive(:search).with(nil, nil).and_return([mock_group])
       get :index
       assigns[:groups].should == [mock_group]
     end
 
     describe "with mime type of xml" do
-  
+
       it "renders all groups as xml" do
-        Group.should_receive(:find).with(:all).and_return(groups = mock("Array of Groups"))
+        Group.should_receive(:search).with(nil, nil).and_return(groups = mock("Array of Groups"))
         groups.should_receive(:to_xml).and_return("generated XML")
         get :index, :format => 'xml'
         response.body.should == "generated XML"
       end
-    
+
     end
 
   end
@@ -34,7 +41,7 @@ describe GroupsController do
       get :show, :id => "37"
       assigns[:group].should equal(mock_group)
     end
-    
+
     describe "with mime type of xml" do
 
       it "renders the requested group as xml" do
@@ -45,11 +52,11 @@ describe GroupsController do
       end
 
     end
-    
+
   end
 
   describe "GET new" do
-  
+
     it "exposes a new group as @group" do
       Group.should_receive(:new).and_return(mock_group)
       get :new
@@ -59,7 +66,7 @@ describe GroupsController do
   end
 
   describe "GET edit" do
-  
+
     it "exposes the requested group as @group" do
       Group.should_receive(:find).with("37").and_return(mock_group)
       get :edit, :id => "37"
@@ -71,7 +78,7 @@ describe GroupsController do
   describe "POST create" do
 
     describe "with valid params" do
-      
+
       it "exposes a newly created group as @group" do
         Group.should_receive(:new).with({'these' => 'params'}).and_return(mock_group(:save => true))
         post :create, :group => {:these => 'params'}
@@ -83,9 +90,9 @@ describe GroupsController do
         post :create, :group => {}
         response.should redirect_to(group_url(mock_group))
       end
-      
+
     end
-    
+
     describe "with invalid params" do
 
       it "exposes a newly created but unsaved group as @group" do
@@ -99,9 +106,9 @@ describe GroupsController do
         post :create, :group => {}
         response.should render_template('new')
       end
-      
+
     end
-    
+
   end
 
   describe "PUT udpate" do
@@ -127,7 +134,7 @@ describe GroupsController do
       end
 
     end
-    
+
     describe "with invalid params" do
 
       it "updates the requested group" do
@@ -159,7 +166,7 @@ describe GroupsController do
       mock_group.should_receive(:destroy)
       delete :destroy, :id => "37"
     end
-  
+
     it "redirects to the groups list" do
       Group.stub!(:find).and_return(mock_group(:destroy => true))
       delete :destroy, :id => "1"
@@ -168,4 +175,5 @@ describe GroupsController do
 
   end
 
+end
 end
