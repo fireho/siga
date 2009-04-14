@@ -1,8 +1,8 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
-describe "/laws/index.html.erb" do
+describe "/laws/index.html.haml" do
   include LawsHelper
-  
+
   before(:each) do
     assigns[:laws] = [
       stub_model(Law,

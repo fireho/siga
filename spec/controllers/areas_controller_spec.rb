@@ -5,24 +5,32 @@ describe AreasController do
   def mock_area(stubs={})
     @mock_area ||= mock_model(Area, stubs)
   end
-  
+
+      describe "When Logged In" do
+
+    before(:each) do
+      @login_warning= nil #{}"You need to be logged in to do that"
+      autho_login_as :admin
+    end
+
+
   describe "GET index" do
 
     it "exposes all areas as @areas" do
-      Area.should_receive(:find).with(:all).and_return([mock_area])
+      Area.should_receive(:search).with(nil, nil).and_return([mock_area])
       get :index
       assigns[:areas].should == [mock_area]
     end
 
     describe "with mime type of xml" do
-  
+
       it "renders all areas as xml" do
-        Area.should_receive(:find).with(:all).and_return(areas = mock("Array of Areas"))
+        Area.should_receive(:search).with(nil, nil).and_return(areas = mock("Array of Areas"))
         areas.should_receive(:to_xml).and_return("generated XML")
         get :index, :format => 'xml'
         response.body.should == "generated XML"
       end
-    
+
     end
 
   end
@@ -34,7 +42,7 @@ describe AreasController do
       get :show, :id => "37"
       assigns[:area].should equal(mock_area)
     end
-    
+
     describe "with mime type of xml" do
 
       it "renders the requested area as xml" do
@@ -45,11 +53,11 @@ describe AreasController do
       end
 
     end
-    
+
   end
 
   describe "GET new" do
-  
+
     it "exposes a new area as @area" do
       Area.should_receive(:new).and_return(mock_area)
       get :new
@@ -59,7 +67,7 @@ describe AreasController do
   end
 
   describe "GET edit" do
-  
+
     it "exposes the requested area as @area" do
       Area.should_receive(:find).with("37").and_return(mock_area)
       get :edit, :id => "37"
@@ -71,7 +79,7 @@ describe AreasController do
   describe "POST create" do
 
     describe "with valid params" do
-      
+
       it "exposes a newly created area as @area" do
         Area.should_receive(:new).with({'these' => 'params'}).and_return(mock_area(:save => true))
         post :create, :area => {:these => 'params'}
@@ -83,9 +91,9 @@ describe AreasController do
         post :create, :area => {}
         response.should redirect_to(area_url(mock_area))
       end
-      
+
     end
-    
+
     describe "with invalid params" do
 
       it "exposes a newly created but unsaved area as @area" do
@@ -99,9 +107,9 @@ describe AreasController do
         post :create, :area => {}
         response.should render_template('new')
       end
-      
+
     end
-    
+
   end
 
   describe "PUT udpate" do
@@ -127,7 +135,7 @@ describe AreasController do
       end
 
     end
-    
+
     describe "with invalid params" do
 
       it "updates the requested area" do
@@ -159,7 +167,7 @@ describe AreasController do
       mock_area.should_receive(:destroy)
       delete :destroy, :id => "37"
     end
-  
+
     it "redirects to the areas list" do
       Area.stub!(:find).and_return(mock_area(:destroy => true))
       delete :destroy, :id => "1"
@@ -168,4 +176,5 @@ describe AreasController do
 
   end
 
+end
 end

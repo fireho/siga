@@ -1,6 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
-describe "/calendars/show.html.erb" do
+describe "/calendars/show.html.haml" do
   include CalendarsHelper
   before(:each) do
     assigns[:calendar] = @calendar = stub_model(Calendar,

@@ -1,8 +1,8 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
-describe "/laws/edit.html.erb" do
+describe "/laws/edit.html.haml" do
   include LawsHelper
-  
+
   before(:each) do
     assigns[:law] = @law = stub_model(Law,
       :new_record? => false,
@@ -12,7 +12,7 @@ describe "/laws/edit.html.erb" do
 
   it "renders the edit law form" do
     render
-    
+
     response.should have_tag("form[action=#{law_path(@law)}][method=post]") do
       with_tag('textarea#law_content[name=?]', "law[content]")
     end

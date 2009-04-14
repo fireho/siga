@@ -1,6 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
-describe "/groups/show.html.erb" do
+describe "/groups/show.html.haml" do
   include GroupsHelper
   before(:each) do
     assigns[:group] = @group = stub_model(Group,

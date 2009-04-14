@@ -5,24 +5,32 @@ describe HeritagesController do
   def mock_heritage(stubs={})
     @mock_heritage ||= mock_model(Heritage, stubs)
   end
-  
+
+      describe "When Logged In" do
+
+    before(:each) do
+      @login_warning= nil #{}"You need to be logged in to do that"
+      autho_login_as :admin
+    end
+
+
   describe "GET index" do
 
     it "exposes all heritages as @heritages" do
-      Heritage.should_receive(:find).with(:all).and_return([mock_heritage])
+      Heritage.should_receive(:search).with(nil, nil).and_return([mock_heritage])
       get :index
       assigns[:heritages].should == [mock_heritage]
     end
 
     describe "with mime type of xml" do
-  
+
       it "renders all heritages as xml" do
-        Heritage.should_receive(:find).with(:all).and_return(heritages = mock("Array of Heritages"))
+        Heritage.should_receive(:search).with(nil, nil).and_return(heritages = mock("Array of Heritages"))
         heritages.should_receive(:to_xml).and_return("generated XML")
         get :index, :format => 'xml'
         response.body.should == "generated XML"
       end
-    
+
     end
 
   end
@@ -34,7 +42,7 @@ describe HeritagesController do
       get :show, :id => "37"
       assigns[:heritage].should equal(mock_heritage)
     end
-    
+
     describe "with mime type of xml" do
 
       it "renders the requested heritage as xml" do
@@ -45,11 +53,11 @@ describe HeritagesController do
       end
 
     end
-    
+
   end
 
   describe "GET new" do
-  
+
     it "exposes a new heritage as @heritage" do
       Heritage.should_receive(:new).and_return(mock_heritage)
       get :new
@@ -59,7 +67,7 @@ describe HeritagesController do
   end
 
   describe "GET edit" do
-  
+
     it "exposes the requested heritage as @heritage" do
       Heritage.should_receive(:find).with("37").and_return(mock_heritage)
       get :edit, :id => "37"
@@ -71,7 +79,7 @@ describe HeritagesController do
   describe "POST create" do
 
     describe "with valid params" do
-      
+
       it "exposes a newly created heritage as @heritage" do
         Heritage.should_receive(:new).with({'these' => 'params'}).and_return(mock_heritage(:save => true))
         post :create, :heritage => {:these => 'params'}
@@ -83,9 +91,9 @@ describe HeritagesController do
         post :create, :heritage => {}
         response.should redirect_to(heritage_url(mock_heritage))
       end
-      
+
     end
-    
+
     describe "with invalid params" do
 
       it "exposes a newly created but unsaved heritage as @heritage" do
@@ -99,9 +107,9 @@ describe HeritagesController do
         post :create, :heritage => {}
         response.should render_template('new')
       end
-      
+
     end
-    
+
   end
 
   describe "PUT udpate" do
@@ -127,7 +135,7 @@ describe HeritagesController do
       end
 
     end
-    
+
     describe "with invalid params" do
 
       it "updates the requested heritage" do
@@ -159,7 +167,7 @@ describe HeritagesController do
       mock_heritage.should_receive(:destroy)
       delete :destroy, :id => "37"
     end
-  
+
     it "redirects to the heritages list" do
       Heritage.stub!(:find).and_return(mock_heritage(:destroy => true))
       delete :destroy, :id => "1"
@@ -168,4 +176,5 @@ describe HeritagesController do
 
   end
 
+end
 end
