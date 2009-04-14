@@ -1,16 +1,3 @@
-<h1>Editing zone</h1>
+Edit
 
-<% form_for(@zone) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
-<% end %>
-
-<%= link_to 'Show', @zone %> |
-<%= link_to 'Back', zones_path %>
+= render @zone

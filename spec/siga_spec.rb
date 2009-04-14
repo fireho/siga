@@ -11,7 +11,7 @@ module SigaSpec
     # @current_user.stub!(:has_role?).and_return(false)
     # @current_user.stub!(:has_permission?).and_return(false)
     @current_user.stub!(:time_zone).and_return('Brasilia')
-    @current_user.stub!(:locale).and_return('pt-BR')
+    @current_user.stub!(:locale).and_return('pt')
 
     @current_user.stub!(:login).and_return("admin")
     request.session[:user] = @current_user

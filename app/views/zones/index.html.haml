@@ -1,20 +1,19 @@
-<h1>Listing zones</h1>
+%h1
+  Listing zones
+%table
+  %tr
+    %th
+      Name
+  - @zones.each do |zone|
+    %tr
+      %td
+        = h zone.name
+      %td
+        = link_to 'Show', zone
+      %td
+        = link_to 'Edit', edit_zone_path(zone)
+      %td
+        = link_to 'Destroy', zone, :confirm => 'Are you sure?', :method => :delete
 
-<table>
-  <tr>
-    <th>Name</th>
-  </tr>
-
-<% @zones.each do |zone| %>
-  <tr>
-    <td><%=h zone.name %></td>
-    <td><%= link_to 'Show', zone %></td>
-    <td><%= link_to 'Edit', edit_zone_path(zone) %></td>
-    <td><%= link_to 'Destroy', zone, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New zone', new_zone_path %>
+%br
+= link_to 'New zone', new_zone_path

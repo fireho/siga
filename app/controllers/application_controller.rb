@@ -38,7 +38,7 @@ class ApplicationController < ActionController::Base
 
   def set_locale
     locale = current_user.locale if current_user
-    I18n.locale = locale || params[:locale] || 'pt-BR'
+    I18n.locale = locale || params[:locale] || 'pt'
     I18n.load_path += Dir[ File.join(RAILS_ROOT, 'lib', 'locale', '*.{rb,yml}') ]
   end
 

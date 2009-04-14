@@ -61,7 +61,7 @@ class User < ActiveRecord::Base
 
   def before_validation
     self.time_zone ||= "Brasilia"
-    self.locale ||= "pt-BR"
+    self.locale ||= "pt"
   end
 
   def activate!
