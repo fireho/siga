@@ -315,7 +315,7 @@ form.formtastic li.error {      background-color: #fdd;    border: 1px solid #fb
 
 /* Submenu */
 ul.submenu, ul.submenu2 {
-    visibility : hidden;
+    display : none;
     position: absolute;
     background-color: #e2e2e2 ;
     padding: 10px 0;
