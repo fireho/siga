@@ -32,6 +32,7 @@ class Person < ActiveRecord::Base
 
   has_money :revenue
   has_permalink :name
+  autocomplete :dad, :mom, :spouse
 
   symbolize :blood, :in => [:"A+", :"A-", :"O+", :"O-", :"B+", :"B-", :"AB+", :"AB-"], :i18n => false
   symbolize :marital, :in => [:unknown, :single, :divorced, :married, :widowed, :common_law]
@@ -75,14 +76,6 @@ class Person < ActiveRecord::Base
   def calc_age
     return unless born_at
     write_attribute(:age, (Time.now - born_at)/60/60/24/360)
-  end
-
-  def mom_text
-    mom.name if mom
-  end
-
-  def mom_text=(v)
-    @mom_text = v
   end
 
   def self.search(filter, page)

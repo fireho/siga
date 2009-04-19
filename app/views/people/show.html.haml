@@ -4,7 +4,8 @@
       .column.left
         %h3= @person.name
         = show @person, :sex_text, :state_text, :arrival_at, :profession_state_text
-        = show @person, :profession, :income, :revenue, :marital_text, :born_at, :blood
+        = show @person, :profession, :marital_text, :born_at, :blood
+        = @person.revenue.format
       .column.right
         %b Mae:
         = @person.mom.try(:name)

@@ -19,9 +19,9 @@ $.fn.subMenu = function() {
     var submenu = $(menu).find('ul')
 
     $(menu).hover(function(){
-        $(submenu).fadeIn(500)
+        $(submenu).fadeIn(100)
     },function(){
-        $(submenu).fadeOut(500)
+        $(submenu).fadeOut(100)
     })
 }
 
