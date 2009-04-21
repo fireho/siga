@@ -23,7 +23,7 @@ class City < ActiveRecord::Base
   belongs_to :country
   belongs_to :province
   has_many :zones
-  has_permalink :name
+  has_friendly_id :name
 
   validates_presence_of :country
   validates_presence_of :name

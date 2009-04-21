@@ -21,7 +21,7 @@
 class Publication < ActiveRecord::Base
   belongs_to :person
   belongs_to :user
-  has_permalink :title, :update => true
+  has_friendly_id :title
 
   validates_presence_of :user
 

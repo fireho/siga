@@ -20,10 +20,14 @@
 #
 class Address < ActiveRecord::Base
   attr_writer :x, :y, :z
+  belongs_to :addressable, :polymorphic => true
+  belongs_to :city
   acts_as_geom :geom
+
   symbolize :prefix, :in => [:street, :airport, :area, :avenue, :lote]
 
   validates_presence_of :geom, :message => "Marque o ponto"
+  validates_presence_of :city
 
   # Instantiate self.geom as a Point
   def create_geom

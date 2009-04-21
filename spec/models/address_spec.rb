@@ -1,8 +1,11 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe Address do
-  it{ Address.generate! }
+  it "should generate" do
+    Address.generate!
+  end
 
+  it { should belong_to :addressable, :polymorphic => true }
 
 end
 

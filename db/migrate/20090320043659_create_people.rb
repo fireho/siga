@@ -2,7 +2,7 @@ class CreatePeople < ActiveRecord::Migration
   def self.up
     create_table :people do |t|
       t.references :country
-      t.string :name, :permalink, :null => false
+      t.string :name, :null => false
       t.string :state, :null => false
       t.boolean :sex, :null => false, :default => false
       t.string :marital, :education, :race, :limit => 10

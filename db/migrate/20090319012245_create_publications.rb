@@ -4,7 +4,7 @@ class CreatePublications < ActiveRecord::Migration
       t.references :person
       t.references :user, :null => false
       t.string :kind, :null => false
-      t.string :title, :permalink, :null => false
+      t.string :title, :null => false
       t.boolean :published, :null => false, :default => false
       t.timestamp :published_at, :wrote_at
       t.text :body
@@ -12,7 +12,6 @@ class CreatePublications < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :publications, :permalink
     add_index :publications, :kind
     add_index :publications, :created_at
     add_index :publications, :published

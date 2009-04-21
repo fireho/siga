@@ -1,7 +1,7 @@
 .block
   .content
     .inner
-      = show @family, :name, :people_count, :revenue, :state_text
+      = show @family, :name, :people_count, :revenue #, :state_text
     = link_to 'Editar', edit_family_path(@family)
     |
     = link_to 'Voltar', families_path

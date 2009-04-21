@@ -1,9 +1,10 @@
 class Address < ActiveRecord::Base
   generator_for :name, :method => :some_name
+  generator_for :prefix => "street"
   generator_for :geom, :method => :random_point
 
   def self.random_point
-    Point.from_x_y_z(-(rand(2) + 50 + rand), -(rand(10) + 15 + rand),0)
+    Point.from_x_y(-(rand(2) + 50 + rand), -(rand(10) + 15 + rand))
   end
 
   def self.some_name

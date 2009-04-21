@@ -16,9 +16,6 @@ describe "/families/show.html.haml" do
     render
     response.should have_text(/value\ for\ name/)
     response.should have_text(/1/)
-    response.should have_text(/1/)
-    response.should have_text(/value\ for\ kind/)
-    response.should have_text(/value\ for\ state/)
   end
 end
 

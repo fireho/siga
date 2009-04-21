@@ -3,7 +3,7 @@
     .inner
       .column.left
         %h3= @group.name
-        = show @group, :offical_name, :kind_text
+        = show @group, :official_name, :kind_text
         =l @group.started_at if @group.started_at
         %h3 Proprietarios
         - for holder in @group.holders

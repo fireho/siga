@@ -20,7 +20,7 @@
 #
 class Article < ActiveRecord::Base
   belongs_to :user
-  has_permalink :title, :update => true
+  has_friendly_id :title
 
   validates_presence_of :user
   validates_presence_of :title, :body

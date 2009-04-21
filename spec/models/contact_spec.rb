@@ -1,7 +1,11 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe Contact do
-  it { Contact.generate! }
+  it "should generate" do
+    Contact.generate!
+  end
+
+  it { should belong_to :contactable, :polymorphic => true }
 
 
 end
