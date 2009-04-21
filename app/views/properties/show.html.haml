@@ -2,8 +2,8 @@
   .content
     %h2.title= @property.name
     .inner
-      .gray=l  @property.created_at
+      .gray=#l  @property.created_at
 
       = link_to 'Edit', edit_property_path(@property)
-      \|
+      |
       = link_to 'Back', properties_path

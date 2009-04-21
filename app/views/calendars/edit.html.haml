@@ -1,28 +1,4 @@
-<h1>Editing calendar</h1>
+%h1
+  Editing calendar
 
-<% form_for(@calendar) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :day %><br />
-    <%= f.date_select :day %>
-  </p>
-  <p>
-    <%= f.label :business %><br />
-    <%= f.check_box :business %>
-  </p>
-  <p>
-    <%= f.label :yearly %><br />
-    <%= f.check_box :yearly %>
-  </p>
-  <p>
-    <%= f.label :note %><br />
-    <%= f.text_area :note %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
-<% end %>
-
-<%= link_to 'Show', @calendar %> |
-<%= link_to 'Back', calendars_path %>
+= render @calendar

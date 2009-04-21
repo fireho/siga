@@ -21,7 +21,7 @@ describe "/professions/index.html.haml" do
   it "renders a list of professions" do
     render
     response.should have_tag("tr>td", "value for name".to_s, 2)
-    response.should have_tag("tr>td", "value for kind".to_s, 2)
+    # response.should have_tag("tr>td", "value for kind".to_s, 2)
     response.should have_tag("tr>td", 1.to_s, 2)
   end
 end

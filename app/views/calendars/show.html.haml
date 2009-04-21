@@ -1,23 +1,20 @@
-<p>
-  <b>Day:</b>
-  <%=h @calendar.day %>
-</p>
+%p
+  %b
+    Day:
+  = h @calendar.day
+%p
+  %b
+    Business:
+  = h @calendar.business
+%p
+  %b
+    Yearly:
+  = h @calendar.yearly
+%p
+  %b
+    Note:
+  = h @calendar.note
 
-<p>
-  <b>Business:</b>
-  <%=h @calendar.business %>
-</p>
-
-<p>
-  <b>Yearly:</b>
-  <%=h @calendar.yearly %>
-</p>
-
-<p>
-  <b>Note:</b>
-  <%=h @calendar.note %>
-</p>
-
-
-<%= link_to 'Edit', edit_calendar_path(@calendar) %> |
-<%= link_to 'Back', calendars_path %>
+= link_to 'Edit', edit_calendar_path(@calendar)
+|
+= link_to 'Back', calendars_path

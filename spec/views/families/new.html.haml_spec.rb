@@ -19,10 +19,10 @@ describe "/families/new.html.haml" do
 
     response.should have_tag("form[action=?][method=post]", families_path) do
       with_tag("input#family_name[name=?]", "family[name]")
-      with_tag("input#family_people_count[name=?]", "family[people_count]")
-      with_tag("input#family_revenue_cents[name=?]", "family[revenue_cents]")
-      with_tag("input#family_kind[name=?]", "family[kind]")
-      with_tag("input#family_state[name=?]", "family[state]")
+      # with_tag("input#family_people_count[name=?]", "family[people_count]")
+      # with_tag("input#family_revenue[name=?]", "family[revenue_cents]")
+      with_tag("select#family_kind[name=?]", "family[kind]")
+      # with_tag("input#family_state[name=?]", "family[state]")
     end
   end
 end

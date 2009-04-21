@@ -1,8 +1,8 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
-describe "/services/new.html.erb" do
+describe "/services/new.html.haml" do
   include ServicesHelper
-  
+
   before(:each) do
     assigns[:service] = stub_model(Service,
       :new_record? => true,
@@ -15,7 +15,7 @@ describe "/services/new.html.erb" do
 
   it "renders new service form" do
     render
-    
+
     response.should have_tag("form[action=?][method=post]", services_path) do
       with_tag("input#service_name[name=?]", "service[name]")
       with_tag("input#service_kind[name=?]", "service[kind]")

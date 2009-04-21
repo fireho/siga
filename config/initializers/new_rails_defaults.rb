@@ -9,6 +9,9 @@ if defined?(ActiveRecord)
 
   # Store the full class name (including module namespace) in STI type column.
   ActiveRecord::Base.store_full_sti_class = true
+
+ActiveRecord::Base.send :include, Autocomplete
+
 end
 
 # Use ISO 8601 format for JSON serialized times and dates.

@@ -17,8 +17,7 @@ describe "/professions/new.html.haml" do
 
     response.should have_tag("form[action=?][method=post]", professions_path) do
       with_tag("input#profession_name[name=?]", "profession[name]")
-      with_tag("input#profession_kind[name=?]", "profession[kind]")
-      with_tag("input#profession_person_count[name=?]", "profession[person_count]")
+      with_tag("select#profession_kind[name=?]", "profession[kind]")
     end
   end
 end

@@ -1,6 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
-describe "/properties/show.html.erb" do
+describe "/properties/show.html.haml" do
   include PropertiesHelper
   before(:each) do
     assigns[:property] = @property = stub_model(Property,

@@ -1,0 +1,16 @@
+- form_for(@official) do |f|
+  = f.error_messages
+  %p
+    = f.label :hired_at
+    %br
+    = f.datetime_select :hired_at
+  %p
+    = f.label :post
+    %br
+    = f.text_field :post
+  %p
+    = f.submit 'Update'
+
+= link_to 'Show', @official
+|
+= link_to 'Back', officials_path
