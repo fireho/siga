@@ -7,9 +7,10 @@
     .column.left
       = f.input :name, :input_html => { :size => 40 }
       = f.input :sex, :as => :radio, :collection => Person.get_sex_values
-      = f.input :marital, :as => :radio, :collection => Person.get_marital_values
+      = f.input :marital, :as => :select, :collection => Person.get_marital_values
       = f.input :born_at, :as => :string, :input_html => { :size => 15, :class => "calendar" }
-      = f.input :birthplace_id, :as => :string
+      = f.hidden_field :birthplace_id
+      = f.input :birthplace_text, :as => :string
       - f.inputs :name => "Residencia", :id => "basic" do
         = f.input :arrival_at, :as => :string, :input_html => { :size => 10, :class => "calendar" }
         = f.input :leave_at, :as => :string, :input_html => { :size => 10, :class => "calendar" }

@@ -32,7 +32,7 @@ class Person < ActiveRecord::Base
 
   has_money :revenue
   has_friendly_id :name
-  autocomplete :dad, :mom, :spouse
+  autocomplete :dad, :mom, :spouse, :birthplace
 
   symbolize :blood, :in => [:"A+", :"A-", :"O+", :"O-", :"B+", :"B-", :"AB+", :"AB-"], :i18n => false
   symbolize :marital, :in => [:unknown, :single, :divorced, :married, :widowed, :common_law]
@@ -45,9 +45,9 @@ class Person < ActiveRecord::Base
   validates_numericality_of :height, :weight, :allow_nil => true
 
   # Human url
-  def to_param
-    "#{id}-#{permalink}"
-  end
+  # def to_param
+  #   "#{id}-#{permalink}"
+  # end
 
   # Filters
   def before_save

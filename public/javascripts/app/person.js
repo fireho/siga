@@ -10,6 +10,11 @@ $(document).ready(function() {
         $("#person_mom_id").val(data[1]);
     });
 
+     $("#person_birthplace_text").autocomplete("/cities.json")
+    .result(function (evt, data, formatted) {
+        $("#person_cities_id").val(data[1]);
+    });
+
 
  });
 

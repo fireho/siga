@@ -39,6 +39,7 @@ Rails::Initializer.run do |config|
   config.gem "nofxx-formtastic", :lib => "formtastic"
   config.gem "nofxx-money", :lib => "money"
   config.gem "friendly_id"
+  config.gem "will_paginate"
 
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
   # config.plugins = [ :exception_notification, :ssl_requirement, :all ]

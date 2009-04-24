@@ -1,4 +1,7 @@
 class AddData < ActiveRecord::Migration
+  FAKES =   [Publication, Article, Person, Group, Law, Area, Procurement,
+            City]
+
   def self.up
     Sector.create(:name => "TI")
     User.create!(:login => "admin", :password => "admin", :name => "admin", :kind => :admin,
@@ -7,15 +10,14 @@ class AddData < ActiveRecord::Migration
 
     # Load bunch of dumb data in devel mode....
     if RAILS_ENV =~ /development/
-      [Publication, Article, Person, Group, Law, Area, Procurement].each do |k|
-        20.times {  k.generate! }
+      FAKES.each do |f|
+        20.times {  f.generate! }
       end
     end
 
   end
 
   def self.down
-    Sector.delete_all
-    User.delete_all
+    FAKES.each { |f| f.delete_all }
   end
 end

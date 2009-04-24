@@ -10,4 +10,4 @@ config.action_mailer.raise_delivery_errors = false
 
 config.gem "faker"
 config.gem "nofxx-object_daddy", :lib => "object_daddy"
-config.gem "josevalim-rails-footnotes", :lib => "rails-footnotes"
+# config.gem "josevalim-rails-footnotes", :lib => "rails-footnotes"
