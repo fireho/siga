@@ -1,0 +1,12 @@
+- semantic_form_for(@ad) do |f|
+  = f.input :title
+  = f.input :kind
+  = f.input :body
+  = f.input :start_at, :as => :string
+  = f.input :end_at, :as => :string
+  %p
+    = f.submit 'Update'
+
+= link_to 'Show', @ad
+|
+= link_to 'Back', ads_path

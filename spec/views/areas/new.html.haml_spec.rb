@@ -1,6 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
-describe "/areas/new.html.erb" do
+describe "/areas/new.html.haml" do
   include AreasHelper
 
   before(:each) do
@@ -17,7 +17,7 @@ describe "/areas/new.html.erb" do
 
     response.should have_tag("form[action=?][method=post]", areas_path) do
       with_tag("input#area_name[name=?]", "area[name]")
-      with_tag("input#area_kind[name=?]", "area[kind]")
+      with_tag("select#area_kind[name=?]", "area[kind]")
       with_tag("input#area_geom[name=?]", "area[geom]")
     end
   end

@@ -10,9 +10,9 @@ describe "/people/show.html.haml" do
 #      :birthplace => "value for birthplace",
       :time_residence => "value for time_residence",
       :profession => "value for profession",
-      :income => 1,
-      :rooms => 1,
-      :revenue => 1
+      #:#income => 1,
+      :rooms => 1
+      #:revenue => 1
     )
   end
 
@@ -23,7 +23,7 @@ describe "/people/show.html.haml" do
 #    response.should have_text(/value\ for\ birthplace/)
     response.should have_text(/Feminino/)
     response.should have_text(/value\ for\ profession/)
-    response.should have_text(/1/)
+#    response.should have_text(/1/)
   end
 end
 

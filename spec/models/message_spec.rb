@@ -1,7 +1,10 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe Message do
- it{ Message.generate! }
+
+  it "should generate" do
+    Message.generate!
+  end
 
 end
 

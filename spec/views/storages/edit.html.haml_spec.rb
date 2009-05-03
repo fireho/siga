@@ -1,8 +1,8 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
-describe "/storages/edit.html.erb" do
+describe "/storages/edit.html.haml" do
   include StoragesHelper
-  
+
   before(:each) do
     assigns[:storage] = @storage = stub_model(Storage,
       :new_record? => false,
@@ -14,7 +14,7 @@ describe "/storages/edit.html.erb" do
 
   it "renders the edit storage form" do
     render
-    
+
     response.should have_tag("form[action=#{storage_path(@storage)}][method=post]") do
       with_tag('input#storage_amount[name=?]', "storage[amount]")
       with_tag('input#storage_unit[name=?]', "storage[unit]")
