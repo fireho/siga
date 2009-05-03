@@ -1,0 +1,29 @@
+- semantic_form_for(@animal) do |f|
+  = f.input :name
+  = f.input :born_at, :as => :string
+  %p
+    = f.label :age
+    %br
+    = f.text_field :age
+  %p
+    = f.label :sex
+    %br
+    = f.check_box :sex
+  %p
+    = f.label :kind
+    %br
+    = f.text_field :kind
+  %p
+    = f.label :fur
+    %br
+    = f.text_field :fur
+  %p
+    = f.label :race
+    %br
+    = f.text_field :race
+  %p
+    = f.submit 'Update'
+
+= link_to 'Show', @animal
+|
+= link_to 'Back', animals_path

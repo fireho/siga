@@ -1,38 +1,31 @@
-<p>
-  <b>Name:</b>
-  <%=h @animal.name %>
-</p>
-
-<p>
-  <b>Born at:</b>
-  <%=h @animal.born_at %>
-</p>
-
-<p>
-  <b>Age:</b>
-  <%=h @animal.age %>
-</p>
-
-<p>
-  <b>Sex:</b>
-  <%=h @animal.sex %>
-</p>
-
-<p>
-  <b>Kind:</b>
-  <%=h @animal.kind %>
-</p>
-
-<p>
-  <b>Fur:</b>
-  <%=h @animal.fur %>
-</p>
-
-<p>
-  <b>Race:</b>
-  <%=h @animal.race %>
-</p>
-
-
-<%= link_to 'Edit', edit_animal_path(@animal) %> |
-<%= link_to 'Back', animals_path %>
+%p
+  %b
+    Name:
+  = h @animal.name
+%p
+  %b
+    Born at:
+  = h @animal.born_at
+%p
+  %b
+    Age:
+  = h @animal.age
+%p
+  %b
+    Sex:
+  = h @animal.sex
+%p
+  %b
+    Kind:
+  = h @animal.kind
+%p
+  %b
+    Fur:
+  = h @animal.fur
+%p
+  %b
+    Race:
+  = h @animal.race
+= link_to 'Edit', edit_animal_path(@animal)
+|
+= link_to 'Back', animals_path

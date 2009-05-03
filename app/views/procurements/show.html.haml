@@ -1,18 +1,15 @@
-<p>
-  <b>Name:</b>
-  <%=h @procurement.name %>
-</p>
-
-<p>
-  <b>Body:</b>
-  <%=h @procurement.body %>
-</p>
-
-<p>
-  <b>Due at:</b>
-  <%=h @procurement.due_at %>
-</p>
-
-
-<%= link_to 'Edit', edit_procurement_path(@procurement) %> |
-<%= link_to 'Back', procurements_path %>
+%p
+  %b
+    Name:
+  = h @procurement.name
+%p
+  %b
+    Body:
+  = h @procurement.body
+%p
+  %b
+    Due at:
+  = h @procurement.due_at
+= link_to 'Edit', edit_procurement_path(@procurement)
+|
+= link_to 'Back', procurements_path

@@ -1,33 +1,27 @@
-<p>
-  <b>Name:</b>
-  <%=h @service.name %>
-</p>
-
-<p>
-  <b>Kind:</b>
-  <%=h @service.kind %>
-</p>
-
-<p>
-  <b>Value cents:</b>
-  <%=h @service.value_cents %>
-</p>
-
-<p>
-  <b>Start at:</b>
-  <%=h @service.start_at %>
-</p>
-
-<p>
-  <b>End at:</b>
-  <%=h @service.end_at %>
-</p>
-
-<p>
-  <b>Done:</b>
-  <%=h @service.done %>
-</p>
-
-
-<%= link_to 'Edit', edit_service_path(@service) %> |
-<%= link_to 'Back', services_path %>
+%p
+  %b
+    Name:
+  = h @service.name
+%p
+  %b
+    Kind:
+  = h @service.kind
+%p
+  %b
+    Value cents:
+  = h @service.value_cents
+%p
+  %b
+    Start at:
+  = h @service.start_at
+%p
+  %b
+    End at:
+  = h @service.end_at
+%p
+  %b
+    Done:
+  = h @service.done
+= link_to 'Edit', edit_service_path(@service)
+|
+= link_to 'Back', services_path

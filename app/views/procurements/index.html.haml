@@ -2,7 +2,7 @@
   .content
     %h2.title Licitacoes
     .inner
-      = simple_table_for @procurements, :title
+      = simple_table_for @procurements, :title, :body
       = will_paginate @procurements
       .clear
 

@@ -17,6 +17,7 @@ describe "/admin/index.html.haml" do
   end
 
   it "renders a list of opts" do
+    pending
     render
     response.should have_tag("tr>td", "value for key".to_s, 2)
     response.should have_tag("tr>td", "value for value".to_s, 2)

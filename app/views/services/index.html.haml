@@ -1,39 +1,24 @@
 %h1
   Listing services
+
 %table
   %tr
-    %th
-      Name
-    %th
-      Kind
-    %th
-      Value cents
-    %th
-      Start at
-    %th
-      End at
-    %th
-      Done
+    %th Name
+    %th Kind
+    %th Value cents
+    %th Start at
+    %th End at
+    %th Done
   - @services.each do |service|
-  %tr
-    %td
-      = h service.name
-    %td
-      = h service.kind
-    %td
-      = h service.value_cents
-    %td
-      = h service.start_at
-    %td
-      = h service.end_at
-    %td
-      = h service.done
-    %td
-      = link_to 'Show', service
-    %td
-      = link_to 'Edit', edit_service_path(service)
-    %td
-      = link_to 'Destroy', service, :confirm => 'Are you sure?', :method => :delete
-  - end
+    %tr
+      %td= h service.name
+      %td= h service.kind
+      %td= h service.value_cents
+      %td= h service.start_at
+      %td= h service.end_at
+      %td= h service.done
+      %td= link_to 'Show', service
+      %td= link_to 'Edit', edit_service_path(service)
+      %td= link_to 'Destroy', service, :confirm => 'Are you sure?', :method => :delete
 %br
 = link_to 'New service', new_service_path

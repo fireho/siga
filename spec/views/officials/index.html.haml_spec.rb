@@ -1,8 +1,8 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
-describe "/officials/index.html.erb" do
+describe "/officials/index.html.haml" do
   include OfficialsHelper
-  
+
   before(:each) do
     assigns[:officials] = [
       stub_model(Official,

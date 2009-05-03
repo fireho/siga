@@ -14,17 +14,6 @@ describe AdminController do
       assigns[:opts].should == [mock_opt]
     end
 
-    describe "with mime type of xml" do
-
-      it "renders all opts as xml" do
-        Opt.should_receive(:find).with(:all).and_return(opts = mock("Array of Opts"))
-        opts.should_receive(:to_xml).and_return("generated XML")
-        get :index, :format => 'xml'
-        response.body.should == "generated XML"
-      end
-
-    end
-
   end
 
   # describe "PUT udpate" do

@@ -5,6 +5,8 @@ describe Province do
     Province.generate!
   end
 
+  it { should belong_to :country}
+
 end
 
 

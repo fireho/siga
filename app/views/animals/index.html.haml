@@ -1,32 +1,42 @@
-<h1>Listing animals</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Born at</th>
-    <th>Age</th>
-    <th>Sex</th>
-    <th>Kind</th>
-    <th>Fur</th>
-    <th>Race</th>
-  </tr>
-
-<% @animals.each do |animal| %>
-  <tr>
-    <td><%=h animal.name %></td>
-    <td><%=h animal.born_at %></td>
-    <td><%=h animal.age %></td>
-    <td><%=h animal.sex %></td>
-    <td><%=h animal.kind %></td>
-    <td><%=h animal.fur %></td>
-    <td><%=h animal.race %></td>
-    <td><%= link_to 'Show', animal %></td>
-    <td><%= link_to 'Edit', edit_animal_path(animal) %></td>
-    <td><%= link_to 'Destroy', animal, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New animal', new_animal_path %>
+%h1
+  Listing animals
+%table
+  %tr
+    %th
+      Name
+    %th
+      Born at
+    %th
+      Age
+    %th
+      Sex
+    %th
+      Kind
+    %th
+      Fur
+    %th
+      Race
+  - @animals.each do |animal|
+    %tr
+      %td
+        = h animal.name
+      %td
+        = h animal.born_at
+      %td
+        = h animal.age
+      %td
+        = h animal.sex
+      %td
+        = h animal.kind
+      %td
+        = h animal.fur
+      %td
+        = h animal.race
+      %td
+        = link_to 'Show', animal
+      %td
+        = link_to 'Edit', edit_animal_path(animal)
+      %td
+        = link_to 'Destroy', animal, :confirm => 'Are you sure?', :method => :delete
+%br
+= link_to 'New animal', new_animal_path

@@ -1,9 +1,5 @@
-- form_for(@official) do |f|
-  = f.error_messages
-  %p
-    = f.label :hired_at
-    %br
-    = f.datetime_select :hired_at
+- semantic_form_for(@official) do |f|
+  = f.input :hired_at, :as => :string
   %p
     = f.label :post
     %br

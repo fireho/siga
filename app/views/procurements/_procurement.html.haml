@@ -1,0 +1,10 @@
+- semantic_form_for(@procurement) do |f|
+  = f.input :title
+  = f.input :body
+  = f.input :due_at, :as => :string, :html_input => { :class => "calendar" }
+  %p
+    = f.submit 'Update'
+
+= link_to 'Show', @procurement
+|
+= link_to 'Back', procurements_path
