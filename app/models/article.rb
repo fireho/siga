@@ -20,7 +20,7 @@
 #
 class Article < ActiveRecord::Base
   belongs_to :user
-  has_friendly_id :title
+  has_friendly_id :title, :use_slug => true
 
   validates_presence_of :user
   validates_presence_of :title, :body

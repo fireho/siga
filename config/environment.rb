@@ -28,11 +28,11 @@ Rails::Initializer.run do |config|
   config.i18n.default_locale = "pt"
 
   config.gem "postgres"
-  config.gem "postgis_adapter"
   config.gem "authlogic"
   config.gem "haml"
   config.gem "rghost"
-  config.gem "GeoRuby", :lib => "geo_ruby"
+  config.gem "nofxx-georuby", :lib => "geo_ruby"
+  config.gem "nofxx-postgis_adapter", :lib => "postgis_adapter"
   config.gem "bcrypt-ruby", :lib => "bcrypt"
   config.gem "thoughtbot-paperclip" , :lib => "paperclip"
   config.gem "giraffesoft-is_taggable", :lib => "is_taggable"

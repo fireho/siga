@@ -31,7 +31,7 @@ class Person < ActiveRecord::Base
   has_one :user
 
   has_money :revenue
-  has_friendly_id :name
+  has_friendly_id :name, :use_slug => true
   autocomplete :dad, :mom, :spouse, :birthplace
 
   symbolize :blood, :in => [:"A+", :"A-", :"O+", :"O-", :"B+", :"B-", :"AB+", :"AB-"], :i18n => false
