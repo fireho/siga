@@ -1,7 +1,7 @@
 <fieldset>
 <legend>Usuários</legend>
 
-<% if session_user.adm == "SIM" %>
+<% if user_session.adm == "SIM" %>
   <% @menu = 'home/menuAdm' %>
 <% end %>
 
@@ -27,7 +27,7 @@
 
 <p align='right'>
   <%= tooltip link_to(image_tag('novo.png', :border => 0), :action => "new" ), { :tooltip => 'Adicionar novo registro.' } %>
-  <%= tooltip link_to(image_tag('voltar.png', :border => 0), :controller => "home", :action => "menuAdm" ), { :tooltip => 'Retornar.' } %>
+  <%#= tooltip link_to(image_tag('voltar.png', :border => 0), :controller => "home", :action => "menuAdm" ), { :tooltip => 'Retornar.' } %>
   </p>
 
 </fieldset>

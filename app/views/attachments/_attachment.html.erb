@@ -1,6 +1,4 @@
-<h1>Editing attachment</h1>
-
-<% form_for(@attachment) do |f| %>
+<% form_for(@attachment, :html => {:multipart => true}) do |f| %>
   <%= f.error_messages %>
 
   <p>
