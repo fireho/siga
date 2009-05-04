@@ -21,7 +21,9 @@
 class Attachment < ActiveRecord::Base
   belongs_to :attachable, :polymorphic => true
   has_attached_file :media,
-                    :styles => { :thumb => ["200x200#", :png] }
+                    :styles => { :thumb => ["200x200#", :png] },
+                    :path => ':rails_root/public/files/attachments/:id/:style/:basename.:extension',
+                    :url => '/files/attachments/:id/:style/:basename.:extension'
   validates_attachment_presence :media
 
 end

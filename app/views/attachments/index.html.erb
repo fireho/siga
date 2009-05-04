@@ -8,11 +8,15 @@
 
 <% @attachments.each do |attachment| %>
   <tr>
-    <td><%=image_tag attachment.media.url(:thumb)%></td>
-    <td><%=h attachment.info %></td>
-    <td><%= link_to 'Show', attachment %></td>
-    <td><%= link_to 'Edit', edit_attachment_path(attachment) %></td>
-    <td><%= link_to 'Destroy', attachment, :confirm => 'Are you sure?', :method => :delete %></td>
+     <%if attachment.media_content_type =~ /^image/%>
+     <td><%=image_tag attachment.media.url(:thumb)%></td>
+     <%else%>
+     <td><%=image_tag "/images/mime/#{choose_icon attachment.media_file_name}"%></td>
+     <%end%>
+     <td><%=h attachment.info %></td>
+     <td><%= link_to 'Show', attachment %></td>
+     <td><%= link_to 'Edit', edit_attachment_path(attachment) %></td>
+     <td><%= link_to 'Destroy', attachment, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
