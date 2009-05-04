@@ -1,0 +1,35 @@
+%h1
+  Listing ads
+%table
+  %tr
+    %th
+      Title
+    %th
+      Kind
+    %th
+      Body
+    %th
+      Start at
+    %th
+      End at
+  - @ads.each do |ad|
+    %tr
+      %td
+        = h ad.title
+      %td
+        = h ad.kind
+      %td
+        = h ad.body
+      %td
+        = h ad.start_at
+      %td
+        = h ad.end_at
+      %td
+        = link_to 'Show', ad
+      %td
+        = link_to 'Edit', edit_ad_path(ad)
+      %td
+        = link_to 'Destroy', ad, :confirm => 'Are you sure?', :method => :delete
+
+%br
+= link_to 'New ad', new_ad_path

@@ -1,0 +1,23 @@
+%p
+  %b
+    Title:
+  = h @ad.title
+%p
+  %b
+    Kind:
+  = h @ad.kind
+%p
+  %b
+    Body:
+  = h @ad.body
+%p
+  %b
+    Start at:
+  = h @ad.start_at
+%p
+  %b
+    End at:
+  = h @ad.end_at
+= link_to 'Edit', edit_ad_path(@ad)
+|
+= link_to 'Back', ads_path

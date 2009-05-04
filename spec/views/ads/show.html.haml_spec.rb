@@ -1,6 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
-describe "/ads/show.html.erb" do
+describe "/ads/show.html.haml" do
   include AdsHelper
   before(:each) do
     assigns[:ad] = @ad = stub_model(Ad,

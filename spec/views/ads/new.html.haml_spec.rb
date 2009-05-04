@@ -1,8 +1,8 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
-describe "/ads/new.html.erb" do
+describe "/ads/new.html.haml" do
   include AdsHelper
-  
+
   before(:each) do
     assigns[:ad] = stub_model(Ad,
       :new_record? => true,
@@ -14,7 +14,7 @@ describe "/ads/new.html.erb" do
 
   it "renders new ad form" do
     render
-    
+
     response.should have_tag("form[action=?][method=post]", ads_path) do
       with_tag("input#ad_title[name=?]", "ad[title]")
       with_tag("input#ad_kind[name=?]", "ad[kind]")

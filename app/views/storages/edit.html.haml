@@ -1,24 +1,3 @@
-<h1>Editing storage</h1>
+%h1 Editing storage
 
-<% form_for(@storage) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :amount %><br />
-    <%= f.text_field :amount %>
-  </p>
-  <p>
-    <%= f.label :unit %><br />
-    <%= f.text_field :unit %>
-  </p>
-  <p>
-    <%= f.label :value_cents %><br />
-    <%= f.text_field :value_cents %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
-<% end %>
-
-<%= link_to 'Show', @storage %> |
-<%= link_to 'Back', storages_path %>
+= render @storage

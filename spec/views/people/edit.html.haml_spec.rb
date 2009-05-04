@@ -9,7 +9,7 @@ describe "/people/edit.html.haml" do
       :name => "value for name",
       :sex => "value for sex",
       :marital_status => "value for marital_status",
-      :birthplace => "value for birthplace",
+      :birthplace_text => "value for birthplace",
       :time_residence => "value for time_residence",
       :profession => "value for profession",
       :revenue => 1

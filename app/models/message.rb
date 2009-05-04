@@ -19,8 +19,8 @@
 #
 #
 class Message < ActiveRecord::Base
-  belongs_to :sender, :foreign_key => :from_id, :class_name => "user"
-  belongs_to :receiver, :foreign_key => :to_id, :class_name => "user"
+  belongs_to :sender, :foreign_key => :from_id, :class_name => "User"
+  belongs_to :receiver, :foreign_key => :to_id, :class_name => "User"
   belongs_to :parent, :foreign_key => :parent_id, :class_name => "Message"
 
   validates_presence_of :sender, :receiver

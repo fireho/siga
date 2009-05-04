@@ -1,0 +1,20 @@
+- form_for(@storage) do |f|
+  = f.error_messages
+  %p
+    = f.label :amount
+    %br
+    = f.text_field :amount
+  %p
+    = f.label :unit
+    %br
+    = f.text_field :unit
+  %p
+    = f.label :value_cents
+    %br
+    = f.text_field :value_cents
+  %p
+    = f.submit 'Update'
+
+= link_to 'Show', @storage
+|
+= link_to 'Back', storages_path

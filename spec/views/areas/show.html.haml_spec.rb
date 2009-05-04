@@ -1,20 +1,19 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
-describe "/registers/show.html.erb" do
-  include RegistersHelper
+describe "/areas/show.html.haml" do
+  include AreasHelper
   before(:each) do
-    assigns[:register] = @register = stub_model(Register,
+    assigns[:area] = @area = stub_model(Area,
       :name => "value for name",
-      :value_cents => 1,
-      :sign => false
+      :kind => "value for kind",
+      :geom => mock("Geom")
     )
   end
 
   it "renders attributes in <p>" do
     render
     response.should have_text(/value\ for\ name/)
-    response.should have_text(/1/)
-    response.should have_text(/false/)
+    response.should have_text(/value\ for\ kind/)
   end
 end
 
