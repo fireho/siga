@@ -8,7 +8,7 @@
 
 <% @attachments.each do |attachment| %>
   <tr>
-    <td><%=h attachment.attachable %></td>
+    <td><%=image_tag attachment.media.url(:thumb)%></td>
     <td><%=h attachment.info %></td>
     <td><%= link_to 'Show', attachment %></td>
     <td><%= link_to 'Edit', edit_attachment_path(attachment) %></td>

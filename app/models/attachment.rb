@@ -21,8 +21,7 @@
 class Attachment < ActiveRecord::Base
   belongs_to :attachable, :polymorphic => true
   has_attached_file :media,
-                    :styles => { :medium => "300x300>",
-                                 :thumb => "100x100>" }
+                    :styles => { :thumb => ["200x200#", :png] }
   validates_attachment_presence :media
 
 end
