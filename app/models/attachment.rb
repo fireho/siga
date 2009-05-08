@@ -25,6 +25,12 @@ class Attachment < ActiveRecord::Base
                     :path => ':rails_root/public/files/attachments/:id/:style/:basename.:extension',
                     :url => '/files/attachments/:id/:style/:basename.:extension'
   validates_attachment_presence :media
+  
+  def self.search(filter, page)
+    paginate :per_page => 20, :page => page,
+    :conditions => ['info like ?', "%#{filter}%"],
+    :order => 'id'
+  end
 
 end
 

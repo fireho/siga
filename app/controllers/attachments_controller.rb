@@ -2,7 +2,7 @@ class AttachmentsController < ApplicationController
   # GET /attachments
   # GET /attachments.xml
   def index
-    @attachments = Attachment.all
+    @attachments = Attachment.search(params[:filter],params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

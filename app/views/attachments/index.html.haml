@@ -1,0 +1,20 @@
+.block
+  .head
+    %h2.title Attachable
+  .content
+    %table{:class => "table"}
+      %tbody
+        %tr
+          %th Tipo
+          %th Info
+        -@attachments.each do |attachment|
+          %tr
+            -if attachment.media_content_type =~ /^image/
+              %td= image_tag attachment.media.url(:thumb)
+            -else
+              %td== #{image_tag("/images/mime/#{choose_icon attachment.media_file_name}")} #{attachment.media_file_name}
+              %td= attachment.info
+          
+    = will_paginate @attachments
+- sidebar do
+  = link_to 'Novo Registro', new_attachment_path, :class => 'icon iadd'
