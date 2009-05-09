@@ -7,6 +7,9 @@
   = f.input :body, :input_html => { :size => "60x20" }
   = f.input :public
   = f.input :published
+  - f.inputs :name => "Arquivo", :id => "arquivos" do
+    = f.render_associated_form @article.attachments, :partial => "attachments/attachment"
+    = f.add_associated_link "+ Novo arquivo", :attachments, :partial => "attachments/attachment"
   =# f.input :published_at, :as => :string, :input_html => { :id => "calendar" }
   .group.navform
     = f.submit 'Salvar', :class => :button
