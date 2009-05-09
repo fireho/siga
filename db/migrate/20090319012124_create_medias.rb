@@ -19,6 +19,6 @@ class CreateMedias < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :medias
+    drop_table :medias if table_exists? :medias
   end
 end

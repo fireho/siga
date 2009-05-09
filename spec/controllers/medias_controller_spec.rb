@@ -9,7 +9,7 @@ describe MediasController do
   describe "responding to GET index" do
 
     it "should expose all medias as @medias" do
-      Media.should_receive(:find).with(:all).and_return([mock_media])
+      Media.should_receive(:search).with(nil,nil).and_return([mock_media])
       get :index
       assigns[:medias].should == [mock_media]
     end
@@ -18,7 +18,7 @@ describe MediasController do
 
       it "should render all medias as xml" do
         request.env["HTTP_ACCEPT"] = "application/xml"
-        Media.should_receive(:find).with(:all).and_return(medias = mock("Array of Medias"))
+        Media.should_receive(:search).with(nil,nil).and_return(medias = mock("Array of Medias"))
         medias.should_receive(:to_xml).and_return("generated XML")
         get :index
         response.body.should == "generated XML"

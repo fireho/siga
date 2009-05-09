@@ -24,11 +24,12 @@ class Media < ActiveRecord::Base
                     :styles => { :thumb => ["200x200#", :png] },
                     :path => ':rails_root/public/files/medias/:id/:style/:basename.:extension',
                     :url => '/files/medias/:id/:style/:basename.:extension'
-  validates_media_presence :media
+  validates_attachment_presence :media
+
 
   def self.search(filter, page)
     paginate :per_page => 20, :page => page,
-    :conditions => ['info like ?', "%#{filter}%"],
+    :conditions => ['medias.info like ?', "%#{filter}%"],
     :order => 'id'
   end
 

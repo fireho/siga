@@ -1,0 +1,12 @@
+%p
+  %b
+    Attachable:
+  = h @media.attachable
+%p
+  %b
+    Info:
+  = h @media.info
+
+= link_to 'Edit', edit_media_path(@media)
+|
+= link_to 'Back', medias_path

@@ -52,7 +52,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :charters
   map.resources :documents
   map.resources :publications
-  map.resources :attachments
+  map.resources :medias
   map.resources :zones
   map.resources :countries
   map.resources :provinces

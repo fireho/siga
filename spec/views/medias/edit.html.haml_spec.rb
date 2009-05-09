@@ -1,6 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
-describe "/medias/edit.html.erb" do
+describe "/medias/edit.html.haml" do
   include MediasHelper
 
   before(:each) do
@@ -11,7 +11,7 @@ describe "/medias/edit.html.erb" do
   end
 
   it "should render edit form" do
-    render "/medias/edit.html.erb"
+    render "/medias/edit.html.haml"
 
     response.should have_tag("form[action=#{media_path(@media)}][method=post]") do
       with_tag('textarea#media_info[name=?]', "media[info]")
