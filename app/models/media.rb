@@ -18,14 +18,14 @@
 #   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 #
-class Attachment < ActiveRecord::Base
+class Media < ActiveRecord::Base
   belongs_to :attachable, :polymorphic => true
   has_attached_file :media,
                     :styles => { :thumb => ["200x200#", :png] },
-                    :path => ':rails_root/public/files/attachments/:id/:style/:basename.:extension',
-                    :url => '/files/attachments/:id/:style/:basename.:extension'
-  validates_attachment_presence :media
-  
+                    :path => ':rails_root/public/files/medias/:id/:style/:basename.:extension',
+                    :url => '/files/medias/:id/:style/:basename.:extension'
+  validates_media_presence :media
+
   def self.search(filter, page)
     paginate :per_page => 20, :page => page,
     :conditions => ['info like ?', "%#{filter}%"],
@@ -37,7 +37,7 @@ end
 # == Schema Information
 # Schema version: 99999999999999
 #
-# Table name: attachments
+# Table name: medias
 #
 #  id                 :integer         not null, primary key
 #  attachable_id      :integer

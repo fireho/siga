@@ -1,9 +1,8 @@
-- semantic_form_for(@attachment, :html => {:multipart => true, :class => "form"}) do |f| 
+- semantic_form_for(@media, :html => {:multipart => true, :class => "form"}) do |f|
   = f.input :media, :label => "Arquivo"
-
   = f.input :info
   .clear
   .navform
     = f.submit "Salvar &rarr;", :class => "button"
     ou
-    = link_to 'Voltar', attachments_path
+    = link_to 'Voltar', medias_path

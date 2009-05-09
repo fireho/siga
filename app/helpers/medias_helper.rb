@@ -1,4 +1,4 @@
-module AttachmentsHelper
+module MediasHelper
   def choose_icon(mime_type)
     case mime_type
       when /\.doc|odf|txt/ then "xls.png"

@@ -1,0 +1,20 @@
+.block
+  .head
+    %h2.title Attachable
+  .content
+    %table{:class => "table"}
+      %tbody
+        %tr
+          %th Tipo
+          %th Info
+        -@medias.each do |media|
+          %tr
+            -if media.media_content_type =~ /^image/
+              %td= image_tag media.media.url(:thumb)
+            -else
+              %td== #{image_tag("/images/mime/#{choose_icon media.media_file_name}")} #{media.media_file_name}
+              %td= media.info
+
+    = will_paginate @medias
+- sidebar do
+  = link_to 'Novo Registro', new_media_path, :class => 'icon iadd'

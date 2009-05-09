@@ -1,15 +1,15 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
-describe "/attachments/show.html.erb" do
-  include AttachmentsHelper
+describe "/medias/show.html.erb" do
+  include MediasHelper
   before(:each) do
-    assigns[:attachment] = @attachment = stub_model(Attachment,
+    assigns[:media] = @media = stub_model(Media,
       :info => "value for info"
     )
   end
 
   it "should render attributes in <p>" do
-    render "/attachments/show.html.erb"
+    render "/medias/show.html.erb"
     response.should have_text(/value\ for\ info/)
   end
 end

@@ -1,0 +1,5 @@
+.media
+  - f.inputs do
+    = f.input :kind, :as => :select, :collection => Media.get_kind_values
+    = f.input :value, :input_html => { :size => 15 }
+    = f.remove_link "remove"

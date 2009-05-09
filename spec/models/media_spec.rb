@@ -1,6 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
-describe Attachment do
+describe Media do
 
 
 end
@@ -8,7 +8,7 @@ end
 # == Schema Information
 # Schema version: 99999999999999
 #
-# Table name: attachments
+# Table name: medias
 #
 #  id                 :integer         not null, primary key
 #  attachable_id      :integer
