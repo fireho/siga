@@ -22,6 +22,7 @@ Info p/ desenvolvedores.
   * Address
 
 * Group        =>   Pessoa Juridica
+  * Holder     =>   Relation Table Person <> Group
   * Documents  =>   Cad. Documentos (CNPJ, Inscricoes, etc)
   * Contact
   * Address

@@ -1,10 +1,11 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe PersonImpairment do
+
   it "should create a new instance given valid attributes" do
-    pending
-    PersonImpairment.create!(@valid_attributes)
+    PersonImpairment.generate!
   end
+
 end
 
 # == Schema Information

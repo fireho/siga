@@ -20,6 +20,8 @@
 #
 class PersonImpairment < ActiveRecord::Base
   belongs_to :person
+  symbolize :kind, :in => [:visual, :auditive]
+
 end
 
 # == Schema Information

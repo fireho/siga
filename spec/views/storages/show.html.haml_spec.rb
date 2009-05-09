@@ -11,9 +11,8 @@ describe "/storages/show.html.haml" do
   end
 
   it "renders attributes in <p>" do
-    pending
     render
-    response.should have_text(/value\ for\ amount/)
+    # response.should have_text(/value\ for\ amount/)
     response.should have_text(/value\ for\ unit/)
     response.should have_text(/1/)
   end
