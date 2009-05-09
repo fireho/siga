@@ -4,8 +4,7 @@
 
 - semantic_form_for(@property, :html => { :class => "form" }) do |f|
   = f.error_messages
-  = f.input :area_id
-  = f.input :person_id
+  = f.input :area
   = f.input :name, :input_html => { :size => 60 }
   = f.input :use, :as => :select, :collection => Property.get_use_values
   = f.input :condition, :input_html => { :size => 60 }

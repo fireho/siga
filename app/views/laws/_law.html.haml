@@ -3,8 +3,7 @@
   = javascript_include_tag "app/rich", "jquery/ui.datepicker", "jquery/jquery.wysiwyg"
 
 - semantic_form_for(@law, :html => { :class => "form" }) do |f|
-  = f.input :person_id
-  = f.input :user_id
+  =# f.input :person
   =# f.input :parent_id
   = f.input :lft,           :input_html => { :size => 60 }
   = f.input :rgt,           :input_html => { :size => 60 }

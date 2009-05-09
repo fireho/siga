@@ -1,8 +1,5 @@
-- form_for(@zone) do |f|
-  = f.error_messages
-  %p
-    = f.label :name
-    = f.text_field :name
+- semantic_form_for(@zone) do |f|
+  = f.input :name
   %p
     = f.submit 'Create'
 
