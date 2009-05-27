@@ -2,7 +2,7 @@
   = stylesheet_link_tag "jquery/ui.theme", "jquery/jquery.wysiwyg"
   = javascript_include_tag "app/rich", "jquery/ui.datepicker", "jquery/jquery.wysiwyg"
 
-- semantic_form_for(@article, :html => { :class => "form" }) do |f|
+- semantic_form_for(@article, :html => { :class => "form", :multipart => true }) do |f|
   = f.input :title, :input_html => { :size => 60 }
   = f.input :body, :input_html => { :size => "60x20" }
   = f.input :public

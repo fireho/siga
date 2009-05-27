@@ -1,5 +1,8 @@
 .media
   - f.inputs do
-    = f.input :media, :label => "Arquivo"
+    .group
+      = f.input :media, :label => "Arquivo"
+    .group
     = f.input :info
+    
     = f.remove_link "remove"
