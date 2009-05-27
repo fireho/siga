@@ -34,8 +34,8 @@ class Person < ActiveRecord::Base
   has_friendly_id :name, :use_slug => true
   autocomplete :dad, :mom, :spouse, :birthplace
 
-  symbolize :blood, :in => [:"A+", :"A-", :"O+", :"O-", :"B+", :"B-", :"AB+", :"AB-"], :i18n => false
-  symbolize :marital, :in => [:unknown, :single, :divorced, :married, :widowed, :common_law]
+  symbolize :blood, :in => [:"A+", :"A-", :"O+", :"O-", :"B+", :"B-", :"AB+", :"AB-"], :i18n => false, :allow_nil => true
+  symbolize :marital, :in => [:unknown, :single, :divorced, :married, :widowed, :common_law], :allow_nil => true
   symbolize :profession_state, :in => [:working, :retired], :allow_nil => true
   symbolize :sex, :in => [true, false]
   symbolize :race, :in => [:caucasian, :asian, :african, :indian], :allow_nil => true

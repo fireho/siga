@@ -5,6 +5,10 @@ describe Article do
 
   it { should belong_to(:user) }
 
+  it "should find" do
+    @article = Article.generate(:title => "ruby is the law")
+    Article.find("ruby-is-the-law").should eql(@article)
+  end
 end
 
 

@@ -1,8 +1,8 @@
-- content_for :content_header do
-  #content_header
+.block
+  .content
     %h1=h @article.title
-.news
-  =h(@article.body).gsub("\n", "<br/>")
+    .inner
+      =h(@article.body).gsub("\n", "<br/>")
 
-%br
+
 = link_to 'Voltar', "/", :class => "icon back"

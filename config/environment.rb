@@ -27,15 +27,15 @@ Rails::Initializer.run do |config|
   config.i18n.load_path += Dir[Rails.root.join("lib", "locales", "*.{rb,yml}")]
   config.i18n.default_locale = "pt"
 
-  config.gem "postgres"
+  config.gem "pg" #"postgres"
   config.gem "authlogic"
-  config.gem "haml"
+  config.gem "haml-edge", :lib => "haml"
   config.gem "rghost"
   config.gem "nofxx-georuby", :lib => "geo_ruby"
   config.gem "nofxx-postgis_adapter", :lib => "postgis_adapter"
   config.gem "bcrypt-ruby", :lib => "bcrypt"
   config.gem "thoughtbot-paperclip" , :lib => "paperclip"
-  config.gem "giraffesoft-is_taggable", :lib => "is_taggable"
+#  config.gem "giraffesoft-is_taggable", :lib => "is_taggable"
   config.gem "nofxx-formtastic", :lib => "formtastic"
   config.gem "nofxx-money", :lib => "money"
   config.gem "friendly_id"

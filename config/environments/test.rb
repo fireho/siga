@@ -11,6 +11,8 @@ config.action_mailer.delivery_method = :test
 
 config.gem "rspec", :lib => false
 config.gem "rspec-rails", :lib => false
+config.gem "webrat", :lib => false
+config.gem "cucumber", :lib => false
 config.gem "nofxx-rspec_spinner", :lib => false
 config.gem "carlosbrando-remarkable", :lib => false
 config.gem "nofxx-object_daddy", :lib => "object_daddy"
