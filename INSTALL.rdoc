@@ -29,7 +29,7 @@ Distro specific:
   \i /usr/share/pgsql/contrib/lwpostgis-64.sql
   \i /usr/share/pgsql/contrib/spatial_ref_sys.sql
 
-  # debian
+  # debian e ubuntu
   \i /usr/share/postgresql-8.3-postgis/lwpostgis.sql;
   \i /usr/share/postgresql-8.3-postgis/spatial_ref_sys.sql;
 

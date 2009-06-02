@@ -43,6 +43,9 @@ Criar um banco UTF8:
     # Debian
     su - postgres -c "/usr/bin/postgresql/8.3/initdb -E utf8 --locale=en_US.UTF-8 $PGROOT/data"
 
+    # Ubuntu
+    su - postgres -c "/usr/lib/postgresql/8.3/bin/initdb -E utf8 --locale=en_US.UTF-8 $PGROOT/data"
+    
 
 == PostGIS
 
@@ -71,7 +74,7 @@ Alguns exemplos:
   \i /usr/share/pgsql/contrib/lwpostgis-64.sql
   \i /usr/share/pgsql/contrib/spatial_ref_sys.sql
 
-  # debian
+  # debian e ubuntu
   \i /usr/share/postgresql-8.3-postgis/lwpostgis.sql;
   \i /usr/share/postgresql-8.3-postgis/spatial_ref_sys.sql;
 
